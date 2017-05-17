@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSet>
+  <Column>
+    <HeaderText>Text</HeaderText>
+    <ItemWidth>200</ItemWidth>
+    <FieldName>AnchorText</FieldName>
+    <FieldType>String</FieldType>
+  </Column>
+  <Column>
+    <HeaderText>Priority</HeaderText>
+    <ItemWidth>250</ItemWidth>
+    <FieldName>Priority</FieldName>
+    <FieldType>Lookup</FieldType>
+    <FieldTypeKey>byte</FieldTypeKey>
+    <FieldTypeName>Name</FieldTypeName>
+    <ControllerInfo>TMV.Data.Entities.CategoryController</ControllerInfo>
+    <FieldLookup>ListCategoryLookup</FieldLookup>
+  </Column>
+  <Column>
+    <HeaderText>Url</HeaderText>
+    <ItemWidth>450</ItemWidth>
+    <FieldName>Url</FieldName>
+    <FieldType>string</FieldType>
+  </Column>
+  <Column>
+    <HeaderText>Order</HeaderText>
+    <ItemWidth>70</ItemWidth>
+    <FieldName>OrderView</FieldName>
+    <FieldType>byte</FieldType>
+  </Column>
+  <Column>
+    <HeaderText>Target</HeaderText>
+    <ItemWidth>70</ItemWidth>
+    <FieldName>Target</FieldName>
+    <FieldType>bool</FieldType>
+  </Column>
+  <ObjectDataSource>
+    <ClassInfo>TMV.Data.Entities.LinkWebsiteInfo</ClassInfo>
+    <ClassController>TMV.Data.Entities.LinkWebsiteController</ClassController>
+    <SelectMethod>SelectLinkWebsite</SelectMethod>
+    <UpdateMethod>UpdateLinkWebsite</UpdateMethod>
+    <DeleteMethod>DeleteLinkWebsite</DeleteMethod>
+    <PrimaryKeyName>LinkWebsiteID</PrimaryKeyName>
+  </ObjectDataSource>
+  <GridConfig>
+    <Title>Danh sách liên kết hữu ích</Title>
+    <ShowUpdate>true</ShowUpdate>
+    <ShowInsert>true</ShowInsert>
+    <ShowDelete>true</ShowDelete>
+  </GridConfig>
+</DataSet>

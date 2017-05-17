@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<DataSet>
+  <Column>
+    <HeaderText>Tiêu đề</HeaderText>
+    <ItemWidth>250</ItemWidth>
+    <FieldName>Title</FieldName>
+    <FieldType>String</FieldType>
+    <FieldUrlName>ArticleId</FieldUrlName>
+    <FieldUrlText>~/Pages/EditArticle.aspx?ArticleId={0}</FieldUrlText>
+  </Column>
+  <Column>
+    <HeaderText>Chuyên mục</HeaderText>
+    <ItemWidth>200</ItemWidth>
+    <FieldName>CategoryId</FieldName>
+    <FieldType>Lookup</FieldType>
+    <FieldTypeKey>Int</FieldTypeKey>
+    <FieldTypeName>CategoryName</FieldTypeName>
+    <ControllerInfo>TMV.Data.Entities.CategoryController</ControllerInfo>
+    <FieldAllowNull>true</FieldAllowNull>
+    <FieldLookup>ListCategoryLookup</FieldLookup>
+  </Column>
+  <Column>
+    <HeaderText>Người tạo</HeaderText>
+    <ItemWidth>100</ItemWidth>
+    <FieldName>AuthorId</FieldName>
+    <FieldType>Lookup</FieldType>
+    <FieldTypeKey>Int</FieldTypeKey>
+    <FieldTypeName>Username</FieldTypeName>
+    <ControllerInfo>TMV.Data.Entities.AdminUserController</ControllerInfo>
+    <FieldAllowNull>true</FieldAllowNull>
+    <FieldLookup>ListAdminUserLookup</FieldLookup>
+  </Column>
+  <Column>
+    <HeaderText>Người sửa</HeaderText>
+    <ItemWidth>100</ItemWidth>
+    <FieldName>EditorId</FieldName>
+    <FieldType>Lookup</FieldType>
+    <FieldTypeKey>Int</FieldTypeKey>
+    <FieldTypeName>Username</FieldTypeName>
+    <ControllerInfo>TMV.Data.Entities.AdminUserController</ControllerInfo>
+    <FieldAllowNull>true</FieldAllowNull>
+    <FieldLookup>ListAdminUserLookup</FieldLookup>
+  </Column>
+  <Column>
+    <HeaderText>Ngày tạo</HeaderText>
+    <ItemWidth>150</ItemWidth>
+    <FieldName>CreatedDate</FieldName>
+    <FieldType>datetime</FieldType>
+  </Column>
+  <Column>
+    <HeaderText>Ngày hiển thị</HeaderText>
+    <ItemWidth>150</ItemWidth>
+    <FieldName>PublishDate</FieldName>
+    <FieldType>datetime</FieldType>
+  </Column>
+  <ObjectDataSource>
+    <ClassInfo>TMV.Data.Entities.ArticleInfo</ClassInfo>
+    <ClassController>TMV.Data.Entities.ArticleController</ClassController>
+    <SelectMethod>SelectArticleApproving</SelectMethod>
+    <DeleteMethod>DeleteArticle</DeleteMethod>
+    <PrimaryKeyName>ArticleId</PrimaryKeyName>
+  </ObjectDataSource>
+  <GridConfig>
+    <Title>Danh sách tin tức đang duyệt</Title>
+    <ShowUpdate>false</ShowUpdate>
+    <ShowInsert>false</ShowInsert>
+    <ShowDelete>true</ShowDelete>
+  </GridConfig>
+</DataSet>

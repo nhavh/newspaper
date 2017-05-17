@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSet>
+  <Column>
+    <HeaderText>Role Name</HeaderText>
+    <ItemWidth>350</ItemWidth>
+    <FieldName>RoleName</FieldName>
+    <FieldType>string</FieldType>
+  </Column>
+  <ObjectDataSource>
+    <ClassInfo>TMV.Data.Entities.AdminRoleInfo</ClassInfo>
+    <ClassController>TMV.Data.Entities.AdminRoleController</ClassController>
+    <SelectMethod>SelectAdminRole</SelectMethod>
+    <UpdateMethod>UpdateAdminRole</UpdateMethod>
+    <DeleteMethod>DeleteAdminRole</DeleteMethod>
+    <PrimaryKeyName>RoleID</PrimaryKeyName>
+  </ObjectDataSource>
+
+  <GridConfig>
+    <Title>Role List</Title>
+    <ShowUpdate>true</ShowUpdate>
+    <ShowInsert>true</ShowInsert>
+    <ShowDelete>true</ShowDelete>
+  </GridConfig>
+</DataSet>

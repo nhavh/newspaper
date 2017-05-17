@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSet>
+  <Column>
+    <HeaderText>User Name</HeaderText>
+    <ItemWidth>150</ItemWidth>
+    <FieldName>Username</FieldName>
+    <FieldType>String</FieldType>
+  </Column>
+  <Column>
+    <HeaderText>Password</HeaderText>
+    <ItemWidth>100</ItemWidth>
+    <FieldName>Password</FieldName>
+    <FieldType>password</FieldType>
+  </Column>
+  <Column>
+    <HeaderText>Administrator?</HeaderText>
+    <ItemWidth>150</ItemWidth>
+    <FieldName>IsAdministrator</FieldName>
+    <FieldType>bool</FieldType>
+  </Column>
+  <Column>
+    <HeaderText>Locked</HeaderText>
+    <ItemWidth>100</ItemWidth>
+    <FieldName>Deleted</FieldName>
+    <FieldType>bool</FieldType>
+  </Column>
+  <ObjectDataSource>
+    <ClassInfo>TMV.Data.Entities.AdminUserInfo</ClassInfo>
+    <ClassController>TMV.Data.Entities.AdminUserController</ClassController>
+    <SelectMethod>SelectAdminUser</SelectMethod>
+    <UpdateMethod>UpdateAdminUser</UpdateMethod>
+    <DeleteMethod>DeleteAdminUser</DeleteMethod>
+    <PrimaryKeyName>UserID</PrimaryKeyName>
+  </ObjectDataSource>
+  <GridConfig>
+    <Title>BO User List</Title>
+    <ShowUpdate>true</ShowUpdate>
+    <ShowInsert>true</ShowInsert>
+    <ShowDelete>true</ShowDelete>
+  </GridConfig>
+</DataSet>

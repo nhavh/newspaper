@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<DataSet>
+  <Column>
+    <HeaderText>Category Name</HeaderText>
+    <ItemWidth>250</ItemWidth>
+    <FieldName>CategoryName</FieldName>
+    <FieldType>String</FieldType>
+    <FieldUrlName>CategoryId</FieldUrlName>
+    <FieldUrlText>~/Pages/EditCategory.aspx?CategoryId={0}</FieldUrlText>
+  </Column>
+  <Column>
+    <HeaderText>ParentId</HeaderText>
+    <ItemWidth>200</ItemWidth>
+    <FieldName>ParentId</FieldName>
+    <FieldType>Lookup</FieldType>
+    <FieldTypeKey>Int</FieldTypeKey>
+    <FieldTypeName>CategoryName</FieldTypeName>
+    <ControllerInfo>TMV.Data.Entities.CategoryController</ControllerInfo>
+    <FieldAllowNull>true</FieldAllowNull>
+    <FieldLookup>ListCategoryLookup</FieldLookup>
+  </Column>
+  <Column>
+    <HeaderText>Thứ tự</HeaderText>
+    <ItemWidth>150</ItemWidth>
+    <FieldName>OrderBy</FieldName>
+    <FieldType>Int</FieldType>
+  </Column>
+  <Column>
+    <HeaderText>Menu Top</HeaderText>
+    <ItemWidth>150</ItemWidth>
+    <FieldName>IsShowMenuTop</FieldName>
+    <FieldType>Bool</FieldType>
+  </Column>
+  <Column>
+    <HeaderText>Menu Bot</HeaderText>
+    <ItemWidth>150</ItemWidth>
+    <FieldName>IsShowMenuBot</FieldName>
+    <FieldType>Bool</FieldType>
+  </Column>
+  
+  <ObjectDataSource>
+    <ClassInfo>TMV.Data.Entities.CategoryInfo</ClassInfo>
+    <ClassController>TMV.Data.Entities.CategoryController</ClassController>
+    <SelectMethod>SelectCategory</SelectMethod>
+    <UpdateMethod>UpdateCategory</UpdateMethod>
+    <DeleteMethod>DeleteCategory</DeleteMethod>
+    <PrimaryKeyName>CategoryId</PrimaryKeyName>
+  </ObjectDataSource>
+  <GridConfig>
+    <Title>Category List</Title>
+    <ShowUpdate>false</ShowUpdate>
+    <ShowInsert>false</ShowInsert>
+    <ShowDelete>true</ShowDelete>
+  </GridConfig>
+</DataSet>

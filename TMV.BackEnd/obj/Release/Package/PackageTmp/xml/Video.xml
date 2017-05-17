@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSet>
+  <Column>
+    <HeaderText>Tiêu đề video</HeaderText>
+    <ItemWidth>250</ItemWidth>
+    <FieldName>Title</FieldName>
+    <FieldType>String</FieldType>
+    <FieldUrlName>VideoId</FieldUrlName>
+    <FieldUrlText>~/Pages/EditVideo.aspx?VideoId={0}</FieldUrlText>
+  </Column>
+  <Column>
+    <HeaderText>Link youtube</HeaderText>
+    <ItemWidth>400</ItemWidth>
+    <FieldName>Url</FieldName>
+    <FieldType>string</FieldType>
+  </Column>
+  <Column>
+    <HeaderText>Người tạo</HeaderText>
+    <ItemWidth>100</ItemWidth>
+    <FieldName>CreatedBy</FieldName>
+    <FieldType>Lookup</FieldType>
+    <FieldTypeKey>Int</FieldTypeKey>
+    <FieldTypeName>Username</FieldTypeName>
+    <ControllerInfo>TMV.Data.Entities.AdminUserController</ControllerInfo>
+    <FieldAllowNull>true</FieldAllowNull>
+    <FieldLookup>ListAdminUserLookup</FieldLookup>
+  </Column>
+  <Column>
+    <HeaderText>Người sửa</HeaderText>
+    <ItemWidth>100</ItemWidth>
+    <FieldName>UpdatedBy</FieldName>
+    <FieldType>Lookup</FieldType>
+    <FieldTypeKey>Int</FieldTypeKey>
+    <FieldTypeName>Username</FieldTypeName>
+    <ControllerInfo>TMV.Data.Entities.AdminUserController</ControllerInfo>
+    <FieldAllowNull>true</FieldAllowNull>
+    <FieldLookup>ListAdminUserLookup</FieldLookup>
+  </Column>
+  <ObjectDataSource>
+    <ClassInfo>TMV.Data.Entities.VideoInfo</ClassInfo>
+    <ClassController>TMV.Data.Entities.VideoController</ClassController>
+    <SelectMethod>SelectVideo</SelectMethod>
+    <UpdateMethod>UpdateVideo</UpdateMethod>
+    <DeleteMethod>DeleteVideo</DeleteMethod>
+    <PrimaryKeyName>VideoId</PrimaryKeyName>
+  </ObjectDataSource>
+  <GridConfig>
+    <Title>Danh sách video</Title>
+    <ShowUpdate>false</ShowUpdate>
+    <ShowInsert>false</ShowInsert>
+    <ShowDelete>true</ShowDelete>
+  </GridConfig>
+</DataSet>

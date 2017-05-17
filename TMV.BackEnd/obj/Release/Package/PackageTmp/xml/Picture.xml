@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSet>
+  <Column>
+    <HeaderText>Tiêu đề hình ảnh</HeaderText>
+    <ItemWidth>250</ItemWidth>
+    <FieldName>Title</FieldName>
+    <FieldType>String</FieldType>
+    <FieldUrlName>PictureId</FieldUrlName>
+    <FieldUrlText>~/Pages/EditPicture.aspx?PictureId={0}</FieldUrlText>
+  </Column>
+  <Column>
+    <HeaderText>Người tạo</HeaderText>
+    <ItemWidth>100</ItemWidth>
+    <FieldName>CreatedBy</FieldName>
+    <FieldType>Lookup</FieldType>
+    <FieldTypeKey>Int</FieldTypeKey>
+    <FieldTypeName>Username</FieldTypeName>
+    <ControllerInfo>TMV.Data.Entities.AdminUserController</ControllerInfo>
+    <FieldAllowNull>true</FieldAllowNull>
+    <FieldLookup>ListAdminUserLookup</FieldLookup>
+  </Column>
+  <Column>
+    <HeaderText>Người sửa</HeaderText>
+    <ItemWidth>100</ItemWidth>
+    <FieldName>UpdatedBy</FieldName>
+    <FieldType>Lookup</FieldType>
+    <FieldTypeKey>Int</FieldTypeKey>
+    <FieldTypeName>Username</FieldTypeName>
+    <ControllerInfo>TMV.Data.Entities.AdminUserController</ControllerInfo>
+    <FieldAllowNull>true</FieldAllowNull>
+    <FieldLookup>ListAdminUserLookup</FieldLookup>
+  </Column>
+  <ObjectDataSource>
+    <ClassInfo>TMV.Data.Entities.PictureInfo</ClassInfo>
+    <ClassController>TMV.Data.Entities.PictureController</ClassController>
+    <SelectMethod>SelectPicture</SelectMethod>
+    <UpdateMethod>UpdatePicture</UpdateMethod>
+    <DeleteMethod>DeletePicture</DeleteMethod>
+    <PrimaryKeyName>PictureId</PrimaryKeyName>
+  </ObjectDataSource>
+  <GridConfig>
+    <Title>Danh sách hình ảnh</Title>
+    <ShowUpdate>false</ShowUpdate>
+    <ShowInsert>false</ShowInsert>
+    <ShowDelete>true</ShowDelete>
+  </GridConfig>
+</DataSet>

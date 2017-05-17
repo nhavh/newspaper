@@ -1,0 +1,71 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs" Inherits="TMV.BackEnd.MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Thẩm mỹ viện Hoàng Anh Manage</title>  
+    <link href="/css/template.css" rel="stylesheet" type="text/css" />
+     <link type="text/css" href="/css/rounded.css" rel="stylesheet" />
+    <script type="text/javascript" src="/js/jquery.js"></script>
+</head>
+<body id="minwidth-body">
+    <form id="aspnetForm" runat="server">  
+	<div id="header-box">
+	    <div id="module-logo">
+	        <img src="/images/logo.png" width="140px" alt=""/>
+	    </div>
+		<div id="module-status">
+		    <span>
+		        Welcome<br />
+		        <asp:HyperLink ID="lnkName" runat="server"></asp:HyperLink>
+		    </span>
+		    <label>
+		        <asp:LinkButton ID="btnLogout" runat="server" CausesValidation="false" OnClick="btnLogout_Click"></asp:LinkButton>
+		    </label>		
+		</div>
+		<div id="module-menu">
+            <ul class="topnav">
+                <%=HtmlMenuTop%>
+            </ul>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $("ul.subnav").parent().append("<span></span>"); //Only shows drop down trigger when js is enabled - Adds empty span tag after ul.subnav
+                    $("ul.topnav li.sub").hover(function() { //When trigger is clicked...
+                        //Following events are applied to the subnav itself (moving subnav up and down)
+                        //$(this).find("ul.subnav").slideDown('fast').show(); //Drop down the subnav on click
+                        $(this).find("ul.subnav").show(); //Drop down the subnav on click
+                        $(this).hover(function() {
+                        }, function() {
+                            $(this).find("ul.subnav").hide(); //When the mouse hovers out of the subnav, move it back up
+                            //$(this).find("ul.subnav").slideUp('fast'); //When the mouse hovers out of the subnav, move it back up
+                        });
+                        //Following events are applied to the trigger (Hover events for the trigger)
+                    }).hover(function() {
+                        $(this).addClass("subhover"); //On hover over, add class "subhover"
+                    }, function() {	//On Hover Out
+                        $(this).removeClass("subhover"); //On hover out, remove class "subhover"
+                    });
+
+                    if (window.location.pathname.indexOf("/default.aspx") > -1)
+                        window.history.replaceState('', '', '/');
+                });
+            </script>
+		</div>
+		<div class="clr"></div>
+	</div>	
+	
+    <div id="content-box">
+		<div class="border">	
+			<asp:ContentPlaceHolder ID="placeHolderContent" runat="server"></asp:ContentPlaceHolder>
+		</div>
+		<div class="clr"></div>
+	</div>			
+	<div id="footer">
+		<p class="copyright">
+			<a href="http://thammyvienhoanganh.com" target="_blank">thammyvienhoanganh.com</a>
+		</p>
+	</div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSet>
+  <Column>
+    <HeaderText>Page Name</HeaderText>
+    <ItemWidth>200</ItemWidth>
+    <FieldName>Name</FieldName>
+    <FieldType>String</FieldType>
+  </Column>
+  <Column>
+    <HeaderText>ParentID</HeaderText>
+    <ItemWidth>250</ItemWidth>
+    <FieldName>ParentID</FieldName>
+    <FieldType>Lookup</FieldType>
+    <FieldTypeKey>Int</FieldTypeKey>
+    <FieldTypeName>Name</FieldTypeName>    
+    <ControllerInfo>TMV.Data.Entities.AdminPageController</ControllerInfo>
+    <FieldAllowNull>true</FieldAllowNull>
+    <FieldLookup>ListAdminPageLookup</FieldLookup>
+  </Column>
+  <Column>
+    <HeaderText>Source</HeaderText>
+    <ItemWidth>450</ItemWidth>
+    <FieldName>Source</FieldName>
+    <FieldType>string</FieldType>
+  </Column>
+  <Column>
+    <HeaderText>Order</HeaderText>
+    <ItemWidth>70</ItemWidth>
+    <FieldName>OrderView</FieldName>
+    <FieldType>int</FieldType>
+  </Column>
+  <Column>
+    <HeaderText>Visible</HeaderText>
+    <ItemWidth>70</ItemWidth>
+    <FieldName>Visible</FieldName>
+    <FieldType>bool</FieldType>
+  </Column>
+	<Column>
+		<HeaderText>Locked</HeaderText>
+		<ItemWidth>70</ItemWidth>
+		<FieldName>Locked</FieldName>
+		<FieldType>bool</FieldType>
+	</Column>
+  <ObjectDataSource>
+    <ClassInfo>TMV.Data.Entities.AdminPageInfo</ClassInfo>
+    <ClassController>TMV.Data.Entities.AdminPageController</ClassController>
+    <SelectMethod>SelectAdminPage</SelectMethod>    
+    <UpdateMethod>UpdateAdminPage</UpdateMethod>
+    <DeleteMethod>DeleteAdminPage</DeleteMethod>
+    <PrimaryKeyName>AdminPageID</PrimaryKeyName>
+  </ObjectDataSource>
+  <GridConfig>
+    <Title>Page List</Title>
+	  <ShowUpdate>true</ShowUpdate>
+	  <ShowInsert>true</ShowInsert>
+	  <ShowDelete>true</ShowDelete>
+  </GridConfig>
+</DataSet>

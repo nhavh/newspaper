@@ -1,0 +1,47 @@
+﻿body{
+    margin:5px;
+	color: #333;
+	font-family: Arial, Helvetica, sans-serif; 
+    font-size: 12px; 
+}
+a{   
+    font-weight: bold;  
+    color: #2255FF;
+    text-decoration: none;    
+}
+a:hover{    
+    color: #FF2255;
+    text-decoration: underline; 
+}
+a:active{   
+    color: #FF2255;
+    text-decoration: underline;
+}
+.CommandButton{ 
+    color: #2222AA;
+}
+.Title{ 
+    color: White; 
+    font-weight: bold; 
+    font-family: Tahoma; 
+    font-size: 14px; 
+}
+
+/* css swfupload */
+.progressWrapper {overflow: hidden;}
+.progressContainer {margin: 2px;padding: 1px;border: solid 1px #E8E8E8;background-color: #F7F7F7;overflow: hidden;}
+.message {margin: 1em 0;padding: 1px 2px;	border: solid 1px #FFDD99;	background-color: #FFFFCC;	overflow: hidden;}
+.green {border: solid 1px #DDF0DD;background-color: #EBFFEB;}
+.blue {border: solid 1px #CEE2F2;background-color: #F0F5FF;}
+.progressName {font-size: 8pt;font-weight: 700;color: #555;height: 14px;text-align: left;white-space: nowrap;overflow: hidden;}
+.progressBarInProgress,
+.progressBarComplete,
+.progressBarError {font-size: 0;width: 0%;height: 2px;background-color: blue;margin-top: 2px;}
+.progressBarComplete {width: 100%;background-color: green;visibility: hidden;}
+.progressBarError {width: 100%;background-color: red;visibility: hidden;}
+.progressBarStatus {margin-top: 2px;font-size: 7pt;font-family: Arial;text-align: left;white-space: nowrap;}
+a.progressCancel {font-size: 0;display: block;height: 14px;width: 14px;background-image: url(/images/delete.gif);background-repeat: no-repeat;
+	float: right;
+}
+/* end swfupload */
+table tr td tr th input, table tr td tr th select {background-color:#fff !important;border-radius:0 !important;padding:0 !important;}

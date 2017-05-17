@@ -1,0 +1,4 @@
+E:\Working\TMV\Microsoft.ApplicationBlocks.Data\bin\Release\Microsoft.ApplicationBlocks.Data.dll
+E:\Working\TMV\Microsoft.ApplicationBlocks.Data\bin\Release\Microsoft.ApplicationBlocks.Data.pdb
+E:\Working\TMV\Microsoft.ApplicationBlocks.Data\obj\Release\Microsoft.ApplicationBlocks.Data.dll
+E:\Working\TMV\Microsoft.ApplicationBlocks.Data\obj\Release\Microsoft.ApplicationBlocks.Data.pdb

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<DataSet>
+  <Column>
+    <HeaderText>Tiêu đề</HeaderText>
+    <ItemWidth>500</ItemWidth>
+    <FieldName>Title</FieldName>
+    <FieldType>string</FieldType>
+    <FieldUrlName>SponsorId</FieldUrlName>
+    <FieldUrlText>~/Pages/EditSponsor.aspx?SponsorId={0}</FieldUrlText>
+  </Column>
+  <Column>
+    <HeaderText>Chuyên mục</HeaderText>
+    <ItemWidth>200</ItemWidth>
+    <FieldName>ItemType</FieldName>
+    <FieldType>Lookup</FieldType>
+    <FieldTypeKey>Int</FieldTypeKey>
+    <FieldTypeName>CategoryName</FieldTypeName>
+    <ControllerInfo>TMV.Data.Entities.CategoryController</ControllerInfo>
+    <FieldAllowNull>true</FieldAllowNull>
+    <FieldLookup>ListCategoryLookup</FieldLookup>
+  </Column>
+  <Column>
+    <HeaderText>Ngày bắt đầu</HeaderText>
+    <ItemWidth>150</ItemWidth>
+    <FieldName>StartDate</FieldName>
+    <FieldType>datetime</FieldType>
+  </Column>
+  <Column>
+    <HeaderText>Ngày kết thúc</HeaderText>
+    <ItemWidth>150</ItemWidth>
+    <FieldName>EndDate</FieldName>
+    <FieldType>datetime</FieldType>
+  </Column>
+  <ObjectDataSource>
+    <ClassInfo>TMV.Data.Entities.SponsorInfo</ClassInfo>
+    <ClassController>TMV.Data.Entities.SponsorController</ClassController>
+    <SelectMethod>SelectSponsor</SelectMethod>
+    <DeleteMethod>DeleteSponsor</DeleteMethod>
+    <PrimaryKeyName>SponsorId</PrimaryKeyName>
+  </ObjectDataSource>
+  <GridConfig>
+    <Title>Danh sách bài viết nổi bật</Title>
+    <ShowUpdate>false</ShowUpdate>
+    <ShowInsert>false</ShowInsert>
+    <ShowDelete>false</ShowDelete>
+  </GridConfig>
+</DataSet>

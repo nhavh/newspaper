@@ -1,0 +1,16 @@
+E:\Working\TMV\TMV.Library\bin\Release\TMV.Library.dll
+E:\Working\TMV\TMV.Library\bin\Release\TMV.Library.pdb
+E:\Working\TMV\TMV.Library\obj\Release\TMV.Library.dll
+E:\Working\TMV\TMV.Library\obj\Release\TMV.Library.pdb
+E:\Working\TMV\TMV.Library\bin\Release\log4net.dll
+E:\Working\TMV\TMV.Library\obj\Release\TMV.Library.csprojResolveAssemblyReference.cache
+E:\OutWork\Mr.Bao\SOURCE\TMV\TMV.Library\bin\Release\TMV.Library.dll
+E:\OutWork\Mr.Bao\SOURCE\TMV\TMV.Library\bin\Release\TMV.Library.pdb
+E:\OutWork\Mr.Bao\SOURCE\TMV\TMV.Library\obj\Release\TMV.Library.csprojResolveAssemblyReference.cache
+E:\OutWork\Mr.Bao\SOURCE\TMV\TMV.Library\obj\Release\TMV.Library.dll
+E:\OutWork\Mr.Bao\SOURCE\TMV\TMV.Library\obj\Release\TMV.Library.pdb
+E:\OutWork\Mr.Bao\ThamMyVienSource\tmvhoanganh\TMV.Library\bin\Release\TMV.Library.dll
+E:\OutWork\Mr.Bao\ThamMyVienSource\tmvhoanganh\TMV.Library\bin\Release\TMV.Library.pdb
+E:\OutWork\Mr.Bao\ThamMyVienSource\tmvhoanganh\TMV.Library\obj\Release\TMV.Library.csprojResolveAssemblyReference.cache
+E:\OutWork\Mr.Bao\ThamMyVienSource\tmvhoanganh\TMV.Library\obj\Release\TMV.Library.dll
+E:\OutWork\Mr.Bao\ThamMyVienSource\tmvhoanganh\TMV.Library\obj\Release\TMV.Library.pdb

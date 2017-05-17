@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSet>
+  <Column>
+    <HeaderText>Tiêu đề</HeaderText>
+    <ItemWidth>550</ItemWidth>
+    <FieldName>Title</FieldName>
+    <FieldType>String</FieldType>
+    <FieldUrlName>BannerId</FieldUrlName>
+    <FieldUrlText>~/Pages/EditBanner.aspx?BannerId={0}</FieldUrlText>
+  </Column>
+  <Column>
+    <HeaderText>Vị trí</HeaderText>
+    <ItemWidth>150</ItemWidth>
+    <FieldName>Priority</FieldName>
+    <FieldType>Lookup</FieldType>
+    <FieldTypeKey>int</FieldTypeKey>
+    <FieldTypeName>Name</FieldTypeName>
+    <FieldAllowNull>true</FieldAllowNull>
+    <FieldLookup>Priority.xml</FieldLookup>
+  </Column>
+  <Column>
+    <HeaderText>Ngày bắt đầu</HeaderText>
+    <ItemWidth>150</ItemWidth>
+    <FieldName>StartDate</FieldName>
+    <FieldType>datetime</FieldType>
+  </Column>
+  <Column>
+    <HeaderText>Ngày kết thúc</HeaderText>
+    <ItemWidth>150</ItemWidth>
+    <FieldName>EndDate</FieldName>
+    <FieldType>datetime</FieldType>
+  </Column>
+  <ObjectDataSource>
+    <ClassInfo>TMV.Data.Entities.BannerInfo</ClassInfo>
+    <ClassController>TMV.Data.Entities.BannerController</ClassController>
+    <SelectMethod>SelectBanner</SelectMethod>
+    <UpdateMethod>UpdateBanner</UpdateMethod>
+    <DeleteMethod>DeleteBanner</DeleteMethod>
+    <PrimaryKeyName>BannerId</PrimaryKeyName>
+  </ObjectDataSource>
+  <GridConfig>
+    <Title>Danh sách banner</Title>
+    <ShowUpdate>false</ShowUpdate>
+    <ShowInsert>false</ShowInsert>
+    <ShowDelete>true</ShowDelete>
+  </GridConfig>
+</DataSet>
