@@ -1,0 +1,18 @@
+﻿@model List<TMV.Data.Entities.ArticleInfo>
+
+@if (Model != null && Model.Count > 0)
+{
+    int i = 1;
+    <div class="title"><b>Bài viết liên quan</b></div>
+    <div class="art-list">
+        @foreach (TMV.Data.Entities.ArticleInfo item in Model)
+        {
+            <a href="@item.NavigationUrl" title="@item.Title" class="art-item">
+                <img src="@TMV.Utilities.Globals.ImageUrlNoCDN(item.Avatar, 230, false)" alt="@item.Title" />
+                <b>@item.Title</b>
+                <span>@item.Description</span>
+            </a>
+            i++;
+        }
+    </div>
+}

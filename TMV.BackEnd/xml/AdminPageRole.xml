@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSet>
+  <Column>
+    <HeaderText>Page ID</HeaderText>
+    <ItemWidth>250</ItemWidth>
+    <FieldName>PageID</FieldName>
+    <FieldType>Lookup</FieldType>
+    <FieldTypeKey>Int</FieldTypeKey>
+    <FieldTypeName>Name</FieldTypeName>
+    <ControllerInfo>TMV.Data.Entities.AdminPageController</ControllerInfo>
+    <FieldAllowNull>true</FieldAllowNull>
+    <FieldLookup>ListAdminPageLookup</FieldLookup>
+    
+    <FieldType>int</FieldType>
+  </Column>
+  <Column>
+    <HeaderText>Role ID</HeaderText>
+    <ItemWidth>250</ItemWidth>
+    <FieldName>RoleID</FieldName>
+    <FieldType>Lookup</FieldType>
+    <FieldTypeKey>Int</FieldTypeKey>
+    <FieldTypeName>RoleName</FieldTypeName>
+    <ControllerInfo>TMV.Data.Entities.AdminRoleController</ControllerInfo>
+    <FieldAllowNull>true</FieldAllowNull>
+    <FieldLookup>ListAdminRoleLookup</FieldLookup>
+    
+  </Column>
+  <ObjectDataSource>
+    <ClassInfo>TMV.Data.Entities.AdminPageRoleInfo</ClassInfo>
+    <ClassController>TMV.Data.Entities.AdminPageRoleController</ClassController>
+    <SelectMethod>SelectAdminPageRole</SelectMethod>
+    <UpdateMethod>UpdateAdminPageRole</UpdateMethod>
+    <DeleteMethod>DeleteAdminPageRole</DeleteMethod>
+    <PrimaryKeyName>PageRoleID</PrimaryKeyName>
+  </ObjectDataSource>
+  <GridConfig>
+    <Title>Page Role List</Title>
+    <ShowUpdate>true</ShowUpdate>
+    <ShowInsert>true</ShowInsert>
+    <ShowDelete>true</ShowDelete>
+  </GridConfig>
+</DataSet>

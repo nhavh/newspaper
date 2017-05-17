@@ -1,0 +1,55 @@
+﻿@model List<TMV.Data.Entities.ArticleInfo>
+
+@if (Model != null && Model.Count > 0)
+{
+
+
+    <div class="section section-why">
+        <div class="row">
+            <div class="columns">
+                <h2 class="section-title">
+                    <img src="/assets/img/s-title-pattern.png" alt=""> <span>Bài viết liên quan</span>
+                    <img src="/assets/img/s-title-pattern.png" alt="">
+                </h2>
+
+                <div class="why row  align-center">
+
+                    @foreach (TMV.Data.Entities.ArticleInfo item in Model)
+                    {
+                        <div class="columns small-12 mobile-6 medium-6 large-3">
+
+                            <div class="whyItem">
+                                <a href="@item.NavigationUrl">
+                                    <img src="@TMV.Utilities.Globals.ImageUrlNoCDN(item.Avatar, 246, false)" title="@item.Title">
+                                    <h3 class="whyItem-name">@item.Title</h3>
+                                </a>
+                            </div>
+
+                        </div>
+                    }
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    @*int i = 1;
+    <div class="art-list" style="margin: 5px 60px; overflow: hidden;">
+        <div class="section-title" style="padding-top: 30px; margin-bottom: 20px;"><b>Bài viết liên quan</b></div>
+        @foreach (TMV.Data.Entities.ArticleInfo item in Model)
+        {
+            <a href="@item.NavigationUrl" title="@item.Title" class="art-item @(i % 3 == 0 ? "fr" : "fl") @(i % 3 == 1 ? "mr" : "0")">
+                <figure>
+                    <img src="@TMV.Utilities.Globals.ImageUrlNoCDN(item.Avatar, 230, false)" alt="@item.Title" />
+                </figure>
+                <h3>@item.Title</h3>
+            </a>
+            if (i == 3)
+            { <div class="clr"></div> }
+            i++;
+        }
+    </div>*@
+}

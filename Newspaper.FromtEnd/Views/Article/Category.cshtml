@@ -1,0 +1,135 @@
+﻿@model List<TMV.Data.Entities.ArticleInfo>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var objCategory = ViewBag.ObjCategory as TMV.Data.Entities.CategoryInfo;
+    var page = ViewBag.Page;
+    var title = objCategory.SeoTitle;
+    var description = objCategory.SeoDescription;
+    var keywords = objCategory.SeoKeyword;
+    var permalink = objCategory.NavigationUrl;
+    var type = "website";
+    var thumbnail = TMV.Utilities.Globals.ImageUrlNoCDN(objCategory.Avatar, 200, false);
+
+    if (page > 1)
+    {
+        title = objCategory.SeoTitle + " | Trang " + page;
+        description = objCategory.SeoDescription + " | Trang " + page;
+        keywords = objCategory.SeoKeyword + " | Trang " + page;
+    }
+}
+@section META_INC {
+    @Html.Raw(TMV.Utilities.HtmlHelper.MetaTag(title, description, keywords, permalink, type, thumbnail))
+}
+
+@*@section LW_INC {
+    @Html.Action("BoxCategory", "Common", new { categoryId = objCategory.ParentId <= 0 ? objCategory.CategoryId : objCategory.Group })
+    @Html.Action("BoxLinkWebsite", "Common", new { priority = objCategory.CategoryId })
+}*@
+@section H1_INC {
+    <h1 style="text-indent: -9999px; position: fixed; top: 0; left: 0;"><a href="@objCategory.NavigationUrl">@objCategory.CategoryName</a></h1>
+}
+@section BREADCRUMB_INC {
+        @Html.Raw(ViewBag.BreadCrumb)
+    }
+
+
+<div class="section baiviet">
+
+    <div class="row">
+        <div class="columns small-12 medium-8 large-9">
+
+            <h2 class="section-title">
+                <img src="/assets/img/s-title-pattern.png" alt=""> <span>@objCategory.CategoryName</span> <img src="/assets/img/s-title-pattern.png"
+                                                                                                               alt="">
+            </h2>
+
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (var item in Model)
+                {
+                    <div class="postSort">
+
+                        <div class="postSort-img">
+                            <a href="@item.NavigationUrl" title="@item.Title">
+                                <img src="@TMV.Utilities.Globals.ImageUrlNoCDN(item.Avatar, 550, false)" alt="@item.Title">
+                            </a>
+                        </div>
+
+                        <div class="postSort-content">
+                            <a href="@item.NavigationUrl">
+                                <h3 class="postSort-title">@item.Title</h3>
+                                <div class="noidung">@item.Description</div>
+                            </a>
+                        </div>
+
+                    </div>
+                
+                    @*<div class="medium-6 columns">
+
+                        <figure class="card-item wow fadeInUp" data-equalizer-watch>
+                            <a href="@item.NavigationUrl">
+                                <img src="@TMV.Utilities.Globals.ImageUrlNoCDN(item.Avatar, 550, false)" alt="@item.Title">
+                            </a>
+                            <figcaption>
+                                <div>
+                                    <a href="@item.NavigationUrl">
+                                        <h2 class="name">@item.Title</h2>
+                                    </a>
+                                    <p class="paragraph">@item.Description </p>
+                                </div>
+                                <div class="text-center">
+                                    <a href="@item.NavigationUrl" class="button button--pink large">Chi tiết</a>
+                                </div>
+
+                            </figcaption>
+                        </figure>
+                    </div>*@
+                }
+                @Html.Raw(ViewBag.PageList)
+            }
+            else
+            {
+                <p class="message">Dữ liệu đang cập nhật</p>
+            }
+            
+            @*<div class="bang-gia">
+
+                <div>
+                    <a href="" class="bang-gia-btn">BẢNG GIÁ DỊCH VỤ</a>
+                </div>
+
+                <div>
+                    <a href=""><img src="/assets/img/btn-phone.png" alt=""></a>
+                </div>
+
+            </div>*@
+
+            @*<ul class="tags">
+                <li><a href="#" class="tag">HTML</a></li>
+                <li><a href="#" class="tag">CSS</a></li>
+                <li><a href="#" class="tag">JavaScript</a></li>
+            </ul>*@
+
+        </div>
+
+
+        <div class="columns small-12 medium-4 large-3">
+
+            <div class="formSearch">
+                <div class="input-group">
+                    <div class="input-group-button">
+                        <a href=""><i class="ti-search"></i></a>
+                    </div>
+
+                    <input class="input-group-field" type="text">
+
+                </div>
+            </div>
+
+            @Html.Action("BoxArticleViewV2", "Common")
+
+        </div>
+    </div>
+</div>
+

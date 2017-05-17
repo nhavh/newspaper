@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<bundle minify="true" runOnBuild="true" output="tmv.js" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://vswebessentials.com/schemas/v1/bundle.xsd">
+  <!--The order of the <file> elements determines the order of the file contents when bundled.-->
+  <file>/Scripts/jquery-1.11.1.min.js</file>
+  <file>/Scripts/jquery.lazyload.js</file>
+  <file>/Scripts/owl.carousel.min.js</file>
+  <file>/Scripts/wow.min.js</file>
+	<file>/Scripts/jquery.colorbox.js</file>
+  <file>/Scripts/custom.js</file>
+</bundle>

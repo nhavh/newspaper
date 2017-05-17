@@ -1,0 +1,37 @@
+﻿@model TMV.Data.Entities.VideoInfo
+
+@{
+    Layout = "~/Views/Shared/_Layout.M.cshtml";
+    var title = Model.SeoTitle;
+    var description = Model.SeoDescription;
+    var keywords = Model.Tags;
+    var permalink = Model.NavigationUrl;
+    var type = "website";
+    var thumbnail = string.Format("http://img.youtube.com/vi/{0}/0.jpg", Model.YoutubeId);
+    var iframe = string.Format("<iframe src='http://www.youtube.com/embed/{0}?rel=0&amp;autoplay=1' frameborder='0' allowfullscreen></iframe>", Model.YoutubeId);
+}
+@section META_INC {
+    @Html.Raw(TMV.Utilities.HtmlHelper.MetaTag(title, description, keywords, permalink, type, thumbnail))
+}
+
+@section BREADCRUMB_INC {
+    @Html.Raw(ViewBag.BreadCrumb)
+}
+
+<section class="wrapper detail video">
+    <h1>@Model.Title</h1>
+    <div class="iframe" data-iframe="@iframe">
+        <img src="@thumbnail" />
+    </div>
+    @Html.Raw(TMV.Utilities.HtmlHelper.HtmlTags(Model.Tags, "/video/"))
+    @Html.Raw(TMV.Utilities.HtmlHelper.HtmlSource("/video/", "Video"))
+    @Html.Action("BoxOtherVideo", new { videoId = Model.VideoId })
+    <div class="fb-comments" data-width="100%" data-href="@Model.NavigationUrl" data-order-by="reverse_time" data-numposts="5">
+        Đang tải bình luận...
+    </div>
+    @Html.Action("BoxSponsor", "Common")
+</section>
+<section class="wrapper">
+    @Html.Action("BoxCustomerReview", "Common")
+    @Html.Action("BoxQuestionAnswer", "Common")
+</section>

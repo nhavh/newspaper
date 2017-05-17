@@ -1,0 +1,363 @@
+﻿@using HtmlHelper = TMV.Utilities.HtmlHelper
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    const string title = "Thẩm Mỹ Viện Hoàng Anh thẩm mỹ viện uy tín ,an toàn tại TPHCM";
+    const string description = "Thẩm mỹ viện Hoàng Anh được biết đến như là một trong những thẩm mỹ viện hàng đầu tại Việt Nam về các dịch vụ thẩm mỹ, điều trị da, phun thêu thẩm mỹ...";
+    const string keywords = "phẫu thuật thẩm mỹ,điều trị da,phun thêu thẩm mỹ";
+    var permalink = TMV.Utilities.Globals.FrontEndUrl;
+    const string type = "website";
+    string thumbnail = TMV.Utilities.Globals.FrontEndUrl + "/Content/images/thammyvienhoanganh-19-01-2016.jpg";
+    var cndUrl = TMV.Utilities.Globals.FrontEndUrl;
+}
+@section META_INC {
+    @Html.Raw(HtmlHelper.MetaTag(title, description, keywords, permalink, type, thumbnail))
+}
+
+@section H1_INC {
+    <h1 style="text-indent: -9999px; position: fixed; top: 0; left: 0;"><a href="/">Nâng Chân Mày Tự Thân Đẹp Tự Nhiên An Toàn</a></h1>
+}
+@section BREADCRUMB_INC {
+        @*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Trang chủ*@
+}
+
+@section Scripts{
+<script src="/assets/js/wonderplugingallery.js"></script>
+    
+}
+
+@*@Html.Action("BoxArticleHome")*@
+
+@Html.Action("BoxSlider_V2", "Common")
+
+<div class="section section-dichvu">
+    <div class="row">
+        <div class="columns">
+            <h2 class="section-title">
+                <img src="/assets/img/s-title-pattern.png" alt=""> <span>Dịch vụ nổi bật</span> <img src="/assets/img/s-title-pattern.png" alt="">
+            </h2>
+
+            <div class="sliderFeature">
+                <div class="swiper-container ">
+                    
+                    @Html.Raw(Server.HtmlDecode(ViewBag.DichVuNoiBat))
+
+                </div>
+
+                <!-- Add Pagination -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="section section-img">
+    <div class="row">
+
+        @Html.Action("BoxVideo", "Home")
+
+
+        @*<div class="columns small-12 medium-6">
+            <h2 class="section-title">
+                <img src="/assets/img/s-title-pattern.png" alt=""> <span>VIDEO CLIP</span> <img src="/assets/img/s-title-pattern.png" alt="">
+            </h2>
+            <div style="max-width: 100%; margin: 0 auto">
+                <div class="flex-video">
+
+                    <iframe width="100%" src="https://www.youtube.com/embed/z620C7UybkA" frameborder=" 0" allowfullscreen></iframe>
+                </div>
+            </div>
+
+        </div>*@
+
+        @Html.Action("BoxPicture", "Home")
+    </div>
+</div>
+
+
+<div class="section section-why">
+    <div class="row">
+        <div class="columns">
+            <h2 class="section-title">
+                <img src="/assets/img/s-title-pattern.png" alt=""> <span>TẠI SAO NÊN CHỌN THẨM MỸ VIỆN HOÀNG ANH</span>
+                <img src="/assets/img/s-title-pattern.png" alt="">
+            </h2>
+
+            @Html.Raw(Server.HtmlDecode(ViewBag.TaiSaoNenChon))
+
+        </div>
+
+    </div>
+</div>
+
+<div class="section section-new">
+    <div class="row">
+        <div class="columns small-12 medium-12 large-6">
+            <h2 class="section-title">
+                <img src="/assets/img/s-title-pattern.png" alt=""> <span>TIN TỨC TẠI TMV HOÀNG ANH</span> <img src="/assets/img/s-title-pattern.png" alt="">
+            </h2>
+
+
+            @Html.Action("BoxArticleView", "Common")
+
+
+        </div>
+
+        <div class="columns small-12 medium-12 large-6">
+            <h2 class="section-title">
+                <img src="/assets/img/s-title-pattern.png" alt=""> <span>CẢM NHẬN KHÁCH HÀNG</span> <img src="/assets/img/s-title-pattern.png" alt="">
+            </h2>
+
+
+            @Html.Action("BoxCustomerReview", "Common")
+
+        </div>
+    </div>
+</div>
+
+@*<div class="row bg-black ">
+    <br />
+
+    <div class="small-12- columns">
+        <h2 class="ttile ico-home">Giới thiệu</h2>
+    </div>
+    <br />
+
+    <div class="small-12- columns">
+
+        <ul class="pgwSlider">
+            <li>
+                <a href="/khai-niem-cua-nang-chan-may/">
+                    <img src="http://static.nangchanmay.com.vn/image/2016/11/1/100000_1(1).png" data-large-src="http://static.nangchanmay.com.vn/image/2016/11/1/100000_banner-1.png">
+                </a>
+            </li>
+            <li>
+                <a href="/uu-diem-cua-nang-chan-may/">
+                    <img src="http://static.nangchanmay.com.vn/image/2016/11/1/100000_2(1).png" data-large-src="http://static.nangchanmay.com.vn/image/2016/11/1/100000_banner-2.png">
+                </a>
+            </li>
+            <li>
+                <a href="/khach-hang-nao-nen-chon-nang-chan-may/">
+                    <img src="http://static.nangchanmay.com.vn/image/2016/11/1/100000_3(1).png" data-large-src="http://static.nangchanmay.com.vn/image/2016/11/1/100000_banner-3.png">
+                </a>
+            </li>
+            <li>
+                <a href="/tai-sao-nen-chon-nang-chan-may/">
+                    <img src="http://static.nangchanmay.com.vn/image/2016/11/1/100000_4(1).png" data-large-src="http://static.nangchanmay.com.vn/image/2016/11/1/100000_banner-4.png">
+                </a>
+            </li>
+            <li>
+                <a href="/ly-do-nen-chon-nang-chan-may/">
+                    <img src="http://static.nangchanmay.com.vn/image/2016/11/1/100000_5(1).png" data-large-src="http://static.nangchanmay.com.vn/image/2016/11/1/100000_banner-5.png">
+                </a>
+            </li>
+        </ul>
+    </div>
+
+  
+</div>
+
+<div class="row bg-black" data-equalizer data-equalize-on="medium">
+    <br />
+    <br />
+    <div class="medium-3 columns">
+        <figure class="card-item wow fadeInUp" data-equalizer-watch data-wow-delay="0s">
+            <a href="/bang-gia/">
+                <img src="http://static.nangchanmay.com.vn/image/2016/11/1/350_bang-gia(2).jpg" alt="">
+            </a>
+            <figcaption>
+                <div>
+                    <a href="/bang-gia/">
+                        <img src="http://static.nangchanmay.com.vn/image/2016/12/4/100000_bang-gia.png" title="Bảng giá" />
+                    </a>
+                </div>
+            </figcaption>
+        </figure>
+    </div>
+    <div class="medium-3 columns">
+        <figure class="card-item wow fadeInUp" data-equalizer-watch data-wow-delay="0.2s">
+            <a href="/kien-thuc/">
+                <img src="http://static.nangchanmay.com.vn/image/2016/11/1/350_kien-thuc.jpg" alt="">
+            </a>
+            <figcaption>
+                <div>
+                    <a href="/kien-thuc/">
+                        <img src="http://static.nangchanmay.com.vn/image/2016/12/4/100000_kien-thuc.png" title="Kiến thức" />
+                    </a>
+                </div>
+            </figcaption>
+        </figure>
+    </div>
+
+    <div class="medium-3 columns">
+        <figure class="card-item wow fadeInUp" data-equalizer-watch data-wow-delay="0.4s">
+            <a href="/khuyen-mai/">
+                <img src="http://static.nangchanmay.com.vn/image/2016/11/1/350_khuyen-mai.jpg" alt="">
+            </a>
+            <figcaption>
+                <div>
+                    <a href="/khuyen-mai/">
+                        <img src="http://static.nangchanmay.com.vn/image/2016/12/4/100000_khuyen-mai.png" title="Khuyến mãi" />
+                    </a>
+                </div>
+            </figcaption>
+        </figure>
+    </div>
+
+    <div class="medium-3 columns">
+        <figure class="card-item wow fadeInUp" data-equalizer-watch data-wow-delay="0.6s">
+            <a href="/lien-he/">
+                <img src="http://static.nangchanmay.com.vn/image/2016/11/1/350_line-he.jpg" alt="">
+            </a>
+            <figcaption>
+                <div>
+                    <a href="/lien-he/">
+                        <img src="http://static.nangchanmay.com.vn/image/2016/12/4/100000_lien-he.png" title="Liên hệ"/>
+                    </a>
+                </div>
+            </figcaption>
+        </figure>
+    </div>
+    <br />
+    <br />
+   
+</div>
+
+<div class="row bg-black">
+    <div class="small-12- columns line-hoavan" style="text-align: center;">
+        <img src="//assets/img/line.jpg" />
+    </div>
+</div>
+
+<div class="row bg-gray">
+    <br />
+    <br />
+    <div class="card-layout ">
+        <div class="expect">
+            <div class="small-12 columns  wow slideInDown">
+                <h2 class="ttile ico-arrow">Quy trình nâng chân mày tại Hoàng Anh</h2>
+            </div>
+
+            <ul class="wolf-tab" data-tabs id="wolf">
+                <li class="tabs-title is-active"><a href="#panel1" aria-selected="true">Bước 1</a></li>
+                <li class="tabs-title"><a href="#panel2">Bước 2</a></li>
+                <li class="tabs-title"><a href="#panel3">Bước 3</a></li>
+                <li class="tabs-title"><a href="#panel4">Bước 4</a></li>
+                <li class="tabs-title"><a href="#panel5">Bước 5</a></li>
+            </ul>
+
+            <div class="tabs-content" data-tabs-content="wolf">
+                <div class="tabs-panel is-active" id="panel1">
+                    <img src="/assets/img/buoc1.png" alt="">
+                </div>
+                <div class="tabs-panel" id="panel2">
+                    <img src="/assets/img/buoc2.png" alt="">
+                </div>
+                <div class="tabs-panel" id="panel3">
+                    <img src="/assets/img/buoc3.png" alt="">
+                </div>
+                <div class="tabs-panel" id="panel4">
+                    <img src="/assets/img/buoc4.png" alt="">
+                </div>
+                <div class="tabs-panel" id="panel5">
+                    <img src="/assets/img/buoc5.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+</div>
+
+
+<div class="row bg-black">
+    <div class="small-12- columns line-hoavan" style=" text-align: center;">
+        <img src="//assets/img/line.jpg" />
+    </div>
+</div>
+
+<div class="row bg-black">
+    <div class="card-layout ">
+        <div class="benefit">
+            <div class="small-12 medium-5 columns  wow fadeInLeftBig">
+                <h2 class="ttile ico-video">Video clip nâng chân mày</h2>
+                <div style="max-width: 100%; margin: 0 auto">
+                    <div class="flex-video">
+
+                        <iframe width="100%" src="@HtmlHelper.RemoveAllHtmlTag(Server.HtmlDecode(ViewBag.CoHieuQuaKhong))" frameborder=" 0" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="small-12 medium-7 columns  wow fadeInRightBig" style="flex-direction: column; align-items: center;">
+                <h2 class="ttile ico-img">Hình ảnh trước & sau khi nâng chân mày tại Hoàng Anh</h2>
+                <div class="large-12 columns">
+                    <div class="slider-wrapper theme-default">
+                        <a href="/hinh-anh-va-video/#hinhanh">
+                            <div id="sub-slider2" class="nivoSlider">
+
+                                <img src="http://cdn.nangchanmay.com.vn/img/2016/11/3/800_1.png" alt="" />
+
+                                <img src="http://cdn.nangchanmay.com.vn/img/2016/11/3/800_2.png" alt="" />
+                                <img src="http://cdn.nangchanmay.com.vn/img/2016/11/3/800_3.png" alt="" />
+                                <img src="http://cdn.nangchanmay.com.vn/img/2016/11/3/800_4.png" alt="" />
+                                <img src="http://cdn.nangchanmay.com.vn/img/2016/11/3/800_5.png" alt="" />
+                                <img src="http://cdn.nangchanmay.com.vn/img/2016/11/3/800_6.png" alt="" />
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div style="margin-top: 5px; margin-bottom: 15px; font-size: 11px;">
+                    Lưu ý : <br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;+ Các hình ảnh trên là từ các khách hàng trước đây của Thẩm mỹ viện Hoàng Anh, hiệu quả đối với các trường hợp cụ thể khác có thể khác nhau.<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;+ Hiệu quả tùy thuộc vào cơ địa của mỗi người.
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row bg-gray">
+    <br/>
+    <br/>
+    <div class="small-12 columns">
+        @Html.Raw(Server.HtmlDecode(ViewBag.BannerLienHe))
+        <br />
+        <br />
+    </div>
+</div>
+
+<div class="row bg-black">
+    <div class="small-12- columns line-hoavan" style=" text-align: center;">
+        <img src="//assets/img/line.jpg" />
+    </div>
+</div>
+
+<div class="row bg-black">
+    <div class="card-layout ">
+        <div class="expect less">
+            <div class="small-12 columns">
+                <h2 class="ttile ico-smile">Lý do bạn nên chọn Thẩm mỹ viện Hoàng Anh</h2>
+            </div>
+
+            <div class="small-12 columns">
+
+
+                @Html.Raw(Server.HtmlDecode(ViewBag.LyDo))
+
+
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+@Html.Action("BoxCustomerReview", "Common")*@

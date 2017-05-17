@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<DataSet>
+  <Column>
+    <HeaderText>Tên khách hàng</HeaderText>
+    <ItemWidth>250</ItemWidth>
+    <FieldName>FullName</FieldName>
+    <FieldType>String</FieldType>
+    <FieldUrlName>CustomerId</FieldUrlName>
+    <FieldUrlText>~/Pages/EditCustomer.aspx?CustomerId={0}</FieldUrlText>
+  </Column>
+  <Column>
+    <HeaderText>Ngày hiển thị</HeaderText>
+    <ItemWidth>250</ItemWidth>
+    <FieldName>PublishDate</FieldName>
+    <FieldType>datetime</FieldType>
+  </Column>
+  <Column>
+    <HeaderText>Ngày tạo</HeaderText>
+    <ItemWidth>250</ItemWidth>
+    <FieldName>CreatedDate</FieldName>
+    <FieldType>datetime</FieldType>
+  </Column>
+  <ObjectDataSource>
+    <ClassInfo>TMV.Data.Entities.CustomerInfo</ClassInfo>
+    <ClassController>TMV.Data.Entities.CustomerController</ClassController>
+    <SelectMethod>SelectCustomer</SelectMethod>
+    <UpdateMethod>UpdateCustomer</UpdateMethod>
+    <DeleteMethod>DeleteCustomer</DeleteMethod>
+    <PrimaryKeyName>CustomerId</PrimaryKeyName>
+  </ObjectDataSource>
+  <GridConfig>
+    <Title>Danh sách khách hàng</Title>
+    <ShowUpdate>false</ShowUpdate>
+    <ShowInsert>false</ShowInsert>
+    <ShowDelete>true</ShowDelete>
+  </GridConfig>
+</DataSet>

@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+    var objCategory = ViewBag.ObjCategory as TMV.Data.Entities.CategoryInfo;
+    var title = objCategory.SeoTitle;
+    var description = objCategory.SeoDescription;
+    var keywords = objCategory.SeoKeyword;
+    var permalink = objCategory.NavigationUrl;
+    var type = "website";
+    var thumbnail = TMV.Utilities.Globals.ImageUrlNoCDN(objCategory.Avatar, 200, false);
+}
+
+@section META_INC {
+    @Html.Raw(TMV.Utilities.HtmlHelper.MetaTag(title, description, keywords, permalink, type, thumbnail))
+}
+
+@section BREADCRUMB_INC {
+    @Html.Raw("<section class=\"wrapper bread-crumb\"><div class=\"container\"><h2 itemscope=\"\" itemtype=\"http://data-vocabulary.org/Breadcrumb\" class=\"rf\"><a href=\"http://tmvhoanganh.com\" itemprop=\"url\"><span itemprop=\"title\">Thẩm mỹ viện Hoàng Anh</span></a></h2><h2 itemscope=\"\" itemtype=\"http://data-vocabulary.org/Breadcrumb\" class=\"rff\"><a href=\"http://tmvhoanganh.com/lien-he/\" itemprop=\"url\"><span itemprop=\"title\">Liên hệ</span></a></h2></div></section>")
+}
+
+<style>
+    [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'], textarea {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        height: 2.78571rem;
+        padding: 0.57143rem;
+        border: 1px solid #e5e9ec;
+        margin: 0 0 1.14286rem;
+        font-family: inherit;
+        font-size: 1.14286rem;
+        color: #0a0a0a;
+        box-shadow: none;
+        border-radius: 0;
+        transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+</style>
+
+<div class="section baiviet">
+
+<div class="row">
+    <div class="medium-12 columns">
+        <div class="main-content">
+            <h2 class="section-title">
+                <img src="/assets/img/s-title-pattern.png" alt=""> <span>Liên hệ</span> <img src="/assets/img/s-title-pattern.png" alt="">
+            </h2>
+            <div class="row">
+
+                <div class="small-12 medium-6 columns">
+                    <form id="frmLienHe" onsubmit="return LienHeInsert()">
+                        <div class="contact-form">
+                            <p style="font-size: 18px;">
+                                759 Lê Hồng Phong (nối dài), P.12, Q.10, Tp. HCM <br>
+                                Điện thoại: 0909 055 678 - (08) 38 634 820 <br>
+                                Email: <a href="mailto:tmvhoanganh@gmail.com">tmvhoanganh@gmail.com </a><br>
+                                Website chính: <a href="http://thammyvienhoanganh.com/">thammyvienhoanganh.com</a>
+                            </p>
+
+                            <label>
+                                Họ tên
+                                <input type="text" name="txtFullName" placeholder="Vui lòng nhập họ tên">
+                            </label>
+
+                            <label>
+                                Email
+                                <input type="email" name="txtEmail" placeholder="Vui lòng nhập địa chỉ email">
+                            </label>
+
+                            <label>
+                                Điện thoại
+                                <input type="text" name="txtPhone" placeholder="Vui lòng nhập số điện thoại">
+                            </label>
+
+                            <label>
+                                Nội dung
+                                <textarea name="txtContent" placeholder="Vui lòng nhập nội dung liên hệ" id="" rows="4"></textarea>
+                            </label>
+                            <br>
+
+                            <div class="">
+                                <button class="button button--pink">Gửi</button>
+
+                                @*<a href="" class="button button--pink">Gửi</a>*@
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="small-12 medium-6 columns">
+                    <div id="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.486656960564!2d106.67043840061785!3d10.773989730762782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752edef7c604e5%3A0x2e85319fc1763f56!2zVGjhuqltIE3hu7kgVmnhu4duIEhvw6BuZyBBbmg!5e0!3m2!1svi!2s!4v1462527837684" width="600" height="450" frameborder="0" style="border: 0" allowfullscreen></iframe>
+                        @*<img class="lazy" data-original="http://thammyvienhoanganh.com/Content/images/map.png" src="http://thammyvienhoanganh.com/Content/images/map.png" style="display: block;">*@
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+                        </div>

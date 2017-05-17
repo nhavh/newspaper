@@ -1,0 +1,55 @@
+﻿@model List<TMV.Data.Entities.VideoInfo>
+
+@*@if (Model != null && Model.Count > 0)
+    {
+        var objVideo = Model.FirstOrDefault();
+        <div class="video">
+            <span class="tit">VIDEO</span>
+            <a href="@objVideo.NavigationUrl" title="@objVideo.Title">
+                <img class="lazy" data-original="http://img.youtube.com/vi/@(objVideo.YoutubeId)/0.jpg" alt="@objVideo.Title" />
+            </a>
+        </div>
+    }*@
+
+
+@*<div class="columns small-12 medium-6">
+        <h2 class="section-title">
+            <img src="/assets/img/s-title-pattern.png" alt=""> <span>VIDEO CLIP</span> <img src="/assets/img/s-title-pattern.png" alt="">
+        </h2>
+        <div style="max-width: 100%; margin: 0 auto">
+            <div class="flex-video">
+
+                <iframe width="100%" src="https://www.youtube.com/embed/z620C7UybkA" frameborder=" 0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+    </div>*@
+
+
+<div class="columns small-12 medium-6">
+    <h2 class="section-title">
+        <img src="/assets/img/s-title-pattern.png" alt=""> <span>VIDEO CLIP</span> <img src="/assets/img/s-title-pattern.png" alt="">
+    </h2>
+
+    <div class="video-gallery video-effect">
+        <div class="wonderplugingallery-container" id="wonderplugingallery-container-2" style="max-width:550px;margin:0 auto;">
+            <div class="wonderplugingallery" id="wonderplugingallery-2" data-galleryid="2" data-width="550" data-height="300" data-skin="darkness" data-autoslide="false" data-autoplayvideo="false" data-schemamarkup="false" data-autoslideandplayafterfirstplayed="false" data-html5player="true" data-responsive="true" data-fullwidth="false" data-showtitle="false" data-showdescription="false" data-showplaybutton="true" data-showfullscreenbutton="true" data-showtimer="true" data-showcarousel="true" data-galleryshadow="false" data-slideshadow="true" data-thumbshowtitle="false" data-thumbshadow="false" data-lightboxshowtitle="true" data-lightboxshowdescription="true" data-specifyid="true" data-donotinit="false" data-addinitscript="false" data-triggerresize="false" data-thumbcolumnsresponsive="false" data-titlesmallscreen="false" data-duration="1500" data-slideduration="1000" data-slideshowinterval="6000" data-googleanalyticsaccount="" data-resizemode="fill" data-imagetoolboxmode="mouseover" data-effect="fade" data-padding="10" data-bgcolor="#444444" data-bgimage="background.jpg" data-thumbwidth="64" data-thumbheight="48" data-thumbgap="8" data-thumbrowgap="16" data-lightboxtextheight="72" data-lightboxtitlecss="{color:#333333; font:bold 12px Arial,Helvetica,sans-serif; overflow:hidden; white-space:normal; line-height:18px;}" data-lightboxdescriptioncss="{color:#333333; font:normal 12px Arial,Helvetica,sans-serif; overflow:hidden; white-space:normal; line-height:14px;}" data-titlecss="{color:#ffffff; font-size:16px; font-family:Armata, sans-serif, Arial; overflow:hidden; white-space:normal; text-align:left; padding:10px 0px;}" data-descriptioncss="{color:#ffffff; font-size:12px; font-family:Armata, sans-serif, Arial; overflow:hidden; white-space:normal; text-align:left; padding:0px 0px 10px 0px;}" data-titleheight="72" data-titlesmallscreenwidth="640" data-titleheightsmallscreen="148" data-triggerresizedelay="100" data-thumbmediumsize="800" data-thumbsmallsize="480" data-thumbmediumwidth="64" data-thumbmediumheight="64" data-thumbsmallwidth="48" data-thumbsmallheight="48" data-jsfolder="./engine/" style="display:none;">
+                @*<a href="https://www.youtube.com/embed/E8b0qmXVoOQ" data-poster="http://img.youtube.com/vi/E8b0qmXVoOQ/0.jpg" /><img class="html5galleryimg" src="http://img.youtube.com/vi/E8b0qmXVoOQ/1.jpg" /></a>
+                <a href="https://www.youtube.com/embed/XXdDpMmnFXg" data-poster="http://img.youtube.com/vi/XXdDpMmnFXg/0.jpg" /><img class="html5galleryimg" src="http://img.youtube.com/vi/XXdDpMmnFXg/1.jpg" /></a>
+                <a href="https://www.youtube.com/embed/UVWtdmJCPtM" data-poster="http://img.youtube.com/vi/UVWtdmJCPtM/0.jpg" /><img class="html5galleryimg" src="http://img.youtube.com/vi/UVWtdmJCPtM/1.jpg" /></a>
+                <a href="https://www.youtube.com/embed/qcSsu_lTzx0" data-poster="http://img.youtube.com/vi/qcSsu_lTzx0/0.jpg" /><img class="html5galleryimg" src="http://img.youtube.com/vi/qcSsu_lTzx0/1.jpg" /></a>
+                <a href="https://www.youtube.com/embed/12CeiDQ3Jzc" data-poster="http://img.youtube.com/vi/12CeiDQ3Jzc/0.jpg" /><img class="html5galleryimg" src="http://img.youtube.com/vi/12CeiDQ3Jzc/1.jpg" /></a>
+                <a href="https://www.youtube.com/embed/_XJM8locpXk" data-poster="http://img.youtube.com/vi/_XJM8locpXk/0.jpg" /><img class="html5galleryimg" src="http://img.youtube.com/vi/_XJM8locpXk/1.jpg" /></a>
+                <a href="https://www.youtube.com/embed/m4BGBndKY6Q" data-poster="http://img.youtube.com/vi/m4BGBndKY6Q/0.jpg"/><img class="html5galleryimg" src="http://img.youtube.com/vi/m4BGBndKY6Q/1.jpg"/></a>*@
+                @foreach (var objVideo in Model)
+{
+    <a href="https://www.youtube.com/embed/@objVideo.YoutubeId" data-poster="http://img.youtube.com/vi/@(objVideo.YoutubeId)/0.jpg">
+        <img class="html5galleryimg" src="http://img.youtube.com/vi/@(objVideo.YoutubeId)/0.jpg" />
+    </a>
+
+}
+            </div>
+        </div>
+    </div>
+
+</div>

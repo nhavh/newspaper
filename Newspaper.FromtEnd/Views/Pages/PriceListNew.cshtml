@@ -1,0 +1,203 @@
+﻿@model List<TMV.Data.Entities.BannerInfo>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var objCategory = ViewBag.ObjCategory;
+    var title = objCategory.SeoTitle;
+    var description = objCategory.SeoDescription;
+    var keywords = objCategory.SeoKeyword;
+    var permalink = objCategory.NavigationUrl;
+    var type = "website";
+    var thumbnail = TMV.Utilities.Globals.ImageUrl(objCategory.Avatar, 200, false);
+}
+@section META_INC {
+    @Html.Raw(TMV.Utilities.HtmlHelper.MetaTag(title, description, keywords, permalink, type, thumbnail))
+}
+
+@section LW_INC {
+    @Html.Action("BoxLinkWebsite", "Common", new { priority = objCategory.CategoryId })
+}
+@section H1_INC {
+    <h1 style="text-indent: -9999px; position: fixed; top: 0; left: 0;"><a href="@objCategory.NavigationUrl">@objCategory.CategoryName</a></h1>
+}
+@section BREADCRUMB_INC {
+    @Html.Raw(ViewBag.BreadCrumb)
+}
+
+<style>
+    .w-box.product {
+        background: #fff;
+        padding-top: 15px;
+        margin-bottom: 20px;
+    }
+    .w-box {
+        margin: 0 0 15px 0;
+        -webkit-transition: all .3s linear;
+        -moz-transition: all .3s linear;
+        -o-transition: all .3s linear;
+        transition: all .3s linear;
+        position: relative;
+        overflow: hidden;
+        cursor: default;
+        border: 1px solid #e0eded;
+        min-height: 220px;
+    }
+        .w-box.product figure, .w-box.product h3 {
+            text-align: center;
+        }
+
+            .w-box.product figure img {
+                width: 155px;
+                max-height: 155px;
+            }
+    .product h3 a {
+        font-size: 20px;
+    }
+</style>
+@*<style>
+    .wp-box .product {
+        height: 342px;
+    }
+
+    .w-box.product {
+        background: #fff;
+        padding-top: 15px;
+        margin-bottom: 20px;
+    }
+
+    .w-box {
+        margin: 0 0 15px 0;
+        -webkit-transition: all .3s linear;
+        -moz-transition: all .3s linear;
+        -o-transition: all .3s linear;
+        transition: all .3s linear;
+        position: relative;
+        overflow: hidden;
+        cursor: default;
+        border: 1px solid #e0eded;
+        min-height: 220px;
+    }
+
+    .col-md-4 {
+        width: 30%;
+        float: left;
+        position: relative;
+        min-height: 1px;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .row {
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+
+    .w-box.product figure, .w-box.product h3 {
+        text-align: center;
+    }
+
+    figure {
+        margin: 0;
+    }
+
+    .wp-theme a {
+        color: #616161;
+        cursor: pointer;
+    }
+
+    .w-box.product figure img {
+        width: 155px;
+        max-height: 155px;
+    }
+
+    .w-box.product figure, .w-box.product h3 {
+        text-align: center;
+    }
+
+    .product h3 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+        .product h3 a {
+            font-size: 20px;
+        }
+
+    .w-box.product p {
+        text-align: center;
+    }
+
+    .w-box p {
+        margin: 5px 0;
+        padding: 0 15px;
+        padding-bottom: 5px;
+    }
+
+    .wp-box p {
+        line-height: 22px;
+    }
+</style>*@
+
+
+
+<div class="section baiviet">
+
+    <div class="row">
+        <div class="columns small-12">
+
+            <h2 class="section-title">
+                <img src="/assets/img/s-title-pattern.png" alt=""> <span>@objCategory.CategoryName</span> <img src="/assets/img/s-title-pattern.png"
+                                                                                                               alt="">
+            </h2>
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="column small-4">
+                        <div class="w-box product" data-productid="29">
+                            <figure>
+                                <a href="@item.NavigationUrl" title="@item.Title">
+                                    <img alt="@item.Title" src="@TMV.Utilities.Globals.ImageUrlNoCDN(item.ImagePath, 300, false)" title="@item.Title">
+                                </a>
+                            </figure>
+                            <h3>
+                                <a href="@item.NavigationUrl">@item.Title</a>
+                            </h3>
+                            <p></p>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            </div>
+    </div>
+</div>
+
+@*<section class="wrapper">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 col-sm-4">
+                    <div class="w-box product" data-productid="29">
+                        <figure>
+                            <a href="@item.NavigationUrl" title="@item.Title">
+                                <img alt="@item.Title" src="@TMV.Utilities.Globals.ImageUrl(item.ImagePath, 300, false)" title="@item.Title">
+                            </a>
+                        </figure>
+                        <h3>
+                            <a href="@item.NavigationUrl">@item.Title</a>
+                        </h3>
+                        <p></p>
+                    </div>
+                </div>
+            }
+        </div>
+       
+    </div>
+</section>
+<section class="wrapper content-4">
+    <div class="container">
+        @Html.Action("BoxQuestionAnswer", "Common")
+        @Html.Action("BoxCustomerReview", "Common")
+    </div>
+</section>*@

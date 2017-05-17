@@ -1,0 +1,37 @@
+﻿@using TMV.Utilities
+@*@model List<TMV.Data.Entities.ArticleInfo>*@
+
+@*@if (Model != null && Model.Count > 0)
+{*@
+    <div class="dvnoibat">
+        <div class="title">Dịch vụ nổi bật</div>
+        @Html.Raw(Server.HtmlDecode(ViewBag.NoiBat2))
+        @*<div class="dvnoibat-content">
+
+    @foreach (var item in Model)
+     {
+         <div class="postSort">
+
+             <div class="postSort-img">
+                 <a href="@item.NavigationUrl">
+                     <img src="@TMV.Utilities.Globals.ImageUrlNoCDN(item.Avatar, 200, false)" alt="@item.Title">
+                 </a>
+             </div>
+
+             <div class="postSort-content">
+                 <a href="@item.NavigationUrl">
+                     <h3 class="postSort-title">@item.Title</h3>
+                     <div class="noidung" title="@item.Description" >@TMV.Utilities.HtmlHelper.FormatString(50,item.Description)</div>
+                 </a>
+             </div>
+
+         </div>
+     }
+
+        </div>*@
+
+
+    </div>
+
+@*}*@
+

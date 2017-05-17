@@ -1,0 +1,49 @@
+﻿@model TMV.Data.Entities.QuestionAnswerInfo
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var title = Model.Title;
+    var description = Model.Title;
+    var keywords = Model.Title;
+    var permalink = Model.NavigationUrl;
+    var type = "website";
+    var thumbnail = "";
+    
+    var questionAnswers = ViewBag.QuestionAnswers as List<TMV.Data.Entities.QuestionAnswerInfo>;
+}
+@section META_INC {
+    @Html.Raw(TMV.Utilities.HtmlHelper.MetaTag(title, description, keywords, permalink, type, thumbnail))
+}
+
+@section BREADCRUMB_INC {
+    @*@Html.Raw(ViewBag.BreadCrumb)*@
+}
+
+<section class="wrapper">
+    <div class="container">
+        <article class="detail video qa">
+            <h1>@Model.Title</h1>
+            <div class="tab tab1">
+                @Html.Raw(Server.HtmlDecode(Model.Question).Replace("img src", "img class=lazy data-original"))
+                <br />
+                @Html.Raw(Server.HtmlDecode(Model.Content).Replace("img src", "img class=lazy data-original"))
+            </div>
+            @Html.Action("BoxQAOther", new { articleId = Model.ArticleId, questionAnswerId = Model.QuestionAnswerId })
+            <div class="fb-comments" data-width="100%" data-href="@Model.NavigationUrl" data-order-by="reverse_time" data-numposts="5">
+                Đang tải bình luận...
+            </div>
+        </article>
+        <aside>
+            @Html.Action("BoxGoogleSearch", "Common")
+            @Html.Action("BoxSponsor", "Common")
+            @Html.Action("BoxFanpage", "Common")
+            @Html.Action("BoxBanner", "Common", new { priority = (byte)TMV.Utilities.Globals.PriorityBanner.RightColum })
+        </aside>
+    </div>
+</section>
+<section class="wrapper content-4">
+    <div class="container">
+        @Html.Action("BoxQuestionAnswer", "Common")
+        @Html.Action("BoxCustomerReview", "Common")
+    </div>
+</section>

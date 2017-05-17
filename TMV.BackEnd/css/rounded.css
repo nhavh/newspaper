@@ -1,0 +1,8 @@
+/** rounded corners **/
+div#element-box {}
+div#element-box div.section-box div.m {background: #fbfbfb;}
+div.title {width:100%;text-align:center;margin:10px 0 20px 0;font-size:18px;font-weight:bold;font-family:Tahoma;line-height:150%;}
+div.m {padding: 0 8px;}
+div#toolbar-box div.m {padding:0;}
+.login .m {padding:65px 30px 0 30px !important;}
+/*==================== Login V2 =====================*/

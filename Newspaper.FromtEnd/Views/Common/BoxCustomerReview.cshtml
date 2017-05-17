@@ -1,0 +1,38 @@
+﻿@model List<TMV.Data.Entities.CustomerReviewInfo>
+
+@if (Model != null && Model.Count > 0)
+{
+    <div class="swiper-container tintuc2">
+        <div class="swiper-wrapper">
+
+            @for (int i = 1; i < Model.Count + 1; i++)
+            {
+                if ((i % 2) != 0)
+                {
+                    @Html.Raw("<div class='swiper-slide'>");
+                }
+                <div class="tintuc">
+                    <div class="tintuc-img">
+                        <img src="@TMV.Utilities.Globals.ImageUrlNoCDN(Model[i-1].Avatar, 200, false)" alt="@Model[i - 1].Title">
+                    </div>
+
+                    <div class="tintuc-content rm">
+                        <h3 class="title">@Model[i - 1].Title</h3>
+                        <div class="rm-content" >@Html.Raw(Server.HtmlDecode(Model[i - 1].Content))</div>
+                    </div>
+                </div>
+                if ((i % 2) == 0)
+                {
+                    @Html.Raw("</div>");
+                }
+            }
+        </div>
+
+
+        <!-- Add Pagination -->
+        <div class="swiper-pagination">
+
+
+        </div>
+    </div>
+}

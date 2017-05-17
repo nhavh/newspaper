@@ -1,0 +1,49 @@
+﻿@model TMV.Data.Entities.ArticleInfo
+
+@{
+    Layout = "~/Views/Shared/_Layout.M.cshtml";
+    var objCategory = ViewBag.ObjCategory as TMV.Data.Entities.CategoryInfo;
+    var title = objCategory == null ? Model.SeoTitle : objCategory.SeoTitle;
+    var description = objCategory == null ? Model.SeoDescription : objCategory.SeoDescription;
+    var keywords = objCategory == null ? Model.Tags : objCategory.SeoKeyword;
+    var permalink = Model.NavigationUrl;
+    var type = "website";
+    var thumbnail = TMV.Utilities.Globals.ImageUrlNoCDN(Model.Avatar, 230, false);
+}
+
+@section META_INC {
+    @Html.Raw(TMV.Utilities.HtmlHelper.MetaTag(title, description, keywords, permalink, type, thumbnail))
+}
+
+@section BREADCRUMB_INC {
+    @*@Html.Raw(ViewBag.BreadCrumb)*@
+}
+
+@section LW_INC {
+    @Html.Action("BoxCategory", "Common", new { categoryId = Model.CategoryId })
+}
+
+<section class="wrapper detail">
+    <h1>@Model.Title</h1>
+    @if (Model.IsTab) {
+        <div class="tab tab1">
+            @Html.Raw(Server.HtmlDecode(Model.Intro).Replace("img src", "img class=lazy data-original"))
+        </div>
+    } else {
+        @Html.Action("BoxTab", new { objArticle = Model })
+    }
+    <input id="hdArticleId" type="hidden" value="@Model.ArticleId" />
+    @if (Model.CategorySlug == "khuyen-mai") {
+        <a href="javascript:PopupRegister()" class="btn1">Đăng ký dịch vụ</a>
+    } else {
+        <a href="@ViewBag.UrlPrice" target="_blank" class="btn1">Bảng giá dịch vụ</a>
+    }
+    <a href="tel:0909055678"><img class="lazy" data-original="/Content/images/btn-phone.png" alt="Liên hệ tư vấn" /></a>
+    @Html.Raw(TMV.Utilities.HtmlHelper.HtmlTags(Model.Tags, Model.NavigationCategoryUrl))
+    @Html.Raw(TMV.Utilities.HtmlHelper.HtmlSource(Model.NavigationCategoryUrl, Model.CategoryName))
+    @Html.Action("BoxOther", new { articleId = Model.ArticleId, categoryId = Model.CategoryId })
+    <div class="fb-comments" data-width="100%" data-href="@Model.NavigationUrl" data-order-by="reverse_time" data-numposts="5">
+        Đang tải bình luận...
+    </div>
+    @Html.Action("BoxSponsor", "Common")
+</section>

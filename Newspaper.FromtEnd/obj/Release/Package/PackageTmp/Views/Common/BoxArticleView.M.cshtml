@@ -1,0 +1,17 @@
+﻿@model List<TMV.Data.Entities.ArticleInfo>
+
+@if (Model != null && Model.Count > 0)
+{
+    <div class="title"><b>TIN QUAN TÂM NHIỀU NHẤT</b></div>
+    <div class="art-list">        
+        @foreach (var item in Model)
+        {
+            <a href="@item.NavigationUrl" class="art-item" title="@item.Title">
+                <img class="lazy" data-original="@TMV.Utilities.Globals.ImageUrl(item.Avatar, 230, false)" alt="@item.Title" />
+                <b>@item.Title</b>
+                <span>@item.Description</span>
+            </a>
+            <div class="clr"></div>
+        }
+    </div>
+}

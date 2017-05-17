@@ -1,0 +1,12 @@
+﻿@model List<TMV.Data.Entities.VideoInfo>
+
+@if (Model != null && Model.Count > 0)
+{
+    var objVideo = Model.FirstOrDefault();
+    <div class="video">
+        <span class="tit">VIDEO</span>
+        <a href="@objVideo.NavigationUrl" title="@objVideo.Title">
+            <img class="lazy" data-original="http://img.youtube.com/vi/@(objVideo.YoutubeId)/0.jpg" alt="@objVideo.Title" />
+        </a>
+    </div>
+}

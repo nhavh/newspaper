@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSet>
+  <Column>
+    <HeaderText>User</HeaderText>
+    <ItemWidth>200</ItemWidth>
+    <FieldName>UserID</FieldName>
+    <FieldType>Lookup</FieldType>
+    <FieldTypeKey>Int</FieldTypeKey>
+    <FieldTypeName>Username</FieldTypeName>
+    <ControllerInfo>TMV.Data.Entities.AdminUserController</ControllerInfo>
+    <FieldAllowNull>true</FieldAllowNull>
+    <FieldLookup>ListAdminUserLookup</FieldLookup>
+  </Column>
+  
+  <Column>  
+    <HeaderText>Role</HeaderText>
+    <ItemWidth>200</ItemWidth>
+    <FieldName>RoleID</FieldName>
+    <FieldType>Lookup</FieldType>
+    <FieldTypeKey>Int</FieldTypeKey>
+    <FieldTypeName>RoleName</FieldTypeName>
+    <ControllerInfo>TMV.Data.Entities.AdminRoleController</ControllerInfo>
+    <FieldAllowNull>true</FieldAllowNull>
+    <FieldLookup>ListAdminRoleLookup</FieldLookup>
+  </Column>
+
+  <ObjectDataSource>
+    <ClassInfo>TMV.Data.Entities.AdminUserRoleInfo</ClassInfo>
+    <ClassController>TMV.Data.Entities.AdminUserRoleController</ClassController>
+    <SelectMethod>SelectAdminUserRole</SelectMethod>
+    <UpdateMethod>UpdateAdminUserRole</UpdateMethod>
+    <DeleteMethod>DeleteAdminUserRole</DeleteMethod>
+    <PrimaryKeyName>UserRoleID</PrimaryKeyName>
+  </ObjectDataSource>
+  <GridConfig>
+    <Title>User Role List</Title>
+    <ShowUpdate>true</ShowUpdate>
+    <ShowInsert>true</ShowInsert>
+    <ShowDelete>true</ShowDelete>
+  </GridConfig>
+</DataSet>

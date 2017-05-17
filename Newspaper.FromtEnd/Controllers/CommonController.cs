@@ -1,0 +1,206 @@
+﻿using System;
+using System.Linq;
+using System.Web.Mvc;
+using TMV.Data.Entities;
+using TMV.Utilities;
+
+namespace Newspaper.FromtEnd.Com.Controllers
+{
+    public class CommonController : Controller
+    {
+        private Random _rd = new Random();
+        private bool _isClearCache = false;
+        private string _cookieName = "CK_RIGHT_ANGLE";
+        public CommonController()
+        {
+            _isClearCache = System.Web.HttpContext.Current.Request.QueryString["ClearCache"] != null;
+        }
+        public ActionResult BoxArticleView()
+        {
+            var articles = new ArticleController().ListArticleByView(_isClearCache);
+            return PartialView(articles);
+        }
+
+        public ActionResult BoxArticleViewV2()
+        {
+            ViewBag.NoiBat2 = new ArticleController().GetArticle(901).Intro;
+            //var articles = new TMV.Data.Entities.ArticleController().ListArticleByView(_isClearCache);
+            return PartialView();
+        }
+
+
+        public ActionResult BoxQuestionAnswer()
+        {
+            var questionAnswers = new QuestionAnswerController().ListQuestionAnswerByArticle(0, 1, 10, _isClearCache);
+            return MvcApplication.IsMobileMode()
+                ? PartialView("BoxQuestionAnswer.M", questionAnswers)
+                : PartialView(questionAnswers);
+        }
+        public ActionResult BoxCustomerReview()
+        {
+            var customerReviews = new CustomerReviewController().ListCustomerReviewByArticle(0, 1, 10, _isClearCache);
+            return PartialView(customerReviews);
+        }
+        public ActionResult BoxLinkWebsite(byte priority = 0)
+        {
+            var linkWebsites = new LinkWebsiteController().ListLinkWebsiteByPriority(priority, _isClearCache);
+            return PartialView(linkWebsites);
+        }
+        public ActionResult BoxFanpage()
+        {
+            return MvcApplication.IsMobileMode()
+                ? PartialView("BoxFanpage.M")
+                : PartialView();
+        }
+        public ActionResult BoxSponsor()
+        {
+            var sponsors = new SponsorController().ListSponsorByType(0, _isClearCache);
+            return MvcApplication.IsMobileMode() ? PartialView("BoxSponsor.M", sponsors) : PartialView(sponsors);
+        }
+        public ActionResult BoxGoogleSearch()
+        {
+            return PartialView();
+        }
+        public ActionResult BoxRating(ArticleInfo objArticle)
+        {
+            return PartialView(objArticle);
+        }
+        public ActionResult BoxBanner(byte priority = 2)
+        {
+            if (priority == (byte)Globals.PriorityBanner.RightAngle)
+            {
+                if (Request.Cookies[_cookieName] != null) return null;
+
+                //CreateCookie();
+            }
+
+            var banners = new BannerController().ListBannerByPriority(priority, _isClearCache);
+            if (banners == null || banners.Count == 0) return null;
+
+            if (priority == (byte)Globals.PriorityBanner.Rating)
+            {
+                var tmp = banners.ToArray();
+                var bannerId = tmp[_rd.Next(0, tmp.Length)].BannerId;
+                return PartialView(banners.Where(p => p.BannerId == bannerId).ToList());
+            }
+            return PartialView(banners);
+        }
+        public ActionResult BoxCategory(int categoryId = 4)
+        {
+            var categorys = new CategoryController().ListCategoryByGroup(categoryId, _isClearCache);
+            return MvcApplication.IsMobileMode()
+                ? PartialView("BoxCategory.M", categorys)
+                : PartialView(categorys);
+        }
+        public ActionResult CatchAll404()
+        {
+            Response.StatusCode = 404;
+            Response.TrySkipIisCustomErrors = true;
+            return View();
+        }
+        public ActionResult SiteMap()
+        {
+            var categories = new CategoryController().ListCategoryByGroup();
+            return PartialView(categories);
+        }
+
+        public ActionResult BoxSlider_V2()
+        {
+            var banners = new BannerController().ListBannerByPriority((int)Globals.PriorityBanner.Home, _isClearCache);
+            return PartialView(banners);
+        }
+
+        //public ActionResult Menu(int type = 1)
+        //{
+        //    var isMobile = MvcApplication.IsMobileMode();
+        //    var httpRequest = System.Web.HttpContext.Current;
+        //    var isClearCache = Request.QueryString["ClearCache"] != null;
+
+        //    #region Lấy cache menu
+        //    string cacheKeyHtml = string.Format("GenHTMLMenu_{0}{1}{2}", Globals.HomeName, type, isMobile ? "MOBILE" : "DESK");
+        //    if (isClearCache) httpRequest.Cache.Remove(cacheKeyHtml);
+
+        //    string content = httpRequest.Cache.Get(cacheKeyHtml) as string;
+        //    if (!string.IsNullOrEmpty(content))
+        //    {
+        //        ViewBag.HTMLMenu = content;
+        //        return PartialView();
+        //    }
+        //    #endregion
+
+        //    #region Gen HTML menu
+        //    var categories = new TMV.Data.Entities.CategoryController().ListCategory(type, isClearCache);
+        //    var categoriesLV1 = categories.Where(p => p.ParentId == -1).ToList();
+
+        //    var htmlMenu = isMobile
+        //        ? "<nav><ul>"
+        //        : type == 1
+        //            ? "<nav class=\"wrapper menudek\"><ul class=\"container\"><li><a href=\"\\\">Thẩm mỹ viện</a></li>"
+        //            : "<nav class=\"wrapper\"><ul class=\"container\"><li><a href=\"\\\">Thẩm mỹ viện</a></li>";
+        //    foreach (var itemLV1 in categoriesLV1)
+        //    {
+        //        htmlMenu += "<li>";
+
+        //        var categoriesLV2 = categories.Where(p => itemLV1.CategoryId == p.ParentId).ToList();
+        //        if (type == 2 || categoriesLV2 == null || categoriesLV2.Count == 0)
+        //        {
+        //            htmlMenu += string.Format("<a href=\"{0}\">{1}</b></a>", itemLV1.NavigationUrl, itemLV1.CategoryName);
+        //            htmlMenu += "</li>";
+        //            continue;
+        //        }
+
+        //        htmlMenu += string.Format("<a href=\"{0}\" class=\"pr\">{1} <b class=\"caret\"></b></a>", itemLV1.NavigationUrl, itemLV1.CategoryName);
+        //        htmlMenu += "<ul>";
+        //        foreach (var itemLV2 in categoriesLV2)
+        //        {
+        //            htmlMenu += "<li>";
+        //            var categoriesLV3 = categories.Where(p => itemLV2.CategoryId == p.ParentId).ToList();
+        //            if (categoriesLV3 == null || categoriesLV3.Count == 0)
+        //            {
+        //                htmlMenu += string.Format("<a href=\"{0}\">{1}</a>", itemLV2.NavigationUrl, itemLV2.CategoryName);
+        //                htmlMenu += "</li>";
+        //                continue;
+        //            }
+        //            htmlMenu += string.Format("<a href=\"{0}\">{1}</a>", itemLV2.NavigationUrl, itemLV2.CategoryName);
+
+        //            htmlMenu += "<ul>";
+        //            foreach (var itemLV3 in categoriesLV3)
+        //            {
+        //                htmlMenu += string.Format("<li><a href=\"{0}\">{1}</a></li>", itemLV3.NavigationUrl, itemLV3.CategoryName);
+        //            }
+        //            htmlMenu += "</ul>";
+        //            htmlMenu += "</li>";
+        //        }
+        //        htmlMenu += "</ul>";
+        //        htmlMenu += "</li>";
+        //    }
+        //    htmlMenu += "</ul></nav>";
+        //    #endregion
+
+        //    //Cache html
+        //    httpRequest.Cache.Add(cacheKeyHtml, htmlMenu, null, DateTime.Now.AddHours(24), TimeSpan.Zero, System.Web.Caching.CacheItemPriority.Normal, null);
+
+        //    ViewBag.HTMLMenu = htmlMenu;
+
+        //    return PartialView();
+        //}
+
+        public ActionResult Menu_V2(int type = 1)
+        {
+            var categories = new CategoryController().ListCategory(type, true);
+            return PartialView(categories);
+        }
+
+        private void CreateCookie()
+        {
+            //var dateExpire = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 00, 00, 00).AddDays(1);
+            //var cookie = new HttpCookie(_cookieName)
+            //{
+            //    Value = "1",
+            //    Expires = dateExpire
+            //};
+            //System.Web.HttpContext.Current.Response.Cookies.Add(cookie);
+        }
+
+    }
+}

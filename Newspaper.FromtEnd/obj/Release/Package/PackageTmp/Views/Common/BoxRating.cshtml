@@ -1,0 +1,88 @@
+﻿@model TMV.Data.Entities.ArticleInfo
+
+@{
+    var w = 16;
+}
+
+@if (Model != null)
+{
+    <div id="rating" class="rating">
+        <div class="fl">
+            <span class="rating-price">
+                <b>Giá cả dịch vụ</b>
+                <i class="ra-current"><em style="width:@(Model.AveragePrice * w)px"></em></i>
+                <em class="ra-vote">
+                    <a href="javascript:;" star="1" class="star-1 vote" title="Rất tệ"></a>
+                    <a href="javascript:;" star="2" class="star-2 vote" title="Tệ"></a>
+                    <a href="javascript:;" star="3" class="star-3 vote" title="Bình thường"></a>
+                    <a href="javascript:;" star="4" class="star-4 vote" title="Tốt"></a>
+                    <a href="javascript:;" star="5" class="star-5 vote" title="Rất tốt"></a>
+                </em>
+            </span>
+            <span class="rating-quality">
+                <b>Kết quả chất lượng dịch vụ</b>
+                <i class="ra-current"><em style="width:@(Model.AverageQuality * w)px"></em></i>
+                <em class="ra-vote">
+                    <a href="javascript:;" star="1" class="star-1 vote" title="Rất tệ"></a>
+                    <a href="javascript:;" star="2" class="star-2 vote" title="Tệ"></a>
+                    <a href="javascript:;" star="3" class="star-3 vote" title="Bình thường"></a>
+                    <a href="javascript:;" star="4" class="star-4 vote" title="Tốt"></a>
+                    <a href="javascript:;" star="5" class="star-5 vote" title="Rất tốt"></a>
+                </em>
+            </span>
+            <span class="rating-doctor">
+                <b>Bác sĩ/NV thực hiện</b>
+                <i class="ra-current"><em style="width:@(Model.AverageDoctor * w)px"></em></i>
+                <em class="ra-vote">
+                    <a href="javascript:;" star="1" class="star-1 vote" title="Rất tệ"></a>
+                    <a href="javascript:;" star="2" class="star-2 vote" title="Tệ"></a>
+                    <a href="javascript:;" star="3" class="star-3 vote" title="Bình thường"></a>
+                    <a href="javascript:;" star="4" class="star-4 vote" title="Tốt"></a>
+                    <a href="javascript:;" star="5" class="star-5 vote" title="Rất tốt"></a>
+                </em>
+            </span>
+            <span class="rating-attitude">
+                <b>Thái độ phục vụ</b>
+                <i class="ra-current"><em style="width:@(Model.AverageAttitude * w)px"></em></i>
+                <em class="ra-vote">
+                    <a href="javascript:;" star="1" class="star-1 vote" title="Rất tệ"></a>
+                    <a href="javascript:;" star="2" class="star-2 vote" title="Tệ"></a>
+                    <a href="javascript:;" star="3" class="star-3 vote" title="Bình thường"></a>
+                    <a href="javascript:;" star="4" class="star-4 vote" title="Tốt"></a>
+                    <a href="javascript:;" star="5" class="star-5 vote" title="Rất tốt"></a>
+                </em>
+            </span>
+            <span class="rating-facility">
+                <b>Cơ sở vật chất</b>
+                <i class="ra-current"><em style="width:@(Model.AverageFacility * w)px"></em></i>
+                <em class="ra-vote">
+                    <a href="javascript:;" star="1" class="star-1 vote" title="Rất tệ"></a>
+                    <a href="javascript:;" star="2" class="star-2 vote" title="Tệ"></a>
+                    <a href="javascript:;" star="3" class="star-3 vote" title="Bình thường"></a>
+                    <a href="javascript:;" star="4" class="star-4 vote" title="Tốt"></a>
+                    <a href="javascript:;" star="5" class="star-5 vote" title="Rất tốt"></a>
+                </em>
+            </span>
+            <span class="rating-customer">
+                <b>Tư vấn chăm sóc khách hàng</b>
+                <i class="ra-current"><em style="width:@(Model.AverageCustomer * w)px"></em></i>
+                <em class="ra-vote">
+                    <a href="javascript:;" star="1" class="star-1 vote" title="Rất tệ"></a>
+                    <a href="javascript:;" star="2" class="star-2 vote" title="Tệ"></a>
+                    <a href="javascript:;" star="3" class="star-3 vote" title="Bình thường"></a>
+                    <a href="javascript:;" star="4" class="star-4 vote" title="Tốt"></a>
+                    <a href="javascript:;" star="5" class="star-5 vote" title="Rất tốt"></a>
+                </em>
+            </span>
+            <label><b>@(Model.TotalRating)/5.0</b></label>
+            <label><i><em style="width:@(Model.TotalRating * w)px"></em></i></label>
+            <label><em>(Từ @(Model.TotalVote + 344) nhận xét)</em></label>
+            <a id="btnRating" href="javascript:AddRating()" class="button"><b>Đánh giá</b></a>
+            <input id="txtItemId" type="hidden" value="@Model.ArticleId" />
+            <input id="txtItemType" type="hidden" value="1" />
+        </div>
+        <div class="fr">
+            @Html.Action("BoxBanner")
+        </div>
+    </div>
+}

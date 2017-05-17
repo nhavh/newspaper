@@ -1,0 +1,68 @@
+﻿@using TMV.Utilities
+@model List<TMV.Data.Entities.CategoryInfo>
+
+@if (Model != null && Model.Any())
+{
+    <nav class="mainNav-container" data-toggler=".show" id="mainNav">
+
+        <div class="row">
+            <div class="columns">
+                <ul class="mainNav dropdown menu" data-dropdown-menu data-click-open="false" data-autoclose="fasle" data-close-on-click-inside="false"
+                    data-close-on-click="false" >
+                    <li class="mainNav-logo active">
+                        <a href="">
+                            <div>
+                                <img src="/assets/img/logo-nav.png" width="40" alt="">
+                            </div>
+                        </a>
+                    </li>
+                    @foreach (var itemParent in Model.Where(p => p.ParentId == -1))
+                    {
+                        var lstSup = Model.Where(p => itemParent.CategoryId == p.ParentId);
+
+                        <li>
+                            <a href="@(string.IsNullOrEmpty(itemParent.Slug) ? Globals.FrontEndUrl : ((itemParent.IsShowDetail || itemParent.Group > 0) ? itemParent.NavigationUrl : "javascripts:void(0);"))" title="@itemParent.CategoryName">
+                                <div>@itemParent.CategoryName</div>
+                            </a>
+                            @if (lstSup.Any())
+                            {
+                                <ul class="menu">
+                                    @foreach (var itemSub in lstSup)
+                                    {
+                                        var lstSup2 = Model.Where(p => itemSub.CategoryId == p.ParentId);
+                                        <li data-sub="@(lstSup2.Any() ? "" : "is-sub")">
+                                            @if (lstSup2.Any())
+                                            {
+                                                <a href="@itemSub.NavigationUrl" title="@itemSub.CategoryName">
+                                                    <span>@itemSub.CategoryName</span>
+                                                </a>
+                                                foreach (var itemSub2 in lstSup2)
+                                                {
+                                                    <a href="@itemSub2.NavigationUrl" title="@itemSub2.CategoryName">
+                                                        @itemSub2.CategoryName
+                                                    </a>
+                                                }
+
+                                            }
+                                            else
+                                            {
+                                                <a href="@itemSub.NavigationUrl" title="@itemSub.CategoryName">
+                                                    @itemSub.CategoryName
+                                                </a>
+                                            }
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                        </li>
+                    }
+                </ul>
+
+
+
+            </div>
+        </div>
+
+
+    </nav>
+}

@@ -1,0 +1,16 @@
+﻿@model List<TMV.Data.Entities.CustomerReviewInfo>
+
+@if (Model != null && Model.Count > 0)
+{
+    <span class="title"><b>KHÁCH HÀNG ĐÁNH GIÁ</b></span>
+    <div class="customer-review">       
+        @foreach (var item in Model.Take(6))
+        {
+            <div>
+                <img class="lazy" data-original="@TMV.Utilities.Globals.ImageUrlNoCDN(item.Avatar, 200, false)" />
+                <b>@item.Title</b>
+                <div>@Html.Raw(Server.HtmlDecode(item.Content))</div>
+            </div>
+        }
+    </div>
+}

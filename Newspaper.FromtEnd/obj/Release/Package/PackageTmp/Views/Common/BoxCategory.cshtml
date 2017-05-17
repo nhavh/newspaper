@@ -1,0 +1,14 @@
+﻿@model List<TMV.Data.Entities.CategoryInfo>
+
+@if (Model != null && Model.Count > 0)
+{ 
+    <section class="wrapper content-5">
+        <div class="container">
+            <span>@Model.FirstOrDefault().GroupName</span>
+            @foreach (var item in Model)
+            {
+                <a href="@item.NavigationUrl" title="@item.CategoryName">@item.CategoryName</a>
+            }
+        </div>
+    </section>
+}

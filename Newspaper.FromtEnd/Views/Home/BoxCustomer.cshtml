@@ -1,0 +1,54 @@
+﻿@model List<TMV.Data.Entities.CustomerInfo>
+
+@if (Model != null && Model.Count > 0)
+{
+     
+    <div class="row">
+        <div class="card-layout ">
+    
+            <div class="ykhv">
+                <div class="small-12 columns">
+                    <h2 class="title">CẢM NHẬN HỌC VIÊN</h2>
+                </div>
+
+                    @foreach (var item in Model)
+                    {
+
+                        <div class="medium-6 small-12 columns">
+                            <div class="ykhv--item">
+
+                                <div class="ykhv--content">
+                                    <h4>Chị Nguyễn Thị Kim Thoa (Củ Chi – TP.HCM):</h4>
+                                    <p>
+                                        “Ngực tôi đã bị chảy xệ thêm vào đó nhũ hoa không biết sao mà bị thâm đen, tôi đã thử nhiều
+                                        cách”
+                                    </p>
+                                </div>
+
+                                <div class="ykhv--avatar">
+                                    <img src="http://www.kriesi.at/themes/enfold/files/2013/04/team-11-180x180.jpg" alt=""/>
+                                </div>
+
+                            </div>
+                        </div>
+                    }
+
+            </div>
+    
+    
+    
+        </div>
+    
+    </div>
+    
+    <div class="title"><b>KHÁCH HÀNG THÂN QUEN</b></div>
+    <span class="text">Thẩm mỹ viện Hoàng Anh cam kết sẽ mang đến kết quả làm đẹp vượt trội, làm hài lòng tất cả quý khách hàng đến tham gia dịch vụ, kể cả với những khách hàng khó tính nhất.</span>
+    <div id="owl-customer" class="owl-carousel">
+        @foreach (var item in Model)
+        {
+            <div class="item">
+                <img class="lazyOwl" data-src="@TMV.Utilities.Globals.ImageUrlNoCDN(item.Avatar, ViewBag.IsMobile ? 600 : 300, false)" />
+            </div>
+        }
+    </div>
+}

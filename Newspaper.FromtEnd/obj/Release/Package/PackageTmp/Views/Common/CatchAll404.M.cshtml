@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.M.cshtml";
+    const string title = "Thẩm mỹ viện Hoàng Anh | Thẩm mỹ viện uy tín hàng đầu tại HCM";
+    const string description = "Thẩm mỹ viện Hoàng Anh với bề dày kinh nghiệm hơn 15 năm trong lĩnh vực thẩm mỹ, tự hào là địa chỉ uy tín, chất lượng được đông đảo khách hàng tin tưởng và đánh giá cao.";
+    const string keywords = "Thẩm mỹ viện Hoàng Anh | Thẩm mỹ viện uy tín hàng đầu tại HCM";
+    var permalink = TMV.Utilities.Globals.FrontEndUrl;
+    const string type = "website";
+    string thumbnail = TMV.Utilities.Globals.FrontEndUrl + "/Content/images/thammyvienhoanganh-19-01-2016.jpg";
+    var cndUrl = TMV.Utilities.Globals.FrontEndUrl;
+}
+@section META_INC {
+    @Html.Raw(TMV.Utilities.HtmlHelper.MetaTag(title, description, keywords, permalink, type, thumbnail))
+}
+
+<section class="wrapper mt49" style="padding:20px 0;">
+    <p class="message">RẤT TIẾC, TRANG BẠN TÌM KIẾM KHÔNG TỒN TẠI</p>
+    <a class="btn" href="javascript:window.history.go(-1)">← TRỞ VỀ TRANG TRƯỚC</a>
+</section>

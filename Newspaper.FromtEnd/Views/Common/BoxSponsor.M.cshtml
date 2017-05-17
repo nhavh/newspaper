@@ -1,0 +1,18 @@
+﻿@model List<TMV.Data.Entities.SponsorInfo>
+
+@if (Model != null && Model.Count > 0)
+{
+    int index = 1;
+    <div class="title"><b>DỊCH VỤ NỔI BẬT</b></div>
+    <div class="art-list">
+        @foreach (var item in Model.Take(11))
+        {
+            <a href="@item.NavigationUrl" class="art-item" title="@item.Title">
+                <img @(index > 3 ? "class=lazy data-original" : "src")="@TMV.Utilities.Globals.ImageUrlNoCDN(item.Avatar, 230, false)" alt="@item.Title" />
+                <b>@item.Title</b>
+                <span>@item.Description</span>
+            </a>
+            index++;
+        }
+    </div>
+}

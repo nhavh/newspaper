@@ -1,0 +1,16 @@
+﻿@model List<TMV.Data.Entities.PictureInfo>
+
+@if (Model != null && Model.Count > 0)
+{
+    <div class="title"><b>HÌNH ẢNH TRƯỚC SAU THẨM MỸ</b></div>
+    <div class="picture">       
+        <div id="owl-picture" class="owl-carousel">
+            @foreach (var item in Model)
+            {
+                <div class="item">
+                    <img class="lazyOwl" data-src="@TMV.Utilities.Globals.ImageUrlNoCDN(item.ImagePath, 700, false)" />
+                </div>
+            }
+        </div>
+    </div>
+}

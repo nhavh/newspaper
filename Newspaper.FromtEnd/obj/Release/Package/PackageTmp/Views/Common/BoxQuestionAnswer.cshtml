@@ -1,0 +1,12 @@
+﻿@model List<TMV.Data.Entities.QuestionAnswerInfo>
+
+@if (Model != null && Model.Count > 0)
+{ 
+    <div class="c4-qa">
+        <span class="tit">HỎI ĐÁP</span>
+        @foreach (var item in Model.Take(6))
+        {
+            <a href="@item.NavigationUrl" title="@item.Title">@item.Title</a>
+        }
+    </div>
+}

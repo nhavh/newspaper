@@ -1,0 +1,32 @@
+﻿@model List<TMV.Data.Entities.ArticleInfo>
+
+<div class="row" data-equalizer data-equalize-on="medium">
+    <div class="card-layout">
+
+        @foreach (var item in Model)
+        {
+            <div class="medium-6 columns">
+
+                <figure class="card-item wow fadeInUp" data-equalizer-watch>
+                    <a href="@item.NavigationUrl">
+                        <img src="@TMV.Utilities.Globals.ImageUrlNoCDN(item.Avatar, 550, false)" alt="@item.Title">
+                    </a>
+                    <figcaption>
+                        <div>
+                            <a href="@item.NavigationUrl">
+                                <h2 class="name">@item.Title</h2>
+                            </a>
+                            <p class="paragraph">@item.Description </p>
+                        </div>
+                        <div class="text-center">
+                            <a href="@item.NavigationUrl" class="button button--pink large">Chi tiết</a>
+                        </div>
+
+                    </figcaption>
+                </figure>
+            </div>
+        }
+
+
+    </div>
+</div>

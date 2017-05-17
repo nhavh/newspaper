@@ -1,0 +1,104 @@
+body, td, pre {color:#333333; font-family:Verdana,Arial,Helvetica,sans-serif; font-size:12px; margin:10px;}
+body {background:#FFF;}
+body.mceForceColors {background:#FFF; color:#000;}
+body.mceBrowserDefaults {background:transparent; color:inherit; font-size:inherit; font-family:inherit;}
+h1 {font-size: 2em}
+h2 {font-size: 1.5em}
+h3 {font-size: 1.17em}
+h4 {font-size: 1em}
+h5 {font-size: .83em}
+h6 {font-size: .75em}
+.mceItemTable, .mceItemTable td, .mceItemTable th, .mceItemTable caption, .mceItemVisualAid {border: 1px dashed #BBB;}
+a.mceItemAnchor {display:inline-block; width:11px !important; height:11px  !important; background:url(img/items.gif) no-repeat 0 0;}
+span.mceItemNbsp {background: #DDD}
+td.mceSelected, th.mceSelected {background-color:#3399ff !important}
+img {border:0;}
+table {cursor:default}
+table td, table th {cursor:text}
+ins {border-bottom:1px solid green; text-decoration: none; color:green}
+del {color:red; text-decoration:line-through}
+cite {border-bottom:1px dashed blue}
+acronym {border-bottom:1px dotted #CCC; cursor:help}
+abbr {border-bottom:1px dashed #CCC; cursor:help}
+
+/* IE */
+* html body {
+scrollbar-3dlight-color:#F0F0EE;
+scrollbar-arrow-color:#676662;
+scrollbar-base-color:#F0F0EE;
+scrollbar-darkshadow-color:#DDD;
+scrollbar-face-color:#E0E0DD;
+scrollbar-highlight-color:#F0F0EE;
+scrollbar-shadow-color:#F0F0EE;
+scrollbar-track-color:#F5F5F5;
+}
+
+img:-moz-broken {-moz-force-broken-image-icon:1; width:24px; height:24px}
+font[face=mceinline] {font-family:inherit !important}
+
+.mceItemMedia {border:1px dotted #cc0000; background-position:center; background-repeat:no-repeat; background-color:#ffffcc}
+.mceItemShockWave {background-image:url(../../img/shockwave.gif)}
+.mceItemFlash {background-image:url(../../img/flash.gif)}
+.mceItemQuickTime {background-image:url(../../img/quicktime.gif)}
+.mceItemWindowsMedia {background-image:url(../../img/windowsmedia.gif)}
+.mceItemRealMedia {background-image:url(../../img/realmedia.gif)}
+.mceItemVideo {background-image:url(../../img/video.gif)}
+.mceItemIframe {background-image:url(../../img/iframe.gif)}
+.mcePageBreak {display:block;border:0;width:100%;height:12px;border-top:1px dotted #ccc;margin-top:15px;background:#fff url(../../img/pagebreak.gif) no-repeat center top;}
+
+
+/*custom class*/
+.pTitle{font-size:24px;font-weight:bold;text-align:center;padding-top: 10px;}
+.pSubTitle{font-size: 17px;font-weight:bold;text-align:center;padding-bottom: 20px;}
+.pCaption{font-weight: bold;font-style:italic;color:#797979;text-align:justify;}
+.pBody{text-align:justify;}
+.pSource{font-size: 13px;text-align:right;font-style:italic;font-weight:bold;color:#ae0000;}
+.pImageCaption{color:#919191;font-style:italic;text-align:center;}
+.pDealDetail{font-size:18px;padding-top:10px;font-weight:bold;}
+.pPictureofDeal{font-size:15px;font-weight:bold;}
+.pTable1{background-color: #CFE6F9;border: 1px solid #BBBBBB;font-family: arial;font-size: 14px;margin-left: 10px;padding: 15px;}
+.pTable1 tr{background-color:inherit !important;}
+.pTable2{}
+.pTable1 .pAuthor{color:#3D77B1;color: #3D77B1;font-size: 12px;font-style: italic;}
+.pAuthor{color:#3D77B1;color: #3D77B1;font-size: 12px;font-style: italic;}
+
+ul.reviews, ul.reviews ul, ul.reviews li {list-style:none;margin:0;}
+
+ul.reviews li.plus {background:transparent url(/images/icon-plus.gif) no-repeat left top;padding:0 0 10px 30px;display:block;}
+ul.reviews li.minus {background:transparent url(/images/icon-minus.gif) no-repeat left top;padding:0 0 10px 30px;display:block;}
+ul.reviews li.plus ul li, ul.reviews li.minus ul li {background:transparent url(/images/icon-view.gif) no-repeat left 5px; padding:0 0 0 15px;}
+
+
+.pro{position:relative;width:520px; padding:20px 0px;}
+.icon-pro{width:144px; background:transparent url(/images/icon-pro-khuyenmai.png) no-repeat left top;height:190px;position:absolute;right:8px;top:5px;padding: 35px 0 0 0px;}
+.icon-pro p {line-height: normal;margin: 0;padding: 0 0 10px;text-align: center;}
+.icon-pro .percent{color:#f20000;font-size:20px;font-weight:bold;}
+.t-pro{width:520px;}
+.pro-r-top{width:100%;background-color:#329800;}
+.pro-r-top p{color:#fff;text-align: justify;width: 330px;}
+.pro-r-center{background-color:#f3f3f3;}
+.c-top{padding:10px 0px 10px 20px;}
+.c-top-title {color:#ffe726 !important;}
+.c-top-title strong{color:#fff496 !important;}
+.pro-r-item{text-align:justify;color:#656565;line-height:150%;}
+hr{background:#c2c2c2;color:#fff;height:1px; border:0 none;}
+.pro-r-bottom{background:transparent url(../images/bg-pro-bottom.gif) no-repeat right top;height:22px;width:520px;}
+.pro-table-item{padding:10px 15px;}
+.icon-pro p {line-height: normal;margin: 0;padding: 0 0 10px;text-align: center;}
+
+.other {margin-bottom:10px;}
+.other-title {background: transparent url(/images/icon-thaoluan.gif) no-repeat left top;font-size:14px;font-weight:bold;padding-left:35px;height:22px;line-height:22px;padding-bottom:10px;}
+.other ul {padding-left:20px;}
+
+ul.list1 li{padding-bottom:10px;margin-left:5px;}
+ul.list1 li a{background:transparent url(/images/icon-list1.gif) no-repeat left 5px;padding-left:20px;color:#333333;display:block;line-height:150%;}
+ul.list1 li a:hover{color:#DA0505;}
+
+/*Deal Ban Can Biet css*/
+.km-template{}
+.km-template-top{background:transparent url(/images/bg-km-template-top.gif) no-repeat left top;height:37px;width:682px;}
+.km-template-center{background:transparent url(/images/bg-km-template-center.gif) repeat-y left top;overflow:hidden;width:642px;padding:0 20px;}
+.km-template-bottom{background:transparent url(/images/bg-km-template-bottom.gif) no-repeat left top;height:37px;width:682px;}
+.km-template-center h2{padding-bottom:10px;padding-left:10px;text-align:justify;}
+.km-template-center p{text-align:justify;}
+.km-right-center{border-left: 1px solid #D0D0D0;border-right: 1px solid #D0D0D0;background-color:#e9e3e1;}

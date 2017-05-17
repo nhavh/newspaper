@@ -1,0 +1,16 @@
+﻿@model List<TMV.Data.Entities.LinkWebsiteInfo>
+
+@if (Model != null && Model.Count > 0)
+{ 
+<section class="wrapper content-6">
+    <div class="container">
+        <div>
+            <h3>Liên kết hữu ích</h3>
+            @foreach (var item in Model)
+            {
+                <a href='@item.Url' @(item.Target ? "target='_blank'" : "") title='@item.AnchorText'>@item.AnchorText</a>
+            }
+        </div>
+    </div>
+</section>
+}

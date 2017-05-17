@@ -1,0 +1,19 @@
+﻿@model List<TMV.Data.Entities.VideoInfo>
+
+@if (Model != null && Model.Count > 0)
+{
+    int i = 1;
+    <div class="title"><b>Video liên quan</b></div>
+    <div class="art-list">
+        @foreach (TMV.Data.Entities.VideoInfo item in Model)
+        {
+            var imgUrl = string.Format("http://img.youtube.com/vi/{0}/0.jpg", item.YoutubeId);
+            <a href="@item.NavigationUrl" title="@item.Title" class="art-item">
+                <img src="@imgUrl" alt="@item.Title" />
+                <b>@item.Title</b>
+                <span>@item.Description</span>
+            </a>
+            i++;
+        }
+    </div>
+}

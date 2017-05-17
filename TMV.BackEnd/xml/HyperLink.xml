@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSet>
+  <Column>
+    <HeaderText>Từ khóa</HeaderText>
+    <ItemWidth>250</ItemWidth>
+    <FieldName>OldChar</FieldName>
+    <FieldType>string</FieldType>
+  </Column>
+  <Column>
+    <HeaderText>Đường dẫn</HeaderText>
+    <ItemWidth>250</ItemWidth>
+    <FieldName>NewChar</FieldName>
+    <FieldType>string</FieldType>
+  </Column>
+  <ObjectDataSource>
+    <ClassInfo>TMV.Data.Entities.HyperLinkInfo</ClassInfo>
+    <ClassController>TMV.Data.Entities.HyperLinkController</ClassController>
+    <SelectMethod>SelectHyperLink</SelectMethod>
+    <UpdateMethod>UpdateHyperLink</UpdateMethod>
+    <DeleteMethod>DeleteHyperLink</DeleteMethod>
+    <PrimaryKeyName>HyperLinkID</PrimaryKeyName>
+  </ObjectDataSource>
+  <GridConfig>
+    <Title>Danh sách link</Title>
+    <ShowUpdate>true</ShowUpdate>
+    <ShowInsert>true</ShowInsert>
+    <ShowDelete>true</ShowDelete>
+  </GridConfig>
+</DataSet>

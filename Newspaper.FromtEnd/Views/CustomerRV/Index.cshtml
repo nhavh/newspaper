@@ -1,0 +1,56 @@
+﻿@using HtmlHelper = TMV.Utilities.HtmlHelper
+@model List<TMV.Data.Entities.CustomerReviewInfo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var objCategory = ViewBag.ObjCategory as TMV.Data.Entities.CategoryInfo;
+    var title = objCategory.SeoTitle;
+    var description = objCategory.SeoDescription;
+    var keywords = objCategory.SeoKeyword;
+    var permalink = objCategory.NavigationUrl;
+    var type = "website";
+    var thumbnail = TMV.Utilities.Globals.ImageUrlNoCDN(objCategory.Avatar, 200, false);
+}
+
+@section META_INC {
+    @Html.Raw(TMV.Utilities.HtmlHelper.MetaTag(title, description, keywords, permalink, type, thumbnail))
+}
+
+
+<div class="row" data-equalizer data-equalize-on="medium">
+    <div class="card-layout">
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+                <div class="medium-6 columns">
+
+                    <figure class="card-item wow fadeInUp" data-equalizer-watch>
+                        <div style="max-width: 350px; margin: 0 auto">
+                            <div class="flex-video">
+                                <iframe width="420" height="315" src="@HtmlHelper.RemoveAllHtmlTag(Server.HtmlDecode(item.Content))" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <figcaption>
+                            <div>
+                                <h2 class="name">@item.Title</h2>
+                                @*<p class="paragraph">@item.Description </p>*@
+                            </div>
+                            @*<div class="text-center">
+                                    <a href="@item.NavigationUrl" class="button button--pink large">Chi tiết</a>
+                                </div>*@
+
+                        </figcaption>
+                    </figure>
+                </div>
+            }
+            @Html.Raw(ViewBag.PageList)
+        }
+        else
+        {
+            <p class="message">Dữ liệu đang cập nhật</p>
+        }
+    </div>
+</div>

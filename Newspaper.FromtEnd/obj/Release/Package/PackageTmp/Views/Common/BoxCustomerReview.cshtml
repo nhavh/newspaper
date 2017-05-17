@@ -1,0 +1,23 @@
+﻿@model List<TMV.Data.Entities.CustomerReviewInfo>
+@{
+    var index = 0;        
+}
+
+@if (Model != null && Model.Count > 0)
+{
+    
+    <div class="c4-review">
+        <span class="tit">KHÁCH HÀNG ĐÁNH GIÁ</span>
+        @foreach (var item in Model.Take(6))
+        {
+            <div class="@(index % 2 == 0 ? "fl" : "fr")">
+                <span>
+                    <b>@item.Title</b>
+                    <i>@Html.Raw(Server.HtmlDecode(item.Content))</i>
+                </span>
+                <img class="lazy" data-original="@TMV.Utilities.Globals.ImageUrl(item.Avatar, 200, false)" />
+            </div>
+            index++;
+        }
+    </div>
+}

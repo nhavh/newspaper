@@ -1,0 +1,63 @@
+﻿@model List<TMV.Data.Entities.ArticleInfo>
+
+@{
+    Layout = "~/Views/Shared/_Layout.M.cshtml";
+    var objCategory = ViewBag.ObjCategory as TMV.Data.Entities.CategoryInfo;
+    var page = ViewBag.Page;
+    var title = objCategory.SeoTitle;
+    var description = objCategory.SeoDescription;
+    var keywords = objCategory.SeoKeyword;
+    var permalink = objCategory.NavigationUrl;
+    var type = "website";
+    var thumbnail = TMV.Utilities.Globals.ImageUrl(objCategory.Avatar, 200, false);
+
+    if (page > 1)
+    {
+        title = objCategory.SeoTitle + " | Trang " + page;
+        description = objCategory.SeoDescription + " | Trang " + page;
+        keywords = objCategory.SeoKeyword + " | Trang " + page;
+    }
+}
+@section META_INC {
+    @Html.Raw(TMV.Utilities.HtmlHelper.MetaTag(title, description, keywords, permalink, type, thumbnail))
+}
+
+@section LW_INC {
+    @*@Html.Action("BoxCategory", "Common", new { categoryId = objCategory.ParentId <= 0 ? objCategory.CategoryId : objCategory.Group })*@
+    @Html.Action("BoxLinkWebsite", "Common", new { priority = objCategory.CategoryId })
+}
+@section H1_INC {
+    <h1><a href="@objCategory.NavigationUrl">@objCategory.CategoryName</a></h1>
+}
+@section BREADCRUMB_INC {
+    @Html.Raw(ViewBag.BreadCrumb)
+}
+
+<section class="wrapper cate">
+    @if (Model != null && Model.Count > 0)
+    {
+        int index = 1;
+        <div class="title"><b>@objCategory.CategoryName</b></div>
+        <div class="art-list">
+            @foreach (var item in Model)
+            {
+                <a href="@item.NavigationUrl" class="art-item" title="@item.Title">
+                    <img @(index > 2 ? "class=lazy data-original" : "src")="@TMV.Utilities.Globals.ImageUrl(item.Avatar, 230, false)" alt="@item.Title" />
+                    <b>@item.Title</b>
+                    <span>@item.Description</span>
+                </a>
+                <div class="clr"></div>
+                index++;
+            }
+        </div>
+        @Html.Raw(ViewBag.PageList)
+    }
+    @Html.Action("BoxSponsor", "Common")
+</section>
+<section class="wrapper">
+    @if (objCategory.ParentId > 0)
+    {
+        @Html.Action("BoxCustomerReview", "Common")
+    }
+    @Html.Action("BoxQuestionAnswer", "Common")
+</section>

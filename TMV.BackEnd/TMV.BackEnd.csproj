@@ -1,0 +1,666 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A5E4C341-59AF-4FC5-841C-8CEB55FDC19C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TMV.BackEnd</RootNamespace>
+    <AssemblyName>TMV.BackEnd</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Moxiecode.TinyMCE">
+      <HintPath>..\TMV.DLL\Moxiecode.TinyMCE.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AccessDeny.aspx" />
+    <Content Include="AjaxAction.aspx" />
+    <Content Include="ChangePassword.aspx" />
+    <Content Include="Controls\GridViewManager.ascx" />
+    <Content Include="Controls\TextEditor.ascx" />
+    <Content Include="css\AutoComplete.css" />
+    <Content Include="css\component.css" />
+    <Content Include="css\datepicker\jquery.ui.all.css" />
+    <Content Include="css\datepicker\jquery.ui.base.css" />
+    <Content Include="css\datepicker\jquery.ui.core.css" />
+    <Content Include="css\datepicker\jquery.ui.datepicker.css" />
+    <Content Include="css\datepicker\jquery.ui.theme.css" />
+    <Content Include="css\general.css" />
+    <Content Include="css\icon.css" />
+    <Content Include="css\ie6.css" />
+    <Content Include="css\ie7.css" />
+    <Content Include="css\jquery_autocomplete.css" />
+    <Content Include="css\login.css" />
+    <Content Include="css\menu.css" />
+    <Content Include="css\norounded.css" />
+    <Content Include="css\rounded.css" />
+    <Content Include="css\screen.css" />
+    <Content Include="css\template.css" />
+    <Content Include="css\theme.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="imagesV2\bg-login.png" />
+    <Content Include="imagesV2\book-cover.png" />
+    <Content Include="imagesV2\grids.png" />
+    <Content Include="imagesV2\header-bg.png" />
+    <Content Include="imagesV2\icon\check-box-active.png" />
+    <Content Include="imagesV2\icon\check-box.png" />
+    <Content Include="imagesV2\icon\icon-off.png" />
+    <Content Include="imagesV2\icon\key.png" />
+    <Content Include="imagesV2\icon\subnav_b.gif" />
+    <Content Include="imagesV2\icon\user.png" />
+    <Content Include="imagesV2\line.png" />
+    <Content Include="imagesV2\linen.png" />
+    <Content Include="imagesV2\logo-linkcircle.png" />
+    <Content Include="imagesV2\retina_wood.png" />
+    <Content Include="imagesV2\ribbon.png" />
+    <Content Include="imagesV2\tiny_grid.png" />
+    <Content Include="images\arrow.png" />
+    <Content Include="images\bg-km-template-bottom.gif" />
+    <Content Include="images\bg-km-template-center.gif" />
+    <Content Include="images\bg-km-template-top.gif" />
+    <Content Include="images\bg-menu.gif" />
+    <Content Include="images\bg-pro-bottom.gif" />
+    <Content Include="images\blankButton.png" />
+    <Content Include="images\calendar.png" />
+    <Content Include="images\datepicker\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="images\datepicker\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="images\datepicker\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="images\datepicker\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="images\datepicker\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="images\datepicker\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="images\datepicker\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="images\datepicker\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="images\datepicker\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="images\datepicker\ui-icons_222222_256x240.png" />
+    <Content Include="images\datepicker\ui-icons_228ef1_256x240.png" />
+    <Content Include="images\datepicker\ui-icons_ef8c08_256x240.png" />
+    <Content Include="images\datepicker\ui-icons_ffd27a_256x240.png" />
+    <Content Include="images\datepicker\ui-icons_ffffff_256x240.png" />
+    <Content Include="images\delete.gif" />
+    <Content Include="images\down_btn.gif" />
+    <Content Include="images\h_green\j_header_left.png" />
+    <Content Include="images\h_green\j_header_left_rtl.png" />
+    <Content Include="images\h_green\j_header_middle.png" />
+    <Content Include="images\h_green\j_header_right.png" />
+    <Content Include="images\icon-list1.gif" />
+    <Content Include="images\icon-minus.gif" />
+    <Content Include="images\icon-plus.gif" />
+    <Content Include="images\icon-pro-khuyenmai.png" />
+    <Content Include="images\icon-temp-km.png" />
+    <Content Include="images\icon-view.gif" />
+    <Content Include="images\j_arrow.png" />
+    <Content Include="images\j_arrow_down.png" />
+    <Content Include="images\j_arrow_left.png" />
+    <Content Include="images\j_border.png" />
+    <Content Include="images\j_bottom.png" />
+    <Content Include="images\j_button1_admin.png" />
+    <Content Include="images\j_button1_collate.png" />
+    <Content Include="images\j_button1_left.png" />
+    <Content Include="images\j_button1_next.png" />
+    <Content Include="images\j_button1_next1.png" />
+    <Content Include="images\j_button1_prev.png" />
+    <Content Include="images\j_button1_refresh.png" />
+    <Content Include="images\j_button1_right.png" />
+    <Content Include="images\j_button1_site.png" />
+    <Content Include="images\j_button2_blank.png" />
+    <Content Include="images\j_button2_first.png" />
+    <Content Include="images\j_button2_first_off.png" />
+    <Content Include="images\j_button2_image.png" />
+    <Content Include="images\j_button2_image_rtl.png" />
+    <Content Include="images\j_button2_last.png" />
+    <Content Include="images\j_button2_last_off.png" />
+    <Content Include="images\j_button2_left.png" />
+    <Content Include="images\j_button2_left_cap.png" />
+    <Content Include="images\j_button2_next.png" />
+    <Content Include="images\j_button2_next_off.png" />
+    <Content Include="images\j_button2_pagebreak.png" />
+    <Content Include="images\j_button2_pagebreak_rtl.png" />
+    <Content Include="images\j_button2_prev.png" />
+    <Content Include="images\j_button2_prev_off.png" />
+    <Content Include="images\j_button2_readmore.png" />
+    <Content Include="images\j_button2_readmore_rtl.png" />
+    <Content Include="images\j_button2_right.png" />
+    <Content Include="images\j_button2_right_cap.png" />
+    <Content Include="images\j_corner_bl.png" />
+    <Content Include="images\j_corner_br.png" />
+    <Content Include="images\j_crn_bl_dark.png" />
+    <Content Include="images\j_crn_bl_light.png" />
+    <Content Include="images\j_crn_bl_med.png" />
+    <Content Include="images\j_crn_br_dark.png" />
+    <Content Include="images\j_crn_br_light.png" />
+    <Content Include="images\j_crn_br_med.png" />
+    <Content Include="images\j_crn_tl_dark.png" />
+    <Content Include="images\j_crn_tl_light.png" />
+    <Content Include="images\j_crn_tl_med.png" />
+    <Content Include="images\j_crn_tr_dark.png" />
+    <Content Include="images\j_crn_tr_light.png" />
+    <Content Include="images\j_crn_tr_med.png" />
+    <Content Include="images\j_divider.png" />
+    <Content Include="images\j_joomla_box.jpg" />
+    <Content Include="images\j_login_lock.jpg" />
+    <Content Include="images\menu\icon-16-archive.png" />
+    <Content Include="images\menu\icon-16-article.png" />
+    <Content Include="images\menu\icon-16-category.png" />
+    <Content Include="images\menu\icon-16-checkin.png" />
+    <Content Include="images\menu\icon-16-component.png" />
+    <Content Include="images\menu\icon-16-config.png" />
+    <Content Include="images\menu\icon-16-content.png" />
+    <Content Include="images\menu\icon-16-cpanel.png" />
+    <Content Include="images\menu\icon-16-default.png" />
+    <Content Include="images\menu\icon-16-frontpage.png" />
+    <Content Include="images\menu\icon-16-help.png" />
+    <Content Include="images\menu\icon-16-info.png" />
+    <Content Include="images\menu\icon-16-install.png" />
+    <Content Include="images\menu\icon-16-language.png" />
+    <Content Include="images\menu\icon-16-logout.png" />
+    <Content Include="images\menu\icon-16-massmail.png" />
+    <Content Include="images\menu\icon-16-media.png" />
+    <Content Include="images\menu\icon-16-menu.png" />
+    <Content Include="images\menu\icon-16-menumgr.png" />
+    <Content Include="images\menu\icon-16-messages.png" />
+    <Content Include="images\menu\icon-16-module.png" />
+    <Content Include="images\menu\icon-16-plugin.png" />
+    <Content Include="images\menu\icon-16-print.png" />
+    <Content Include="images\menu\icon-16-section.png" />
+    <Content Include="images\menu\icon-16-static.png" />
+    <Content Include="images\menu\icon-16-stats.png" />
+    <Content Include="images\menu\icon-16-themes.png" />
+    <Content Include="images\menu\icon-16-trash.png" />
+    <Content Include="images\menu\icon-16-user.png" />
+    <Content Include="images\mini_icon.png" />
+    <Content Include="images\notice-alert.png" />
+    <Content Include="images\notice-download.png" />
+    <Content Include="images\notice-info.png" />
+    <Content Include="images\notice-note.png" />
+    <Content Include="images\selector-arrow.png" />
+    <Content Include="images\toolbar\icon-32-adduser.png" />
+    <Content Include="images\toolbar\icon-32-apply.png" />
+    <Content Include="images\toolbar\icon-32-archive.png" />
+    <Content Include="images\toolbar\icon-32-back.png" />
+    <Content Include="images\toolbar\icon-32-cancel.png" />
+    <Content Include="images\toolbar\icon-32-config.png" />
+    <Content Include="images\toolbar\icon-32-copy.png" />
+    <Content Include="images\toolbar\icon-32-css.png" />
+    <Content Include="images\toolbar\icon-32-default.png" />
+    <Content Include="images\toolbar\icon-32-delete.png" />
+    <Content Include="images\toolbar\icon-32-download.png" />
+    <Content Include="images\toolbar\icon-32-edit.png" />
+    <Content Include="images\toolbar\icon-32-export.png" />
+    <Content Include="images\toolbar\icon-32-forward.png" />
+    <Content Include="images\toolbar\icon-32-help.png" />
+    <Content Include="images\toolbar\icon-32-html.png" />
+    <Content Include="images\toolbar\icon-32-lock.png" />
+    <Content Include="images\toolbar\icon-32-menu.png" />
+    <Content Include="images\toolbar\icon-32-move.png" />
+    <Content Include="images\toolbar\icon-32-new.png" />
+    <Content Include="images\toolbar\icon-32-preview.png" />
+    <Content Include="images\toolbar\icon-32-print.png" />
+    <Content Include="images\toolbar\icon-32-publish.png" />
+    <Content Include="images\toolbar\icon-32-refresh.png" />
+    <Content Include="images\toolbar\icon-32-revert.png" />
+    <Content Include="images\toolbar\icon-32-save.png" />
+    <Content Include="images\toolbar\icon-32-search.png" />
+    <Content Include="images\toolbar\icon-32-send.png" />
+    <Content Include="images\toolbar\icon-32-trash.png" />
+    <Content Include="images\toolbar\icon-32-unarchive.png" />
+    <Content Include="images\toolbar\icon-32-unpublish.png" />
+    <Content Include="images\toolbar\icon-32-upload.png" />
+    <Content Include="images\toolbar\icon-32-xml.png" />
+    <Content Include="js\flashupload\checkflash_ie.vbs" />
+    <Content Include="js\flashupload\fileprogress.js" />
+    <Content Include="js\flashupload\fu_checkflash.js" />
+    <Content Include="js\flashupload\swfupload.js" />
+    <Content Include="js\flashupload\swfupload.queue.js" />
+    <Content Include="js\flashupload\swfupload.swf" />
+    <Content Include="js\flashupload\tinyhandler.js" />
+    <Content Include="js\jquery-1.4.4.min.js" />
+    <Content Include="js\jquery-UI.js" />
+    <Content Include="js\jquery.autocomplete.js" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\templates\ArticleRelatedWord.htm" />
+    <Content Include="js\templates\DealNote.htm" />
+    <Content Include="js\templates\Promotion.htm" />
+    <Content Include="js\templates\StoreRelatedWord.htm" />
+    <Content Include="js\templates\Tips.htm" />
+    <Content Include="js\template_list.js" />
+    <Content Include="js\ui\jquery.ui.core.js" />
+    <Content Include="js\ui\jquery.ui.datepicker.js" />
+    <Content Include="Login.aspx" />
+    <Content Include="Pages\EditArticle.aspx" />
+    <Content Include="Pages\EditBanner.aspx" />
+    <Content Include="Pages\EditCategory.aspx" />
+    <Content Include="Pages\EditCustomer.aspx" />
+    <Content Include="Pages\EditCustomerReview.aspx" />
+    <Content Include="Pages\EditPicture.aspx" />
+    <Content Include="Pages\EditPrice.aspx" />
+    <Content Include="Pages\EditQuestionAnswer.aspx" />
+    <Content Include="Pages\EditSponsor.aspx" />
+    <Content Include="Pages\EditVideo.aspx" />
+    <Content Include="Pages\ListAdminPage.aspx" />
+    <Content Include="Pages\ListAdminPageRole.aspx" />
+    <Content Include="Pages\ListAdminRole.aspx" />
+    <Content Include="Pages\ListAdminUser.aspx" />
+    <Content Include="Pages\ListAdminUserRole.aspx" />
+    <Content Include="Pages\ListAdminWorkFlow.aspx" />
+    <Content Include="Pages\ListArticle.aspx" />
+    <Content Include="Pages\ListBanner.aspx" />
+    <Content Include="Pages\ListCategory.aspx" />
+    <Content Include="Pages\ListCustomer.aspx" />
+    <Content Include="Pages\ListCustomerReview.aspx" />
+    <Content Include="Pages\ListHyperLink.aspx" />
+    <Content Include="Pages\ListLinkWebsite.aspx" />
+    <Content Include="Pages\ListPicture.aspx" />
+    <Content Include="Pages\ListPrice.aspx" />
+    <Content Include="Pages\ListQuestionAnswer.aspx" />
+    <Content Include="Pages\ListRegister.aspx" />
+    <Content Include="Pages\ListSponsor.aspx" />
+    <Content Include="Pages\ListVideo.aspx" />
+    <Content Include="SaveFile.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="xml\AdminPage.xml" />
+    <Content Include="xml\Banner.xml" />
+    <Content Include="xml\Customer.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="xml\HyperLink.xml" />
+    <Content Include="xml\Picture.xml" />
+    <Content Include="xml\Price.xml" />
+    <Content Include="xml\Priority.xml" />
+    <Content Include="xml\RegisterCancel.xml" />
+    <Content Include="xml\RegisterSuccess.xml" />
+    <Content Include="xml\RegisterPending.xml" />
+    <Content Include="xml\Sponsor.xml" />
+    <Content Include="xml\Status.xml" />
+    <Content Include="xml\Video.xml" />
+    <Content Include="xml\AdminPageRole.xml" />
+    <Content Include="xml\AdminRole.xml" />
+    <Content Include="xml\AdminUser.xml" />
+    <Content Include="xml\AdminUserRole.xml" />
+    <Content Include="xml\AdminWorkFlow.xml" />
+    <Content Include="xml\ArticleApproving.xml" />
+    <Content Include="xml\ArticleEditting.xml" />
+    <Content Include="xml\ArticleOnline.xml" />
+    <Content Include="xml\ArticleWaittingApprove.xml" />
+    <Content Include="xml\Category.xml" />
+    <Content Include="xml\QuestionAnswer.xml" />
+    <Content Include="xml\CustomerReview.xml" />
+    <Content Include="xml\LinkWebsite.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessDeny.aspx.cs">
+      <DependentUpon>AccessDeny.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AccessDeny.aspx.designer.cs">
+      <DependentUpon>AccessDeny.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AjaxAction.aspx.cs">
+      <DependentUpon>AjaxAction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AjaxAction.aspx.designer.cs">
+      <DependentUpon>AjaxAction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\GridViewManager.ascx.cs">
+      <DependentUpon>GridViewManager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\GridViewManager.ascx.designer.cs">
+      <DependentUpon>GridViewManager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TextEditor.ascx.cs">
+      <DependentUpon>TextEditor.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\TextEditor.ascx.designer.cs">
+      <DependentUpon>TextEditor.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditArticle.aspx.cs">
+      <DependentUpon>EditArticle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EditArticle.aspx.designer.cs">
+      <DependentUpon>EditArticle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditBanner.aspx.cs">
+      <DependentUpon>EditBanner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EditBanner.aspx.designer.cs">
+      <DependentUpon>EditBanner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditCategory.aspx.cs">
+      <DependentUpon>EditCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EditCategory.aspx.designer.cs">
+      <DependentUpon>EditCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditCustomer.aspx.cs">
+      <DependentUpon>EditCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EditCustomer.aspx.designer.cs">
+      <DependentUpon>EditCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditCustomerReview.aspx.cs">
+      <DependentUpon>EditCustomerReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EditCustomerReview.aspx.designer.cs">
+      <DependentUpon>EditCustomerReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditPicture.aspx.cs">
+      <DependentUpon>EditPicture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EditPicture.aspx.designer.cs">
+      <DependentUpon>EditPicture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditPrice.aspx.cs">
+      <DependentUpon>EditPrice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EditPrice.aspx.designer.cs">
+      <DependentUpon>EditPrice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditQuestionAnswer.aspx.cs">
+      <DependentUpon>EditQuestionAnswer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EditQuestionAnswer.aspx.designer.cs">
+      <DependentUpon>EditQuestionAnswer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditSponsor.aspx.cs">
+      <DependentUpon>EditSponsor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EditSponsor.aspx.designer.cs">
+      <DependentUpon>EditSponsor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EditVideo.aspx.cs">
+      <DependentUpon>EditVideo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\EditVideo.aspx.designer.cs">
+      <DependentUpon>EditVideo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListAdminPage.aspx.cs">
+      <DependentUpon>ListAdminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListAdminPage.aspx.designer.cs">
+      <DependentUpon>ListAdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListAdminPageRole.aspx.cs">
+      <DependentUpon>ListAdminPageRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListAdminPageRole.aspx.designer.cs">
+      <DependentUpon>ListAdminPageRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListAdminRole.aspx.cs">
+      <DependentUpon>ListAdminRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListAdminRole.aspx.designer.cs">
+      <DependentUpon>ListAdminRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListAdminUser.aspx.cs">
+      <DependentUpon>ListAdminUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListAdminUser.aspx.designer.cs">
+      <DependentUpon>ListAdminUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListAdminUserRole.aspx.cs">
+      <DependentUpon>ListAdminUserRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListAdminUserRole.aspx.designer.cs">
+      <DependentUpon>ListAdminUserRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListAdminWorkFlow.aspx.cs">
+      <DependentUpon>ListAdminWorkFlow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListAdminWorkFlow.aspx.designer.cs">
+      <DependentUpon>ListAdminWorkFlow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListArticle.aspx.cs">
+      <DependentUpon>ListArticle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListArticle.aspx.designer.cs">
+      <DependentUpon>ListArticle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListBanner.aspx.cs">
+      <DependentUpon>ListBanner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListBanner.aspx.designer.cs">
+      <DependentUpon>ListBanner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListCategory.aspx.cs">
+      <DependentUpon>ListCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListCategory.aspx.designer.cs">
+      <DependentUpon>ListCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListCustomer.aspx.cs">
+      <DependentUpon>ListCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListCustomer.aspx.designer.cs">
+      <DependentUpon>ListCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListCustomerReview.aspx.cs">
+      <DependentUpon>ListCustomerReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListCustomerReview.aspx.designer.cs">
+      <DependentUpon>ListCustomerReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListHyperLink.aspx.cs">
+      <DependentUpon>ListHyperLink.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListHyperLink.aspx.designer.cs">
+      <DependentUpon>ListHyperLink.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListLinkWebsite.aspx.cs">
+      <DependentUpon>ListLinkWebsite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListLinkWebsite.aspx.designer.cs">
+      <DependentUpon>ListLinkWebsite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListPicture.aspx.cs">
+      <DependentUpon>ListPicture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListPicture.aspx.designer.cs">
+      <DependentUpon>ListPicture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListPrice.aspx.cs">
+      <DependentUpon>ListPrice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListPrice.aspx.designer.cs">
+      <DependentUpon>ListPrice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListQuestionAnswer.aspx.cs">
+      <DependentUpon>ListQuestionAnswer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListQuestionAnswer.aspx.designer.cs">
+      <DependentUpon>ListQuestionAnswer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListRegister.aspx.cs">
+      <DependentUpon>ListRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListRegister.aspx.designer.cs">
+      <DependentUpon>ListRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListSponsor.aspx.cs">
+      <DependentUpon>ListSponsor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListSponsor.aspx.designer.cs">
+      <DependentUpon>ListSponsor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ListVideo.aspx.cs">
+      <DependentUpon>ListVideo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\ListVideo.aspx.designer.cs">
+      <DependentUpon>ListVideo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveFile.aspx.cs">
+      <DependentUpon>SaveFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SaveFile.aspx.designer.cs">
+      <DependentUpon>SaveFile.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MasterPage.Master" />
+    <None Include="Properties\PublishProfiles\TMV_BACKEND.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TMV.Data\TMV.Data.csproj">
+      <Project>{905765ac-dc80-43f6-8ec8-4be90ce9443f}</Project>
+      <Name>TMV.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMV.FrameWork\TMV.FrameWork.csproj">
+      <Project>{70627673-82c7-4263-a5e8-baa12b91c0db}</Project>
+      <Name>TMV.FrameWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMV.Library\TMV.Library.csproj">
+      <Project>{976a6ed4-680a-4964-b5cb-9fce6952adc9}</Project>
+      <Name>TMV.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMV.Services\TMV.Services.csproj">
+      <Project>{bfca1462-982e-4670-93ef-4a4a0c2a22de}</Project>
+      <Name>TMV.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2288</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2288/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

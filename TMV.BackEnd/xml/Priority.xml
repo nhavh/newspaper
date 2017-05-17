@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<DataSet>
+  <Priority>
+    <ID>0</ID>
+    <Name>Tất cả</Name>
+  </Priority>
+  <Priority>
+    <ID>1</ID>
+    <Name>Bảng giá</Name>
+  </Priority>
+  <Priority>
+    <ID>2</ID>
+    <Name>Khung đánh giá</Name>
+  </Priority>
+  <Priority>
+    <ID>3</ID>
+    <Name>Cột phải</Name>
+  </Priority>
+  <Priority>
+    <ID>4</ID>
+    <Name>Trang chủ</Name>
+  </Priority>
+  <Priority>
+    <ID>5</ID>
+    <Name>Góc phải</Name>
+  </Priority>
+</DataSet>

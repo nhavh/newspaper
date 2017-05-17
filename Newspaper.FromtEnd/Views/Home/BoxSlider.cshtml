@@ -1,0 +1,24 @@
+﻿@model List<TMV.Data.Entities.BannerInfo>
+
+@{
+    var cndUrl = TMV.Utilities.Globals.FrontEndUrl;
+}
+@if (Model != null && Model.Count > 0)
+{
+    <div class="wrapper slider">
+        <div id="owl-slider" class="owl-carousel">
+            @foreach (var item in Model)
+{
+    <a href="@item.Url">
+        <img class="" src="@TMV.Utilities.Globals.ImageUrl(item.ImagePath, 1440, false)" width="100%" />
+    </a>
+}
+        </div>
+    </div>
+}
+else
+{
+    <div class="wrapper slider">
+        <a href="/"><img src="@(cndUrl)/Content/images/banner.png" /></a>
+    </div>
+}

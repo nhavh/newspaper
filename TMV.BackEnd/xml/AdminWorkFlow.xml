@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSet>
+  <Column>
+    <HeaderText>From</HeaderText>
+    <ItemWidth>200</ItemWidth>
+    <FieldName>FromID</FieldName>
+    <FieldType>Lookup</FieldType>
+    <FieldTypeKey>Int</FieldTypeKey>
+    <FieldTypeName>RoleName</FieldTypeName>
+    <ControllerInfo>TMV.Data.Entities.AdminRoleController</ControllerInfo>
+    <FieldAllowNull>true</FieldAllowNull>
+    <FieldLookup>ListAdminRoleLookup</FieldLookup>
+  </Column>
+  
+  <Column>
+    <HeaderText>To</HeaderText>
+    <ItemWidth>200</ItemWidth>
+    <FieldName>ToID</FieldName>
+    <FieldType>Lookup</FieldType>
+    <FieldTypeKey>Int</FieldTypeKey>
+    <FieldTypeName>RoleName</FieldTypeName>
+    <ControllerInfo>TMV.Data.Entities.AdminRoleController</ControllerInfo>
+    <FieldAllowNull>true</FieldAllowNull>
+    <FieldLookup>ListAdminRoleLookup</FieldLookup>
+  </Column>
+
+  <ObjectDataSource>
+    <ClassInfo>TMV.Data.Entities.AdminWorkFlowInfo</ClassInfo>
+    <ClassController>TMV.Data.Entities.AdminWorkFlowController</ClassController>
+    <SelectMethod>SelectAdminWorkFlow</SelectMethod>
+    <UpdateMethod>UpdateAdminWorkFlow</UpdateMethod>
+    <DeleteMethod>DeleteAdminWorkFlow</DeleteMethod>
+    <PrimaryKeyName>WorkFlowID</PrimaryKeyName>
+  </ObjectDataSource>
+  <GridConfig>
+    <Title>Work Flow List</Title>
+    <ShowUpdate>true</ShowUpdate>
+    <ShowInsert>true</ShowInsert>
+    <ShowDelete>true</ShowDelete>
+  </GridConfig>
+</DataSet>

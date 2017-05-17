@@ -1,0 +1,39 @@
+﻿<div id="google-map">
+    <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyAf97G6Joah1r0FuYng9ZwT5ZYWT2zKY08&sensor=false" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            showAddress('Hẻm 248, phường 11, Gò Vấp, Hồ Chí Minh, Vietnam');
+        });
+        function showAddress(address) {
+            var map = new GMap2(document.getElementById("map_canvas"));
+            //map.openInfoWindowHtml(address);
+            var geocoder = new GClientGeocoder();
+            geocoder.getLatLng(address, function (point) {
+                if (!point) { alert(address + " not found"); }
+                else {
+                    map.setCenter(point, 15);
+                    var marker = new GMarker(point);
+                    map.addOverlay(marker);
+                    marker.openInfoWindow(address, { maxWidth: 250, maxHeight: 50 });
+                }
+            }
+        );
+
+            map.enableContinuousZoom();
+            map.enableScrollWheelZoom();
+        }
+        function addToMap(response) {
+            // Retrieve the object
+            place = response.Placemark[0];
+            // Retrieve the latitude and longitude
+            point = new GLatLng(place.Point.coordinates[1],
+                                place.Point.coordinates[0]);
+            marker = new GMarker(point);
+            GEvent.addListener(marker, "click", function () {
+                marker.openInfoWindowHtml(name[response.name] + ' ' + response.name);
+            });
+            map.addOverlay(marker);
+        }
+    </script>
+    
+</div>

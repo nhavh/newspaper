@@ -1,0 +1,13 @@
+E:\Working\TMV\TMV.Services\bin\Release\TMV.Services.dll
+E:\Working\TMV\TMV.Services\bin\Release\TMV.Services.pdb
+E:\Working\TMV\TMV.Services\bin\Release\Jayrock.Json.dll
+E:\Working\TMV\TMV.Services\bin\Release\TMV.Data.dll
+E:\Working\TMV\TMV.Services\bin\Release\TMV.Library.dll
+E:\Working\TMV\TMV.Services\bin\Release\Microsoft.ApplicationBlocks.Data.dll
+E:\Working\TMV\TMV.Services\bin\Release\log4net.dll
+E:\Working\TMV\TMV.Services\bin\Release\TMV.Data.pdb
+E:\Working\TMV\TMV.Services\bin\Release\TMV.Library.pdb
+E:\Working\TMV\TMV.Services\bin\Release\Microsoft.ApplicationBlocks.Data.pdb
+E:\Working\TMV\TMV.Services\obj\Release\TMV.Services.csprojResolveAssemblyReference.cache
+E:\Working\TMV\TMV.Services\obj\Release\TMV.Services.dll
+E:\Working\TMV\TMV.Services\obj\Release\TMV.Services.pdb

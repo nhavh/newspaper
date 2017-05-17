@@ -1,0 +1,136 @@
+﻿@{
+    var cndUrl = TMV.Utilities.Globals.FrontEndUrl;
+}
+
+<header class="wrapper header mobile">
+    <div class="hd-logo">
+        <a href="/" title="Thẩm mỹ viện Hoàng Anh">
+            <img src="@(cndUrl)/Content/images/logo.png" alt="Thẩm mỹ viện Hoàng Anh">
+        </a>
+    </div>
+    <a href="javascript:;" class="menu"><b></b><b></b><b></b></a>
+    @*<nav>
+        <ul>
+            <li>
+                <a href="/">Thẩm mỹ viện</a>
+            </li>
+            <li>
+                <a href="/gioi-thieu/">Giới thiệu</a>
+            </li>
+            <li>
+                <a href="/phau-thuat-tham-my/">Phẫu thuật thẩm mỹ<b></b></a>
+                <ul>
+                    <li>
+                        <a href="/phau-thuat-tham-my-mat/">Phẫu Thuật Thẩm Mỹ Mắt</a>
+                        <ul>
+                            <li><a href="/nang-chan-may/">Nâng Chân Mày</a></li>
+                            <li><a href="/cat-mi-mat-duoi/">Cắt Mí Mắt Dưới</a></li>
+                            <li><a href="/cat-mi-mat-tren/">Cắt Mí Mắt Trên</a></li>
+                            <li><a href="/cat-mi-mat-han-quoc/">Cắt Mí Mắt Hàn Quốc</a></li>
+                            <li><a href="/bam-mi-mat/">Bấm Mí Mắt</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/phau-thuat-tham-my-mui/">Phẫu Thuật Thẩm Mỹ Mũi</a>
+                        <ul>
+                            <li><a href="/nang-mui-s-line/">Nâng Mũi S-line</a></li>
+                            <li><a href="/thu-gon-canh-mui/">Thu Gọn Cánh Mũi</a></li>
+                            <li><a href="/nang-mui-boc-sun-vanh-tai/">Nâng Mũi Bọc Sụn Vành Tai</a></li>
+                            <li><a href="/nang-mui-boc-can/">Nâng Mũi Bọc Cân</a></li>
+                            <li><a href="/nang-mui-sun-nhan-tao/">Nâng Mũi Sụn Nhân Tạo</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/phau-thuat-tham-my-khuon-mat/">Phẫu Thuật Thẩm Mỹ Khuôn Mặt</a>
+                        <ul>
+                            <li><a href="/cay-mo-mat/">Cấy Mỡ Mặt</a></li>
+                            <li><a href="/cang-da-mat/">Căng Da Mặt</a></li>
+                            <li><a href="/chinh-tai-venh/">Chỉnh Tai Vểnh</a></li>
+                            <li><a href="/lay-silicon-moi/">Lấy Silicon Môi</a></li>
+                            <li><a href="/cat-moi-day/">Cắt Môi Dày</a></li>
+                            <li><a href="/tham-my-moi-trai-tim/">Thẩm Mỹ Môi Trái Tim</a></li>
+                            <li><a href="/tao-ma-lum-dong-tien/">Tạo Má Lúm Đồng Tiền</a></li>
+                            <li><a href="/don-cam-v-line/">Độn Cằm V-Line</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/nang-nguc-tham-my/">Nâng Ngực Thẩm Mỹ</a>
+                        <ul>
+                            <li><a href="/thu-nho-dau-nguc/">Thu Nhỏ Đầu Ngực</a></li>
+                            <li><a href="/phau-thuat-thu-nho-nguc/">Phẫu Thuật Thu Nhỏ Ngực</a></li>
+                            <li><a href="/nang-nguc-noi-soi/">Nâng Ngực Nội Soi</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/tham-my-vung-kin/">Thẩm Mỹ Vùng Kín</a>
+                        <ul>
+                            <li><a href="/va-mang-trinh/">Vá Màng Trinh</a></li>
+                            <li><a href="/cay-long-vung-kin/">Cấy Lông Vùng Kín</a></li>
+                            <li><a href="/thu-hep-vung-kin/">Thu Hẹp Vùng Kín</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/phau-thuat-nang-mong/">Phẫu Thuật Nâng Mông</a>
+                    </li>
+                    <li>
+                        <a href="/hut-mo-bung/">Hút Mỡ Bụng</a>
+                        <ul>
+                            <li><a href="/tao-hinh-thanh-bung/">Tạo Hình Thành Bụng</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/hut-mo-nong-cam/">Hút Mỡ Nọng Cằm</a></li>
+                    <li><a href="/hut-mo-canh-tay/">Hút Mỡ Cánh Tay</a></li>
+                    <li><a href="/hut-mo-dui/">Hút Mỡ Đùi</a></li>
+                    <li><a href="/cay-toc/">Cấy Tóc</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/cham-soc-da/">Chăm sóc da<b></b></a>
+                <ul>
+                    <li><a href="/tam-trang-an-toan/">Tắm Trắng An Toàn</a></li>
+                    <li><a href="/duong-trang-da/">Dưỡng Trắng Da</a></li>
+                    <li><a href="/tay-long/">Tẩy Lông</a></li>
+                    <li><a href="/cham-soc-da-toan-than/">Chăm Sóc Da Toàn Thân</a></li>
+                    <li><a href="/cham-soc-da-mat/">Chăm Sóc Da Mặt</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/dieu-tri-da/">Điều trị da<b></b></a>
+                <ul>
+                    <li><a href="/ca-da-mat/">Cà Da Mặt</a></li>
+                    <li><a href="/tri-ran-da/">Trị Rạn Da</a></li>
+                    <li><a href="/thu-nho-lo-chan-long/">Thu Nhỏ Lỗ Chân Lông</a></li>
+                    <li><a href="/xoa-hinh-xam/">Xoá Hình Xăm</a></li>
+                    <li><a href="/tay-not-ruoi/">Tẩy Nốt Ruồi</a></li>
+                    <li><a href="/triet-long-vinh-vien/">Triệt Lông Vĩnh Viễn</a></li>
+                    <li><a href="/tri-da-mat-do/">Trị Da Mặt Đỏ</a></li>
+                    <li><a href="/cach-chong-lao-hoa-da/">Cách Chống Lão Hóa Da</a></li>
+                    <li><a href="/cach-tri-tan-nhang/">Cách Trị Tàn Nhang</a></li>
+                    <li><a href="/cach-tri-nam-da/">Cách Trị Nám Da</a></li>
+                    <li><a href="/cach-tri-seo-mun/">Cách Trị Sẹo Mụn</a></li>
+                    <li><a href="/cach-tri-mun/">Cách Trị Mụn</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/phun-xam/">Phun xăm<b></b></a>
+                <ul>
+                    <li><a href="/theu-chan-may/">Thêu Chân Mày</a></li>
+                    <li><a href="/dieu-khac-chan-may-6d/">Điêu Khắc Chân Mày 6D</a></li>
+                    <li><a href="/phun-tan-bot-long-may/">Phun Tán Bột Lông Mày</a></li>
+                    <li><a href="/phun-chan-may-ngang/">Phun Chân Mày Ngang</a></li>
+                    <li><a href="/xam-moi-tham/">Xăm Môi Thâm</a></li>
+                    <li><a href="/phun-moi-pha-le/">Phun Môi Pha Lê</a></li>
+                    <li><a href="/phun-mi-mat/">Phun Mí Mắt</a></li>
+                    <li><a href="/phun-chan-may/">Phun Chân Mày</a></li>
+                    <li><a href="/phun-hong-nhu-hoa/">Phun Hồng Nhũ Hoa</a></li>
+                </ul>
+            </li>
+            <li><a href="/bi-quyet-lam-dep/">BÍ QUYẾT LÀM ĐẸP</a></li>
+            <li><a href="/khuyen-mai/">Khuyến mãi</a></li>
+            <li><a href="/bang-gia/">Bảng giá</a></li>
+            <li><a href="/video/">Video</a></li>
+            <li><a href="/hinh-anh/">Hình ảnh</a></li>
+        </ul>
+    </nav>*@
+    @Html.Action("Menu", "Common")
+</header>

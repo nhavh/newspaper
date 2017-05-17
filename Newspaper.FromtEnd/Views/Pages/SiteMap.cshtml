@@ -1,0 +1,64 @@
+﻿@model List<TMV.Data.Entities.CategoryInfo>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var objCategory = ViewBag.ObjCategory;
+    var title = objCategory.SeoTitle;
+    var description = objCategory.SeoDescription;
+    var keywords = objCategory.SeoKeyword;
+    var permalink = objCategory.NavigationUrl;
+    var type = "website";
+    var thumbnail = TMV.Utilities.Globals.ImageUrlNoCDN(objCategory.Avatar, 200, false);
+
+    var categories1 = Model.Where(p => p.ParentId == -1).ToList();
+    var categories2 = Model.Where(p => categories1.Any(s => s.CategoryId == p.ParentId)).ToList();
+    var categories3 = Model.Where(p => categories2.Any(s => s.CategoryId == p.ParentId)).ToList();
+}
+@section META_INC {
+    @Html.Raw(TMV.Utilities.HtmlHelper.MetaTag(title, description, keywords, permalink, type, thumbnail))
+}
+
+@section LW_INC {
+    @Html.Action("BoxLinkWebsite", "Common", new { priority = objCategory.CategoryId })
+}
+@section H1_INC {
+    <h1><a href="@objCategory.NavigationUrl">@objCategory.CategoryName</a></h1>
+}
+@section BREADCRUMB_INC {
+    @*@Html.Raw(ViewBag.BreadCrumb)*@
+}
+
+<section class="wrapper">
+    <div class="container">
+        <article class="sitemap">
+            @foreach (var item1 in categories1)
+            {
+                <span>
+                    <a href="@item1.NavigationUrl">@item1.CategoryName</a>
+                    @foreach (var item2 in categories2)
+                    {
+                        if (item1.CategoryId != item2.ParentId) { continue; }
+                        <b>...<a href="@item2.NavigationUrl">@item2.CategoryName</a></b>
+                        foreach (var item3 in categories3)
+                        {
+                            if (item2.CategoryId != item3.ParentId) { continue; }
+                            <i>......<a href="@item3.NavigationUrl">@item3.CategoryName</a></i>
+                        }
+                    }
+                </span>
+            }
+        </article>
+        <aside>
+            @Html.Action("BoxGoogleSearch", "Common")
+            @Html.Action("BoxSponsor", "Common")
+            @Html.Action("BoxFanpage", "Common")
+            @Html.Action("BoxBanner", "Common", new { priority = (byte)TMV.Utilities.Globals.PriorityBanner.RightColum })
+        </aside>
+    </div>
+</section>
+<section class="wrapper content-4">
+    <div class="container">
+        @Html.Action("BoxQuestionAnswer", "Common")
+        @Html.Action("BoxCustomerReview", "Common")
+    </div>
+</section>

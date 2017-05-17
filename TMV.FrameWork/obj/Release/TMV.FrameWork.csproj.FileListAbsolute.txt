@@ -1,0 +1,12 @@
+E:\Working\TMV\TMV.FrameWork\bin\Release\TMV.FrameWork.dll
+E:\Working\TMV\TMV.FrameWork\bin\Release\TMV.FrameWork.pdb
+E:\Working\TMV\TMV.FrameWork\bin\Release\TMV.Data.dll
+E:\Working\TMV\TMV.FrameWork\bin\Release\TMV.Library.dll
+E:\Working\TMV\TMV.FrameWork\bin\Release\Microsoft.ApplicationBlocks.Data.dll
+E:\Working\TMV\TMV.FrameWork\bin\Release\log4net.dll
+E:\Working\TMV\TMV.FrameWork\bin\Release\TMV.Data.pdb
+E:\Working\TMV\TMV.FrameWork\bin\Release\TMV.Library.pdb
+E:\Working\TMV\TMV.FrameWork\bin\Release\Microsoft.ApplicationBlocks.Data.pdb
+E:\Working\TMV\TMV.FrameWork\obj\Release\TMV.FrameWork.csprojResolveAssemblyReference.cache
+E:\Working\TMV\TMV.FrameWork\obj\Release\TMV.FrameWork.dll
+E:\Working\TMV\TMV.FrameWork\obj\Release\TMV.FrameWork.pdb

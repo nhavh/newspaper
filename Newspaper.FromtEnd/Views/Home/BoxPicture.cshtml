@@ -1,0 +1,44 @@
+﻿@model List<TMV.Data.Entities.PictureInfo>
+
+@if (Model != null && Model.Count > 0)
+{
+    <div class="columns small-12 medium-6">
+        <h2 class="section-title">
+            <img src="/assets/img/s-title-pattern.png" alt=""> <span>HÌNH TRƯỚC & SAU THẨM MỸ</span> <img src="/assets/img/s-title-pattern.png" alt="">
+        </h2>
+
+
+        <div class="swiper-container slider2">
+            <div class="swiper-wrapper">
+                @foreach (var item in Model)
+                {
+                    <div class="swiper-slide">
+                        <img src="@TMV.Utilities.Globals.ImageUrlNoCDN(item.ImagePath, 545, false)" alt="">
+                </div>
+                }
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination">
+
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+
+        </div>
+
+        <br>
+
+
+        <div>*Lưu &yacute; : &nbsp; &nbsp;</div>
+        <div>
+            + C&aacute;c h&igrave;nh ảnh tr&ecirc;n l&agrave; từ c&aacute;c kh&aacute;ch h&agrave;ng trước đ&acirc;y
+            của Thẩm mỹ viện Ho&agrave;ng Anh, hiệu quả đối với c&aacute;c trường hợp cụ thể kh&aacute;c
+            c&oacute; thể kh&aacute;c nhau. &nbsp; &nbsp;
+        </div>
+        <div>+ Hiệu quả t&ugrave;y thuộc v&agrave;o cơ địa của mỗi người.</div>
+
+
+    </div>
+}

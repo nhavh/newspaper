@@ -1,0 +1,21 @@
+﻿@model List<TMV.Data.Entities.SponsorInfo>
+@{
+    var cndUrl = TMV.Utilities.Globals.FrontEndUrl;
+    var index = 1;
+}
+
+@if (Model != null && Model.Count > 0)
+{ 
+    <div class="title"><b>DỊCH VỤ NỔI BẬT</b></div>
+    <div class="art-list">
+        @foreach (var item in Model.Take(6))
+        {
+            <a href="@item.NavigationUrl" class="art-item @(index % 3 != 0 ? "fl" : "fr") @(index % 3 == 1 ? "mr" : "")" title="@item.Title">
+                <figure><img class="lazy" data-original="@TMV.Utilities.Globals.ImageUrl(item.Avatar, 230, false)" alt="@item.Title" /></figure>
+                <b>@item.Title</b>
+                <span>@item.Description</span>
+            </a>
+            index++;
+        }
+    </div>
+}

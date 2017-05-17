@@ -1,0 +1,24 @@
+﻿@model List<TMV.Data.Entities.QuestionAnswerInfo>
+
+@{
+    int questionAnswerId = ViewBag.QuestionAnswerId;
+}
+
+@if (Model != null && Model.Count > 0)
+{
+    <div class="dt-qa">
+        @foreach (var item in Model)
+        {
+            if (questionAnswerId > 0 && questionAnswerId == item.QuestionAnswerId) { continue; }
+            <div>
+                <b>@item.Title</b>
+                <div>   
+                    @Html.Raw(Server.HtmlDecode(item.Question))
+                    <br />
+                    @Html.Raw(Server.HtmlDecode(item.Content))
+                    <a href="@item.NavigationUrl" title="@item.Title">(Xem chi tiết)</a>
+                </div>
+            </div>
+        }
+    </div>
+}

@@ -1,0 +1,15 @@
+﻿@model List<TMV.Data.Entities.CustomerReviewInfo>
+
+@if (Model != null && Model.Count > 0)
+{
+    <div class="dt-cr">
+        @foreach (var item in Model)
+	    {
+		    <div>
+                <img src="@TMV.Utilities.Globals.ImageUrl(item.Avatar, 200, false)" alt="@item.Title" />
+                <b>@item.Title</b>
+                <div>@Html.Raw(Server.HtmlDecode(item.Content))</div>
+            </div>
+	    }
+    </div>
+}

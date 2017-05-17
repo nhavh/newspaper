@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<DataSet>
+  <Column>
+    <HeaderText>Họ và tên</HeaderText>
+    <ItemWidth>150</ItemWidth>
+    <FieldName>FullName</FieldName>
+    <FieldType>String</FieldType>
+    <ReadOnly>true</ReadOnly>
+  </Column>
+  <Column>
+    <HeaderText>Giới tính</HeaderText>
+    <ItemWidth>100</ItemWidth>
+    <FieldName>Gender</FieldName>
+    <FieldType>bool</FieldType>
+    <ReadOnly>true</ReadOnly>
+  </Column>
+  <Column>
+    <HeaderText>Số điện thoại</HeaderText>
+    <ItemWidth>150</ItemWidth>
+    <FieldName>PhoneNumber</FieldName>
+    <FieldType>String</FieldType>
+    <ReadOnly>true</ReadOnly>
+  </Column>
+  <Column>
+    <HeaderText>Email</HeaderText>
+    <ItemWidth>150</ItemWidth>
+    <FieldName>Email</FieldName>
+    <FieldType>String</FieldType>
+    <ReadOnly>true</ReadOnly>
+  </Column>
+  <Column>
+    <HeaderText>Nội dung</HeaderText>
+    <ItemWidth>300</ItemWidth>
+    <FieldName>Content</FieldName>
+    <FieldType>String</FieldType>
+    <ReadOnly>true</ReadOnly>
+  </Column>
+  <Column>
+    <HeaderText>Trạng thái</HeaderText>
+    <ItemWidth>150</ItemWidth>
+    <FieldName>Status</FieldName>
+    <FieldType>Lookup</FieldType>
+    <FieldTypeKey>int</FieldTypeKey>
+    <FieldTypeName>Name</FieldTypeName>
+    <FieldAllowNull>true</FieldAllowNull>
+    <FieldLookup>Status.xml</FieldLookup>
+  </Column>
+  <ObjectDataSource>
+    <ClassInfo>TMV.Data.Entities.RegisterInfo</ClassInfo>
+    <ClassController>TMV.Data.Entities.RegisterController</ClassController>
+    <SelectMethod>SelectRegisterCancel</SelectMethod>
+    <UpdateMethod>UpdateRegisterStatus</UpdateMethod>
+    <DeleteMethod>DeleteRegister</DeleteMethod>
+    <PrimaryKeyName>RegisterId</PrimaryKeyName>
+  </ObjectDataSource>
+  <GridConfig>
+    <Title>Danh sách khách hàng hủy</Title>
+    <ShowUpdate>true</ShowUpdate>
+    <ShowInsert>false</ShowInsert>
+    <ShowDelete>true</ShowDelete>
+  </GridConfig>
+</DataSet>

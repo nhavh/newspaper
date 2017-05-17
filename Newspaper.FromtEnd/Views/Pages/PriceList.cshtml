@@ -1,0 +1,65 @@
+﻿@model List<TMV.Data.Entities.BannerInfo>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var objCategory = ViewBag.ObjCategory;
+    var title = objCategory.SeoTitle;
+    var description = objCategory.SeoDescription;
+    var keywords = objCategory.SeoKeyword;
+    var permalink = objCategory.NavigationUrl;
+    var type = "website";
+    var thumbnail = TMV.Utilities.Globals.ImageUrlNoCDN(objCategory.Avatar, 200, false);
+}
+@section META_INC {
+    @Html.Raw(TMV.Utilities.HtmlHelper.MetaTag(title, description, keywords, permalink, type, thumbnail))
+}
+
+@section LW_INC {
+    @Html.Action("BoxLinkWebsite", "Common", new { priority = objCategory.CategoryId })
+}
+@section H1_INC {
+    <h1><a href="@objCategory.NavigationUrl">@objCategory.CategoryName</a></h1>
+}
+@section BREADCRUMB_INC {
+    @*@Html.Raw(ViewBag.BreadCrumb)*@
+}
+
+<section class="wrapper">
+    <div class="container">
+        <article class="detail price-left" >
+            @if (Model != null && Model.Count > 0)
+            {
+                var objBanner = Model.FirstOrDefault();
+                <h1 class="title"><b>@objCategory.CategoryName</b></h1>
+                <img id="img" src="@TMV.Utilities.Globals.ImageUrlNoCDN(objBanner.ImagePath, 800, true)" />
+                <a href="mailto:tmvhoanganh@gmail.com"><img class="lazy" data-original="/Content/images/btn-reg1.png" alt="Đăng ký tư vấn dịch vụ" /></a>
+                <a href="tel:0909055678"><img class="lazy" data-original="/Content/images/btn-phone.png" alt="Liên hệ tư vấn" /></a>
+            }
+            else
+            {
+                <p class="message">Dữ liệu đang cập nhật</p>
+            }
+        </article>
+        <aside>
+            @Html.Action("BoxGoogleSearch", "Common")
+            @if (Model != null && Model.Count > 0)
+            {
+                <div class="sponsor price-right">
+                    <span><b>BẢNG GIÁ DỊCH VỤ</b></span>
+                    @foreach (var item in Model)
+                    {
+                        <a href="@item.NavigationUrl">@item.Title</a>
+                    }                    
+                </div>
+            }
+            @Html.Action("BoxFanpage", "Common")
+            @Html.Action("BoxBanner", "Common", new { priority = (byte)TMV.Utilities.Globals.PriorityBanner.RightColum })
+        </aside>
+    </div>
+</section>
+<section class="wrapper content-4">
+    <div class="container">
+        @Html.Action("BoxQuestionAnswer", "Common")
+        @Html.Action("BoxCustomerReview", "Common")
+    </div>
+</section>

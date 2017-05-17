@@ -1,0 +1,55 @@
+﻿@model TMV.Data.Entities.ArticleInfo
+
+@{
+    var keyReplace = "img src";
+    var valueReplace = "img data-src";
+
+    var intro = Server.HtmlDecode(Model.Intro);
+    var advantage = Server.HtmlDecode(Model.Advantage);
+    var result = Server.HtmlDecode(Model.Result);
+    var process = Server.HtmlDecode(Model.Process);
+
+    var hyperLinks = new TMV.Data.Entities.HyperLinkController().ListHyperLink();
+    foreach (var item in hyperLinks)
+    {
+        var oldChar = item.OldChar.Trim();
+        var newChar = string.Format("<a href=\"{0}\">{1}</a>", item.NewChar, item.OldChar);
+        intro = intro.Replace(oldChar, newChar);
+        advantage = advantage.Replace(oldChar, newChar);
+        result = result.Replace(oldChar, newChar);
+        process = process.Replace(oldChar, newChar);
+    }
+}
+<div class="dt-tab">
+    <a href="javascript:void(0)" class="active" itemid="1">GIỚI THIỆU</a>
+    <a href="javascript:void(0)" itemid="2">ƯU ĐIỂM</a>
+    <a href="javascript:void(0)" itemid="3">KẾT QUẢ</a>
+    <a href="javascript:void(0)" itemid="4">ĐÁNH GIÁ</a>
+    <a href="javascript:void(0)" itemid="5">QUY TRÌNH</a>
+    <a href="javascript:void(0)" itemid="6">VIDEO</a>
+    <a href="javascript:void(0)" itemid="7">HÌNH ẢNH</a>
+    <a href="javascript:void(0)" itemid="8">HỎI ĐÁP</a>
+</div>
+<div class="tab tab1">
+    @Html.Raw(intro.Replace(keyReplace, "img class=lazy data-original"))
+</div>
+<div class="tab tab2">
+    @Html.Raw(advantage.Replace(keyReplace, valueReplace))
+</div>
+<div class="tab tab3">
+    @Html.Raw(result.Replace(keyReplace, valueReplace))
+</div>
+<div class="tab tab4" load="1">
+    @Html.Action("BoxRating", "Common", new { objArticle = Model })
+    <div class="clr"></div>
+</div>
+<div class="tab tab5">
+    @Html.Raw(process.Replace(keyReplace, valueReplace))
+</div>
+<div class="tab tab6">
+    <div data-iframe="@Server.HtmlDecode(Model.Video)"></div>
+</div>
+<div class="tab tab7">
+    @Html.Raw(Server.HtmlDecode(Model.FrontBack).Replace(keyReplace, valueReplace))
+</div>
+<div class="tab tab8" load="1"><img data-src="/Content/images/loader.gif" /></div>

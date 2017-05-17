@@ -1,0 +1,32 @@
+﻿@model List<TMV.Data.Entities.BannerInfo>
+@{
+    var priority = Model == null || Model.Count == 0 ? 0 : Model.FirstOrDefault().Priority;
+}
+
+@if (priority > 0)
+{
+    if (priority == (byte)TMV.Utilities.Globals.PriorityBanner.Rating)
+    {
+        var objBanner = Model.FirstOrDefault();
+        <img data-src="@TMV.Utilities.Globals.ImageUrlNoCDN(objBanner.ImagePath, 430, false)" alt="@objBanner.Title" />
+    }
+    else if (priority == (byte)TMV.Utilities.Globals.PriorityBanner.RightAngle)
+    {
+        var objBanner = Model.FirstOrDefault();
+        <div id="right-angle" >
+            <div>
+                <a id="right-angle-close" href="javascript:void(0)">×</a>
+                <a href="@objBanner.Url" title="@objBanner.Title"><img src="@TMV.Utilities.Globals.ImageUrlNoCDN(objBanner.ImagePath, 300, false)" alt="@objBanner.Title" /></a>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="ban-right">
+            @foreach (var item in Model)
+            {
+                <img class="lazy" data-original="@TMV.Utilities.Globals.ImageUrlNoCDN(item.ImagePath, 430, false)" alt="@item.Title" />
+            }
+        </div>
+    }
+}

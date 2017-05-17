@@ -1,0 +1,46 @@
+﻿<!-- dialog itself, mfp-hide class is required to make dialog hidden -->
+<div id="popup-register" class="zoom-anim-dialog mfp-hide small-dialog">
+    <h2 class="title">Đăng ký</h2>
+    <form id="frmRegister" onsubmit="return Register()">
+        <div class="row">
+            <div class="columns medium-6 small-12">
+                <label>
+                    Họ tên
+                    <input type="text" name="txtFullNameRG" placeholder="" id="name">
+                </label>
+            </div>
+
+            <div class="columns medium-6 small-12">
+                <label>
+                    Số điện thoại
+                    <input type="text" name="txtPhoneNumberRG" placeholder="">
+                </label>
+            </div>
+
+            <div class="columns medium-6 small-12">
+                <label>
+                    Dịch vụ
+                    <select name="txtKhoaHocRG">
+                        <option value="Nâng chân mày">Nâng chân mày</option>
+                        @*<option value="Phun thêu nâng cao">Phun thêu nâng cao</option>
+                        <option value="Chăm sóc da chuyên nghiệp">Chăm sóc da chuyên nghiệp</option>
+                        <option value="Chăm sóc da nâng cao">Chăm sóc da nâng cao</option>*@
+                    </select>
+                </label>
+            </div>
+
+            <div class="columns medium-6 small-12">
+                <label>
+                    Ngày đăng ký
+                    <input type="text" name="txtNgayDangKyRG" id="dp1">
+                </label>
+            </div>
+            <br>
+            <br>
+            <div class="text-center columns">
+                <button class="button button--pink large">Đăng ký</button>
+                @*<a href="" class="button button--pink large">Đăng ký</a>*@
+            </div>
+        </div>
+    </form>
+</div>

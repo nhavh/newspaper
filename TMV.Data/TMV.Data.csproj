@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{905765AC-DC80-43F6-8EC8-4BE90CE9443F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TMV.Data</RootNamespace>
+    <AssemblyName>TMV.Data</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\AdminPageController.cs" />
+    <Compile Include="Entities\AdminPageInfo.cs" />
+    <Compile Include="Entities\AdminPageRoleController.cs" />
+    <Compile Include="Entities\AdminPageRoleInfo.cs" />
+    <Compile Include="Entities\AdminRoleController.cs" />
+    <Compile Include="Entities\AdminRoleInfo.cs" />
+    <Compile Include="Entities\AdminUserController.cs" />
+    <Compile Include="Entities\AdminUserInfo.cs" />
+    <Compile Include="Entities\AdminUserRoleController.cs" />
+    <Compile Include="Entities\AdminUserRoleInfo.cs" />
+    <Compile Include="Entities\AdminWorkFlowController.cs" />
+    <Compile Include="Entities\AdminWorkFlowInfo.cs" />
+    <Compile Include="Entities\ArticleController.cs" />
+    <Compile Include="Entities\ArticleInfo.cs" />
+    <Compile Include="Entities\BannerController.cs" />
+    <Compile Include="Entities\BannerInfo.cs" />
+    <Compile Include="Entities\CategoryController.cs" />
+    <Compile Include="Entities\CategoryInfo.cs" />
+    <Compile Include="Entities\CustomerController.cs" />
+    <Compile Include="Entities\CustomerInfo.cs" />
+    <Compile Include="Entities\CustomerReviewController.cs" />
+    <Compile Include="Entities\CustomerReviewInfo.cs" />
+    <Compile Include="Entities\HyperLinkController.cs" />
+    <Compile Include="Entities\HyperLinkInfo.cs" />
+    <Compile Include="Entities\LinkWebsiteController.cs" />
+    <Compile Include="Entities\LinkWebsiteInfo.cs" />
+    <Compile Include="Entities\PictureController.cs" />
+    <Compile Include="Entities\PictureInfo.cs" />
+    <Compile Include="Entities\QuestionAnswerInfo.cs" />
+    <Compile Include="Entities\RatingController.cs" />
+    <Compile Include="Entities\RatingInfo.cs" />
+    <Compile Include="Entities\RegisterController.cs" />
+    <Compile Include="Entities\RegisterInfo.cs" />
+    <Compile Include="Entities\SponsorController.cs" />
+    <Compile Include="Entities\SponsorInfo.cs" />
+    <Compile Include="Entities\VideoController.cs" />
+    <Compile Include="Entities\VideoInfo.cs" />
+    <Compile Include="Navigation.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Entities\QuestionAnswerController.cs" />
+    <Compile Include="SQL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Microsoft.ApplicationBlocks.Data\Microsoft.ApplicationBlocks.Data.csproj">
+      <Project>{29bb5741-262c-4986-9900-8b5be7065c6d}</Project>
+      <Name>Microsoft.ApplicationBlocks.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TMV.Library\TMV.Library.csproj">
+      <Project>{976a6ed4-680a-4964-b5cb-9fce6952adc9}</Project>
+      <Name>TMV.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

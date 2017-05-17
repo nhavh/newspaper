@@ -1,0 +1,333 @@
+﻿@{
+    var cndUrl = TMV.Utilities.Globals.FrontEndUrl;
+}
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index,follow" />
+    <meta name="google-site-verification" content="y9WBeak16eQLBQRIY0fkbUXq8EHJyJrUWYSLr25bKQY" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700&amp;subset=vietnamese" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/app.css">
+
+
+    <style>
+        .whyItem img {
+            border-bottom-left-radius: 15%;
+            border-top-right-radius: 15%;
+        }
+
+        .dichvuItem img {
+            width: 100%;
+            border-bottom-left-radius: 15%;
+            border-top-right-radius: 15%;
+        }
+        #right-angle {
+            bottom: 30px;
+        }
+        .mainNav-container {
+            z-index: 20;
+        }
+        .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+            background-color: #fff;
+        }
+        .menu-mobile {
+            z-index: 999;
+            position: relative;
+        }
+        .navContact-txt {
+            font-size: 12px;
+        }
+        @@media screen and (max-width: 63.9375em) {
+            .menu-fix {top: 215px;}
+            .menu-fix li a {font-size: 9px;}
+            .menu-fix li img {width: 60%;}
+            header .navContact-column .navContact {margin: 5px 0 0 0;}
+        }
+    </style>
+
+        @RenderSection("META_INC", false)
+    <link rel="shortcut icon" href="/assets/img/favicon.ico" />
+</head>
+<body>
+    <div class="wrapper h1">
+        <div class="container">
+            @RenderSection("H1_INC", false)
+        </div>
+    </div>
+
+    <header>
+        <div class="row align-middle">
+            <div class="shrink columns">
+
+                <a href="/">
+
+                    <img src="/assets/img/logo.png" width="318" alt="">
+                </a>
+
+
+
+            </div>
+
+            <div class="shrink  columns text-center tonvinh-column">
+
+                <img src="/assets/img/tonvinhadong.png" alt="" width="307">
+
+            </div>
+
+            <div class="expand  columns navContact-column ">
+
+                <div class="navContact">
+                    <div class="navContact-txt">Hãy gọi cho chúng tôi để được tư vấn miễn phí</div>
+
+                    <div class="navContact-phone">
+                        <img src="/assets/img/icon-phone.png" alt="" width="24"> 0909 055 678 - (08) 38 634 820
+                    </div>
+
+                    <div class="navContact-txt">759 Lê Hồng Phong (nối dài), P.12, Q.10, Tp. HCM</div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </header>
+
+    <div class="menu-mobile">
+
+
+        <div>
+            <a href="/"><img src="/assets/img/logo-nav.png" width="40" alt=""></a>
+        </div>
+
+
+
+        <div class="hamburger" data-toggle="mainNav">
+            <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+            </div>
+        </div>
+    </div>
+
+    @Html.Action("Menu_V2", "Common")
+
+
+    <ul class="menu-fix ">
+        <li>
+            <a href="/bang-gia">
+                <img src="/assets/img/icon-fix-1.png" alt=""> BẢNG GIÁ
+            </a>
+        </li>
+
+        <li>
+            <a href="/khuyen-mai">
+                <img src="/assets/img/icon-fix-2.png" alt=""> KHUYẾN MÃI
+            </a>
+        </li>
+
+        <li>
+            <a href="#dk-tu-van">
+                <img src="/assets/img/icon-fix-3.png" alt=""> ĐĂNG KÝ
+            </a>
+        </li>
+
+        <li>
+            <a href="/kien-thuc">
+                <img src="/assets/img/icon-fix-4.png" alt=""> TIN TỨC
+            </a>
+        </li>
+    </ul>
+
+
+    @RenderSection("BREADCRUMB_INC", false)
+
+    @RenderBody()
+    @RenderSection("LW_INC", false)
+
+    @Html.Action("BoxBanner", "Common", new { priority = (byte)TMV.Utilities.Globals.PriorityBanner.RightAngle })
+    <div id="btn-top">↑</div>
+
+    @*<div>
+            <a class="popup-register" href="#popup-register">
+                <div class="coccoc-alo-phone coccoc-alo-green coccoc-alo-show" id="coccoc-alo-phoneIcon">
+                    <div class="coccoc-alo-ph-circle"></div>
+                    <div class="coccoc-alo-ph-circle-fill"></div>
+                    <div class="coccoc-alo-ph-img-circle"></div>
+                </div>
+            </a>
+        </div>*@
+
+    <footer>
+        <div class="row align-middle">
+            <div class="columns small-12 mobile-12 medium-4">
+                <div class="text-right">
+                    <img src="/assets/img/logo.png" width="318" alt="">
+                </div>
+                <div class="text-right" style="font-size: 12px; margin-top: 20px; margin-bottom: 20px">
+                    <div>759 Lê Hồng Phong (nối dài), P.12, Q.10, Tp. HCM</div>
+                    <div> Điện thoại: 0909 055 678 - (08) 38 634 820</div>
+                    Email: <a href="mailto:tmvhoanganh@gmail.com">tmvhoanganh@gmail.com</a>
+                </div>
+
+                <br>
+
+            </div>
+            <div class="columns small-12 mobile-12 medium-4" id="dk-tu-van">
+
+                <div class="formTuvan">
+
+                    <form id="frmRegister" onsubmit="return Register()">
+                        <h4 class="title">Đăng ký tư vấn</h4>
+
+                        <div class="form-element">
+                            <span>Họ và tên :</span>
+                            <div class="form-element-input">
+                                <input type="text" placeholder="Họ và tên" name="txtFullNameRG" id="txtFullNameRG">
+                            </div>
+
+
+                        </div>
+
+                        <div class="form-element">
+                            <span>Số ĐT:</span>
+                            <div class="form-element-input">
+                                <input type="text" placeholder="Số ĐT" name="txtPhoneNumberRG" id="txtPhoneNumberRG">
+                            </div>
+
+                        </div>
+
+                        <div class="form-element">
+                            <span>Email:</span>
+                            <div class="form-element-input">
+                                <input type="email" placeholder="Email" name="txtEmailRG" id="txtEmailRG">
+                            </div>
+
+                        </div>
+
+                        <div class="form-element">
+                            <span> Giới tính</span>
+
+                            <div class="form-element-input">
+                                <input type="radio" name="sex" value="male" id="radioMale" required><label for="radioMale">Nam</label>
+                                <input type="radio" name="sex" value="female" id="radioFemale"><label for="radioFemale">Nữ</label>
+                            </div>
+                        </div>
+
+                        <div class="form-element">
+                            <span>Nội dung :</span>
+
+                            <div class="form-element-input">
+                                <textarea placeholder="Nội dung" name="txtContentRG" id="txtContentRG"></textarea>
+                            </div>
+
+
+                        </div>
+
+                        <div class="text-center">
+                            <button class="formTuvan-btn">&raquo; Đăng ký &laquo;</button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <div class="text-center" style="font-size: 12px; color: black; margin-top: 10px; margin-bottom: 15px;">
+                    Bản quyền 2014 © Trung tâm thẩm mỹ Hoàng Anh. All rights reserved.
+                </div>
+
+            </div>
+            <div class="columns small-12 mobile-12 medium-4">
+
+                <h4 class="ketnoi-txt">KẾT NỐI TMV HOÀNG ANH</h4>
+
+                <a href="https://www.facebook.com/thammyvienhoanganh.vn" style="display: inline-block; padding: 20px 5px;">
+                    <img src="/assets/img/facebook.png" alt="">
+                </a>
+
+                <a href="https://www.youtube.com/channel/UC4M32_ehIBHFUPUnXinITxg" style="display: inline-block; padding: 20px 5px;">
+                    <img src="/assets/img/youtube.png" alt="">
+                </a>
+
+            </div>
+        </div>
+    </footer>
+
+    <div id="thongtin" class="formTuvan zoom-anim-dialog mfp-hide all-popup">
+
+        <form id="frmRegisterService" onsubmit="return RegisterService()">
+            <h4 class="title">Đăng ký dịch vụ</h4>
+
+            <div class="form-element">
+                <span>Họ và tên :</span>
+                <div class="form-element-input">
+                    <input type="text" placeholder="Họ và tên" name="txtFullNameSV" id="txtFullNameSV">
+                </div>
+
+
+            </div>
+
+            <div class="form-element">
+                <span>Số ĐT:</span>
+                <div class="form-element-input">
+                    <input type="text" placeholder="Số ĐT" name="txtPhoneNumberSV" id="txtPhoneNumberSV">
+                </div>
+
+            </div>
+
+            <div class="form-element">
+                <span>Email:</span>
+                <div class="form-element-input">
+                    <input type="email" placeholder="Email" name="txtEmailSV" id="txtEmailSV">
+                </div>
+
+            </div>
+
+            <div class="form-element">
+                <span>Dịch vụ :</span>
+
+                <div class="form-element-input">
+                    <textarea placeholder="Nội dung" name="txtContentSV" id="txtContentSV"></textarea>
+                </div>
+
+
+            </div>
+
+            <div class="text-center">
+                <button class="formTuvan-btn">&raquo; Đăng ký &laquo;</button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class='gotop'>
+        <i class='ti-angle-up'></i>
+    </div>
+
+    <script src="/assets/js/app.js"></script>
+    <script src="/assets/static/custom.js"></script>
+<script src="/assets/js/custom.js"></script>
+
+    @RenderSection("Scripts",false)
+
+<!-- Google Tag Manager -->
+    <noscript>
+        <iframe src="//www.googletagmanager.com/ns.html?id=GTM-WF7T36"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+            '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WF7T36');</script>
+    <!-- End Google Tag Manager -->
+
+
+</body>
+</html>

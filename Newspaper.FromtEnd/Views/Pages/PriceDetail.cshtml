@@ -1,0 +1,129 @@
+﻿@model TMV.Data.Entities.BannerInfo
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var title = Model.Title;
+    var description = Model.Title;
+    var keywords = Model.Title;
+    var permalink = Model.NavigationUrl;
+    var type = "website";
+    var thumbnail = TMV.Utilities.Globals.ImageUrlNoCDN(Model.ImagePath, 800, true);
+
+    List<TMV.Data.Entities.BannerInfo> prices = ViewBag.Prices;
+}
+@section META_INC {
+    @Html.Raw(TMV.Utilities.HtmlHelper.MetaTag(title, description, keywords, permalink, type, thumbnail))
+}
+@section H1_INC {
+<h1 style="text-indent: -9999px; position: fixed; top: 0; left: 0;"><a href="@Model.NavigationUrl">@Model.Title</a></h1>
+}
+@section BREADCRUMB_INC {
+    @*@Html.Raw(ViewBag.BreadCrumb)*@
+}
+
+<div class="section baiviet">
+
+    <div class="row">
+        <div class="columns small-12 medium-8 large-9">
+
+            <h2 class="section-title">
+                <img src="/assets/img/s-title-pattern.png" alt=""> <span>@Model.Title</span> <img src="/assets/img/s-title-pattern.png"
+                                                                                                  alt="">
+            </h2>
+
+            @if (Model.Type == (int)TMV.Utilities.Globals.BannerType.Image)
+            {
+                <img src="@TMV.Utilities.Globals.ImageUrlNoCDN(Model.ImagePath, 800, true)" />
+            }
+            else
+            {
+                <div class="tab tab1">@Html.Raw(Server.HtmlDecode(Model.Content))</div>
+            }
+
+            <div class="bang-gia">
+
+                <div>
+                    <a href="" class="bang-gia-btn">BẢNG GIÁ DỊCH VỤ</a>
+                </div>
+
+                <div>
+                    <a href="/bang-gia"><img src="/assets/img/btn-phone.png" alt=""></a>
+                </div>
+
+                @*<div style="text-align: center; padding: 10px;">
+                    Ghi chú: (*) thời gian và số lần tùy thuộc vào cơ địa của mỗi người.
+                </div>*@
+
+            </div>
+
+            @*@if (!string.IsNullOrEmpty(Model.Tags))
+            {
+                @Html.Raw(TMV.Utilities.HtmlHelper.HtmlTagsNew(Model.Tags, Request.RawUrl))
+            }*@
+
+            @*<ul class="tags">
+                    <li><a href="#" class="tag">HTML</a></li>
+                    <li><a href="#" class="tag">CSS</a></li>
+                    <li><a href="#" class="tag">JavaScript</a></li>
+                </ul>*@</div>
+
+
+        <div class="columns small-12 medium-4 large-3">
+
+            <div class="formSearch">
+                <div class="input-group">
+                    <div class="input-group-button">
+                        <a href=""><i class="ti-search"></i></a>
+                    </div>
+
+                    <input class="input-group-field" type="text">
+
+                </div>
+            </div>
+
+            @Html.Action("BoxArticleViewV2", "Common")
+
+        </div>
+    </div>
+</div>
+
+@*<section class="wrapper">
+    <div class="container">
+        <article class="detail">
+            <h1>@Model.Title</h1>
+            @if (Model.Type == (int)TMV.Utilities.Globals.BannerType.Image)
+            {
+                <img src="@TMV.Utilities.Globals.ImageUrlNoCDN(Model.ImagePath, 800, true)" />
+            }
+            else
+            {
+                <div class="tab tab1">@Html.Raw(Server.HtmlDecode(Model.Content))</div>
+            }
+            <a href="tel:0909055678"><img class="lazy" data-original="/Content/images/btn-phone.png" alt="Liên hệ tư vấn" /></a>
+            <div class="fb-comments" data-width="100%" data-href="@Model.NavigationUrl" data-order-by="reverse_time" data-numposts="5">
+                Đang tải bình luận...
+            </div>
+        </article>
+        <aside>
+            @Html.Action("BoxGoogleSearch", "Common")
+            @if (prices != null && prices.Count > 0)
+            {
+                <div class="sponsor price-right">
+                    <span><b>BẢNG GIÁ DỊCH VỤ</b></span>
+                    @foreach (var item in prices)
+                    {
+                        <a href="@item.NavigationUrl">@item.Title</a>
+                    }
+                </div>
+            }
+            @Html.Action("BoxFanpage", "Common")
+            @Html.Action("BoxBanner", "Common", new { priority = (byte)TMV.Utilities.Globals.PriorityBanner.RightColum })
+        </aside>
+    </div>
+</section>
+<section class="wrapper content-4">
+    <div class="container">
+        @Html.Action("BoxQuestionAnswer", "Common")
+        @Html.Action("BoxCustomerReview", "Common")
+    </div>
+</section>*@

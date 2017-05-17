@@ -1,0 +1,77 @@
+﻿@model List<TMV.Data.Entities.ArticleInfo>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var objCategory = ViewBag.ObjCategory as TMV.Data.Entities.CategoryInfo;
+    var page = ViewBag.Page;
+    var title = objCategory.SeoTitle;
+    var description = objCategory.SeoDescription;
+    var keywords = objCategory.SeoKeyword;
+    var permalink = objCategory.NavigationUrl;
+    var type = "website";
+    var thumbnail = TMV.Utilities.Globals.ImageUrl(objCategory.Avatar, 200, false);
+
+    if (page > 1)
+    {
+        title = objCategory.SeoTitle + " | Trang " + page;
+        description = objCategory.SeoDescription + " | Trang " + page;
+        keywords = objCategory.SeoKeyword + " | Trang " + page;
+    }
+}
+@section META_INC {
+    @Html.Raw(TMV.Utilities.HtmlHelper.MetaTag(title, description, keywords, permalink, type, thumbnail))
+}
+
+@section LW_INC {
+    @Html.Action("BoxCategory", "Common", new { categoryId = objCategory.ParentId <= 0 ? objCategory.CategoryId : objCategory.Group })
+    @Html.Action("BoxLinkWebsite", "Common", new { priority = objCategory.CategoryId })
+}
+@section H1_INC {
+    <h1><a href="@objCategory.NavigationUrl">@objCategory.CategoryName</a></h1>
+}
+@section BREADCRUMB_INC {
+    @Html.Raw(ViewBag.BreadCrumb)
+}
+
+<section class="wrapper">
+    <div class="container">
+        <article class="category">
+            @if (Model != null && Model.Count > 0)
+            {
+                int index = 1;
+                <div class="title"><b>@objCategory.CategoryName</b></div>
+                <div class="art-list">
+                    @foreach (var item in Model)
+                    {
+                        <a href="@item.NavigationUrl" class="art-item" title="@item.Title">
+                            <figure><img @(index > 2 ? "class=lazy data-original" : "src")="@TMV.Utilities.Globals.ImageUrl(item.Avatar, 230, false)" alt="@item.Title" /></figure>
+                            <label>
+                                <b>@item.Title</b>
+                                <i style="width:@(item.TotalRating * 16)px" title="@item.TotalRating sao"></i>
+                                <span>@item.Description</span>
+                            </label>
+                        </a>
+                        index++;
+                    }
+                </div>
+            @Html.Raw(ViewBag.PageList)
+            }
+            else
+            {
+                <p class="message">Dữ liệu đang cập nhật</p>
+            }
+        </article>
+        <aside>
+            @Html.Action("BoxGoogleSearch", "Common")
+            @Html.Action("BoxSponsor", "Common")
+            @Html.Action("BoxFanpage", "Common")
+            @Html.Action("BoxBanner", "Common", new { priority = (byte)TMV.Utilities.Globals.PriorityBanner.RightColum })
+        </aside>
+    </div>
+</section>
+<section class="wrapper content-4">
+    <div class="container">
+        @Html.Action("BoxQuestionAnswer", "Common")
+        @Html.Action("BoxCustomerReview", "Common")
+    </div>
+</section>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<DataSet>
+  <Status>
+    <ID>1</ID>
+    <Name>Chờ tư vấn</Name>
+  </Status>
+  <Status>
+    <ID>2</ID>
+    <Name>Đã tư vấn</Name>
+  </Status>
+  <Status>
+    <ID>3</ID>
+    <Name>Hủy</Name>
+  </Status>
+</DataSet>
