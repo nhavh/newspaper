@@ -35,3 +35,15 @@ E:\NhaVH\TMVHoangAnh\Source\TMV.Services\bin\Debug\Microsoft.ApplicationBlocks.D
 E:\NhaVH\TMVHoangAnh\Source\TMV.Services\obj\Debug\TMV.Services.csprojResolveAssemblyReference.cache
 E:\NhaVH\TMVHoangAnh\Source\TMV.Services\obj\Debug\TMV.Services.dll
 E:\NhaVH\TMVHoangAnh\Source\TMV.Services\obj\Debug\TMV.Services.pdb
+D:\ProjectNews\newspaper\TMV.Services\bin\Debug\TMV.Services.dll
+D:\ProjectNews\newspaper\TMV.Services\bin\Debug\TMV.Services.pdb
+D:\ProjectNews\newspaper\TMV.Services\bin\Debug\TMV.Data.dll
+D:\ProjectNews\newspaper\TMV.Services\bin\Debug\TMV.Library.dll
+D:\ProjectNews\newspaper\TMV.Services\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
+D:\ProjectNews\newspaper\TMV.Services\bin\Debug\log4net.dll
+D:\ProjectNews\newspaper\TMV.Services\bin\Debug\TMV.Data.pdb
+D:\ProjectNews\newspaper\TMV.Services\bin\Debug\TMV.Library.pdb
+D:\ProjectNews\newspaper\TMV.Services\bin\Debug\Microsoft.ApplicationBlocks.Data.pdb
+D:\ProjectNews\newspaper\TMV.Services\obj\Debug\TMV.Services.csprojResolveAssemblyReference.cache
+D:\ProjectNews\newspaper\TMV.Services\obj\Debug\TMV.Services.dll
+D:\ProjectNews\newspaper\TMV.Services\obj\Debug\TMV.Services.pdb

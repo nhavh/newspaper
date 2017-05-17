@@ -34,3 +34,12 @@ E:\NhaVH\TMVHoangAnh\Source\TMV.Static\bin\TMV.Library.pdb
 E:\NhaVH\TMVHoangAnh\Source\TMV.Static\obj\Debug\TMV.Static.csprojResolveAssemblyReference.cache
 E:\NhaVH\TMVHoangAnh\Source\TMV.Static\obj\Debug\TMV.Static.dll
 E:\NhaVH\TMVHoangAnh\Source\TMV.Static\obj\Debug\TMV.Static.pdb
+D:\ProjectNews\newspaper\TMV.Static\bin\TMV.Static.dll.config
+D:\ProjectNews\newspaper\TMV.Static\bin\TMV.Static.dll
+D:\ProjectNews\newspaper\TMV.Static\bin\TMV.Static.pdb
+D:\ProjectNews\newspaper\TMV.Static\bin\TMV.Library.dll
+D:\ProjectNews\newspaper\TMV.Static\bin\log4net.dll
+D:\ProjectNews\newspaper\TMV.Static\bin\TMV.Library.pdb
+D:\ProjectNews\newspaper\TMV.Static\obj\Debug\TMV.Static.csprojResolveAssemblyReference.cache
+D:\ProjectNews\newspaper\TMV.Static\obj\Debug\TMV.Static.dll
+D:\ProjectNews\newspaper\TMV.Static\obj\Debug\TMV.Static.pdb

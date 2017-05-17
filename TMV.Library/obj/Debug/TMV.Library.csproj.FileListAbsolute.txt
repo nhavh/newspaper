@@ -18,3 +18,8 @@ E:\NhaVH\TMVHoangAnh\Source\TMV.Library\bin\Debug\TMV.Library.dll
 E:\NhaVH\TMVHoangAnh\Source\TMV.Library\bin\Debug\TMV.Library.pdb
 E:\NhaVH\TMVHoangAnh\Source\TMV.Library\obj\Debug\TMV.Library.dll
 E:\NhaVH\TMVHoangAnh\Source\TMV.Library\obj\Debug\TMV.Library.pdb
+D:\ProjectNews\newspaper\TMV.Library\bin\Debug\TMV.Library.dll
+D:\ProjectNews\newspaper\TMV.Library\bin\Debug\TMV.Library.pdb
+D:\ProjectNews\newspaper\TMV.Library\obj\Debug\TMV.Library.csprojResolveAssemblyReference.cache
+D:\ProjectNews\newspaper\TMV.Library\obj\Debug\TMV.Library.dll
+D:\ProjectNews\newspaper\TMV.Library\obj\Debug\TMV.Library.pdb

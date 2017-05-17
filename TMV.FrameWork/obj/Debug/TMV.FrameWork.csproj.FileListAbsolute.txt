@@ -34,3 +34,15 @@ E:\NhaVH\TMVHoangAnh\Source\TMV.FrameWork\bin\Debug\Microsoft.ApplicationBlocks.
 E:\NhaVH\TMVHoangAnh\Source\TMV.FrameWork\obj\Debug\TMV.FrameWork.csprojResolveAssemblyReference.cache
 E:\NhaVH\TMVHoangAnh\Source\TMV.FrameWork\obj\Debug\TMV.FrameWork.dll
 E:\NhaVH\TMVHoangAnh\Source\TMV.FrameWork\obj\Debug\TMV.FrameWork.pdb
+D:\ProjectNews\newspaper\TMV.FrameWork\bin\Debug\TMV.FrameWork.dll
+D:\ProjectNews\newspaper\TMV.FrameWork\bin\Debug\TMV.FrameWork.pdb
+D:\ProjectNews\newspaper\TMV.FrameWork\bin\Debug\TMV.Data.dll
+D:\ProjectNews\newspaper\TMV.FrameWork\bin\Debug\TMV.Library.dll
+D:\ProjectNews\newspaper\TMV.FrameWork\bin\Debug\Microsoft.ApplicationBlocks.Data.dll
+D:\ProjectNews\newspaper\TMV.FrameWork\bin\Debug\log4net.dll
+D:\ProjectNews\newspaper\TMV.FrameWork\bin\Debug\TMV.Data.pdb
+D:\ProjectNews\newspaper\TMV.FrameWork\bin\Debug\TMV.Library.pdb
+D:\ProjectNews\newspaper\TMV.FrameWork\bin\Debug\Microsoft.ApplicationBlocks.Data.pdb
+D:\ProjectNews\newspaper\TMV.FrameWork\obj\Debug\TMV.FrameWork.csprojResolveAssemblyReference.cache
+D:\ProjectNews\newspaper\TMV.FrameWork\obj\Debug\TMV.FrameWork.dll
+D:\ProjectNews\newspaper\TMV.FrameWork\obj\Debug\TMV.FrameWork.pdb
