@@ -182,7 +182,40 @@ namespace Newspaper.FromtEnd.Com.Controllers
         {
             return PartialView();
         }
+        public ActionResult BlockBannerCenter1()
+        {
+            return PartialView();
+        }
+        public ActionResult BlockWrcRacing()
+        {
+            return PartialView();
+        }
+        public ActionResult BlockHealthFitness()
+        {
+            return PartialView();
+        }
 
+        public ActionResult BlockBusiness()
+        {
+            return PartialView();
+        }
+        public ActionResult BlockMusic()
+        {
+            return PartialView();
+        }
+
+        public ActionResult BlockLeftMostPopular()
+        {
+            return PartialView();
+        }
+        public ActionResult BlockLeftRecentComments()
+        {
+            return PartialView();
+        }
+        public ActionResult BlockLatestAticles()
+        {
+            return PartialView();
+        }
 
     }
 }

@@ -480,6 +480,14 @@
     <Content Include="Views\Common\BlockLeftBanner1.cshtml" />
     <Content Include="Views\Common\BlockLeftHolidayRecipes.cshtml" />
     <Content Include="Views\Common\BlockBannerCenter.cshtml" />
+    <Content Include="Views\Common\BlockWrcRacing.cshtml" />
+    <Content Include="Views\Common\BlockHealthFitness.cshtml" />
+    <Content Include="Views\Common\BlockBusiness.cshtml" />
+    <Content Include="Views\Common\BlockMusic.cshtml" />
+    <Content Include="Views\Common\BlockBannerCenter1.cshtml" />
+    <Content Include="Views\Common\BlockLeftMostPopular.cshtml" />
+    <Content Include="Views\Common\BlockLatestAticles.cshtml" />
+    <Content Include="Views\Common\BlockLeftRecentComments.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TMV.Data\TMV.Data.csproj">
