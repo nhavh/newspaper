@@ -150,6 +150,26 @@ namespace Newspaper.FromtEnd.Com.Controllers
         {
             return PartialView();
         }
+        public ActionResult BlockLeftStayConnected()
+        {
+            return PartialView();
+        }
+        public ActionResult BlockLeftBanner()
+        {
+            return PartialView();
+        }
+        public ActionResult BlockLeftItModern()
+        {
+            return PartialView();
+        }
+        public ActionResult BlockLeftReviews()
+        {
+            return PartialView();
+        }
+        public ActionResult BlockTraining()
+        {
+            return PartialView();
+        }
 
 
     }

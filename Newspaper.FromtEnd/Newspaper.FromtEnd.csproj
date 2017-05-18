@@ -472,6 +472,11 @@
     <Content Include="Views\Common\BlockLifeStyleNews.cshtml" />
     <Content Include="Views\Common\BlockHouseDesign.cshtml" />
     <Content Include="Views\Common\BlockTechAndGadgets.cshtml" />
+    <Content Include="Views\Common\BlockLeftStayConnected.cshtml" />
+    <Content Include="Views\Common\BlockLeftBanner.cshtml" />
+    <Content Include="Views\Common\BlockLeftItModern.cshtml" />
+    <Content Include="Views\Common\BlockLeftReviews.cshtml" />
+    <Content Include="Views\Common\BlockTraining.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TMV.Data\TMV.Data.csproj">
