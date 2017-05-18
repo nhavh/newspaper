@@ -98,92 +98,13 @@ namespace Newspaper.FromtEnd.Com.Controllers
             Response.TrySkipIisCustomErrors = true;
             return View();
         }
-        public ActionResult SiteMap()
-        {
-            var categories = new CategoryController().ListCategoryByGroup();
-            return PartialView(categories);
-        }
 
         public ActionResult BoxSlider_V2()
         {
             var banners = new BannerController().ListBannerByPriority((int)Globals.PriorityBanner.Home, _isClearCache);
             return PartialView(banners);
         }
-
-        //public ActionResult Menu(int type = 1)
-        //{
-        //    var isMobile = MvcApplication.IsMobileMode();
-        //    var httpRequest = System.Web.HttpContext.Current;
-        //    var isClearCache = Request.QueryString["ClearCache"] != null;
-
-        //    #region Lấy cache menu
-        //    string cacheKeyHtml = string.Format("GenHTMLMenu_{0}{1}{2}", Globals.HomeName, type, isMobile ? "MOBILE" : "DESK");
-        //    if (isClearCache) httpRequest.Cache.Remove(cacheKeyHtml);
-
-        //    string content = httpRequest.Cache.Get(cacheKeyHtml) as string;
-        //    if (!string.IsNullOrEmpty(content))
-        //    {
-        //        ViewBag.HTMLMenu = content;
-        //        return PartialView();
-        //    }
-        //    #endregion
-
-        //    #region Gen HTML menu
-        //    var categories = new TMV.Data.Entities.CategoryController().ListCategory(type, isClearCache);
-        //    var categoriesLV1 = categories.Where(p => p.ParentId == -1).ToList();
-
-        //    var htmlMenu = isMobile
-        //        ? "<nav><ul>"
-        //        : type == 1
-        //            ? "<nav class=\"wrapper menudek\"><ul class=\"container\"><li><a href=\"\\\">Thẩm mỹ viện</a></li>"
-        //            : "<nav class=\"wrapper\"><ul class=\"container\"><li><a href=\"\\\">Thẩm mỹ viện</a></li>";
-        //    foreach (var itemLV1 in categoriesLV1)
-        //    {
-        //        htmlMenu += "<li>";
-
-        //        var categoriesLV2 = categories.Where(p => itemLV1.CategoryId == p.ParentId).ToList();
-        //        if (type == 2 || categoriesLV2 == null || categoriesLV2.Count == 0)
-        //        {
-        //            htmlMenu += string.Format("<a href=\"{0}\">{1}</b></a>", itemLV1.NavigationUrl, itemLV1.CategoryName);
-        //            htmlMenu += "</li>";
-        //            continue;
-        //        }
-
-        //        htmlMenu += string.Format("<a href=\"{0}\" class=\"pr\">{1} <b class=\"caret\"></b></a>", itemLV1.NavigationUrl, itemLV1.CategoryName);
-        //        htmlMenu += "<ul>";
-        //        foreach (var itemLV2 in categoriesLV2)
-        //        {
-        //            htmlMenu += "<li>";
-        //            var categoriesLV3 = categories.Where(p => itemLV2.CategoryId == p.ParentId).ToList();
-        //            if (categoriesLV3 == null || categoriesLV3.Count == 0)
-        //            {
-        //                htmlMenu += string.Format("<a href=\"{0}\">{1}</a>", itemLV2.NavigationUrl, itemLV2.CategoryName);
-        //                htmlMenu += "</li>";
-        //                continue;
-        //            }
-        //            htmlMenu += string.Format("<a href=\"{0}\">{1}</a>", itemLV2.NavigationUrl, itemLV2.CategoryName);
-
-        //            htmlMenu += "<ul>";
-        //            foreach (var itemLV3 in categoriesLV3)
-        //            {
-        //                htmlMenu += string.Format("<li><a href=\"{0}\">{1}</a></li>", itemLV3.NavigationUrl, itemLV3.CategoryName);
-        //            }
-        //            htmlMenu += "</ul>";
-        //            htmlMenu += "</li>";
-        //        }
-        //        htmlMenu += "</ul>";
-        //        htmlMenu += "</li>";
-        //    }
-        //    htmlMenu += "</ul></nav>";
-        //    #endregion
-
-        //    //Cache html
-        //    httpRequest.Cache.Add(cacheKeyHtml, htmlMenu, null, DateTime.Now.AddHours(24), TimeSpan.Zero, System.Web.Caching.CacheItemPriority.Normal, null);
-
-        //    ViewBag.HTMLMenu = htmlMenu;
-
-        //    return PartialView();
-        //}
+        
 
         public ActionResult Menu_V2(int type = 1)
         {
@@ -191,16 +112,20 @@ namespace Newspaper.FromtEnd.Com.Controllers
             return PartialView(categories);
         }
 
-        private void CreateCookie()
+        public ActionResult BlockLogin()
         {
-            //var dateExpire = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 00, 00, 00).AddDays(1);
-            //var cookie = new HttpCookie(_cookieName)
-            //{
-            //    Value = "1",
-            //    Expires = dateExpire
-            //};
-            //System.Web.HttpContext.Current.Response.Cookies.Add(cookie);
+            return PartialView();
         }
+        public ActionResult BlockBannerTop()
+        {
+            return PartialView();
+        }
+
+        public ActionResult BlockMenu()
+        {
+            return PartialView();
+        }
+
 
     }
 }
