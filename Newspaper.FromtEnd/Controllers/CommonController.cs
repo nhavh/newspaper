@@ -134,6 +134,22 @@ namespace Newspaper.FromtEnd.Com.Controllers
         {
             return PartialView();
         }
+        public ActionResult BlockDontMiss()
+        {
+            return PartialView();
+        }
+        public ActionResult BlockLifeStyleNews()
+        {
+            return PartialView();
+        }
+        public ActionResult BlockHouseDesign()
+        {
+            return PartialView();
+        }
+        public ActionResult BlockTechAndGadgets()
+        {
+            return PartialView();
+        }
 
 
     }

@@ -468,6 +468,10 @@
     <Content Include="Views\Common\BlockMenu.cshtml" />
     <Content Include="Views\Common\BlockSliderText.cshtml" />
     <Content Include="Views\Common\BlockBanner4.cshtml" />
+    <Content Include="Views\Common\BlockDontMiss.cshtml" />
+    <Content Include="Views\Common\BlockLifeStyleNews.cshtml" />
+    <Content Include="Views\Common\BlockHouseDesign.cshtml" />
+    <Content Include="Views\Common\BlockTechAndGadgets.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TMV.Data\TMV.Data.csproj">
