@@ -133,6 +133,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="assets\css\style.css" />
     <Content Include="assets\css\app.css" />
     <Content Include="assets\fonts\themify-icons\themify.svg" />
     <Content Include="assets\img\bang-gia-dich-vu.png" />
@@ -169,6 +170,7 @@
     <Content Include="assets\img\truocsau1.png" />
     <Content Include="assets\img\why1.png" />
     <Content Include="assets\img\youtube.png" />
+    <Content Include="assets\js\wp-emoji-release.min.js" />
     <Content Include="assets\js\app.js" />
     <Content Include="assets\js\custom.js" />
     <Content Include="assets\js\wonderplugingallery.js" />

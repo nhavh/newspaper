@@ -121,9 +121,10 @@ namespace Newspaper.FromtEnd.Com.Controllers
             return PartialView();
         }
 
-        public ActionResult BlockMenu()
+        public ActionResult BlockMenu(int type = 1)
         {
-            return PartialView();
+            var data = new CategoryController().ListMenu(type, true);
+            return PartialView(data);
         }
 
         public ActionResult BlockSliderText()

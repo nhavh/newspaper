@@ -61,6 +61,18 @@ namespace TMV.Data.Entities
             System.Web.HttpContext.Current.Cache.Add(strCacheKey, res, null, DateTime.Now.AddMinutes(5), TimeSpan.Zero, System.Web.Caching.CacheItemPriority.Normal, null);
             return res;
         }
+        public List<CategoryInfo> ListMenu(int type = 1, bool isClearCache = false)
+        {
+            string strCacheKey = $"TMV_ListMenuGroup_{Globals.HomeName}{type}";
+            if (isClearCache) System.Web.HttpContext.Current.Cache.Remove(strCacheKey);
+            var res = System.Web.HttpContext.Current.Cache.Get(strCacheKey) as List<CategoryInfo>;
+            if (res != null) return res;
+            var tmp = CBO.FillCollection<CategoryInfo>(SQL.ListMenu(type));
+            if (tmp == null) return new List<CategoryInfo>();
+            res = tmp;
+            System.Web.HttpContext.Current.Cache.Add(strCacheKey, res, null, DateTime.Now.AddMinutes(5), TimeSpan.Zero, System.Web.Caching.CacheItemPriority.Normal, null);
+            return res;
+        }
         public DataTable SelectCategory()
         {
             return CBO.ConvertToDataTable(ListCategory(), typeof(CategoryInfo));
