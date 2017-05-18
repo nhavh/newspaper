@@ -158,6 +158,10 @@ namespace Newspaper.FromtEnd.Com.Controllers
         {
             return PartialView();
         }
+        public ActionResult BlockLeftBanner1()
+        {
+            return PartialView();
+        }
         public ActionResult BlockLeftItModern()
         {
             return PartialView();
@@ -166,7 +170,15 @@ namespace Newspaper.FromtEnd.Com.Controllers
         {
             return PartialView();
         }
+        public ActionResult BlockLeftHolidayRecipes()
+        {
+            return PartialView();
+        }
         public ActionResult BlockTraining()
+        {
+            return PartialView();
+        }
+        public ActionResult BlockBannerCenter()
         {
             return PartialView();
         }
