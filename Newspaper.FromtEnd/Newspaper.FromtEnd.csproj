@@ -466,6 +466,8 @@
     <Content Include="Views\Common\BlockLogin.cshtml" />
     <Content Include="Views\Common\BlockBannerTop.cshtml" />
     <Content Include="Views\Common\BlockMenu.cshtml" />
+    <Content Include="Views\Common\BlockSliderText.cshtml" />
+    <Content Include="Views\Common\BlockBanner4.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TMV.Data\TMV.Data.csproj">

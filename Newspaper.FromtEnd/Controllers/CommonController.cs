@@ -126,6 +126,15 @@ namespace Newspaper.FromtEnd.Com.Controllers
             return PartialView();
         }
 
+        public ActionResult BlockSliderText()
+        {
+            return PartialView();
+        }
+        public ActionResult BlockBanner4()
+        {
+            return PartialView();
+        }
+
 
     }
 }
