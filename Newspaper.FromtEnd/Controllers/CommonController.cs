@@ -217,5 +217,28 @@ namespace Newspaper.FromtEnd.Com.Controllers
             return PartialView();
         }
 
+        public ActionResult BlockFooterEditPick()
+        {
+            return PartialView();
+        }
+        public ActionResult BlockFooterPopularPost()
+        {
+            return PartialView();
+        }
+        public ActionResult BlockFooterPopularCategory()
+        {
+            return PartialView();
+        }
+
+        public ActionResult BlockFooter()
+        {
+            return PartialView();
+        }
+        public ActionResult BlockHeader()
+        {
+            return PartialView();
+        }
+
+
     }
 }

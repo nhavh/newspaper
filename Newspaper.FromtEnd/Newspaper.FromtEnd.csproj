@@ -488,6 +488,11 @@
     <Content Include="Views\Common\BlockLeftMostPopular.cshtml" />
     <Content Include="Views\Common\BlockLatestAticles.cshtml" />
     <Content Include="Views\Common\BlockLeftRecentComments.cshtml" />
+    <Content Include="Views\Common\BlockFooterEditPick.cshtml" />
+    <Content Include="Views\Common\BlockFooterPopularPost.cshtml" />
+    <Content Include="Views\Common\BlockFooterPopularCategory.cshtml" />
+    <Content Include="Views\Common\BlockFooter.cshtml" />
+    <Content Include="Views\Common\BlockHeader.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TMV.Data\TMV.Data.csproj">
