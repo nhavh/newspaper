@@ -139,6 +139,7 @@ namespace Newspaper.FromtEnd.Com.Controllers
         }
         public ActionResult BlockDontMiss()
         {
+            var dataMenu = new CategoryController().ListMenuDontMiss(true);
             return PartialView();
         }
         public ActionResult BlockLifeStyleNews()

@@ -301,6 +301,10 @@ namespace TMV.Data
         {
             return SqlHelper.ExecuteReader(ConnectString, "Menu",menuType);
         }
+        public static IDataReader ListMenuDontMis()
+        {
+            return SqlHelper.ExecuteReader(ConnectString, "MenuDontMiss");
+        }
         public static IDataReader ListCategoryBot()
         {
             return SqlHelper.ExecuteReader(ConnectString, "CategoryListBot");
