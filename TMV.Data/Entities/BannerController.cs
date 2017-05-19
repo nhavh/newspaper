@@ -38,9 +38,15 @@ namespace TMV.Data.Entities
             return res;
         }
         public DataTable SelectBanner()
-        {
+        {            
             var banners = CBO.FillCollection<BannerInfo>(SQL.ListBanner());
             return CBO.ConvertToDataTable(banners, typeof(BannerInfo));
+        }
+        public List<BannerInfo> TextListByHome(int priority)
+        {
+            var banners = CBO.FillCollection<BannerInfo>(SQL.TextListByHome(priority));
+            if(banners == null || banners.Count == 0) return new List<BannerInfo>();
+            return new List<BannerInfo>(banners);
         }
         public DataTable SelectBannerPrice()
         {

@@ -552,6 +552,10 @@ namespace TMV.Data
         {
             return SqlHelper.ExecuteReader(ConnectString, "BannerList");
         }
+        public static IDataReader TextListByHome(int priority)
+        {
+            return SqlHelper.ExecuteReader(ConnectString, "TextListByHome",priority);
+        }
         public static IDataReader ListBannerPrice()
         {
             return SqlHelper.ExecuteReader(ConnectString, "BannerListPrice");

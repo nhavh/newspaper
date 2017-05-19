@@ -129,7 +129,8 @@ namespace Newspaper.FromtEnd.Com.Controllers
 
         public ActionResult BlockSliderText()
         {
-            return PartialView();
+            var data = new BannerController().TextListByHome(6);
+            return PartialView(data);
         }
         public ActionResult BlockBanner4()
         {
