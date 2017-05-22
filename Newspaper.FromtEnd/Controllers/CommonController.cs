@@ -9,8 +9,9 @@ namespace Newspaper.FromtEnd.Com.Controllers
     public class CommonController : Controller
     {
         private Random _rd = new Random();
-        private bool _isClearCache = false;
+        private bool _isClearCache = true;
         private string _cookieName = "CK_RIGHT_ANGLE";
+        int _pageSize = 5;
         public CommonController()
         {
             _isClearCache = System.Web.HttpContext.Current.Request.QueryString["ClearCache"] != null;
@@ -137,10 +138,12 @@ namespace Newspaper.FromtEnd.Com.Controllers
             var data = new BannerController().TextListByHome(2);
             return PartialView(data);
         }
-        public ActionResult BlockDontMiss()
+        public ActionResult BlockDontMiss(int type=2, int categoryid=-1, int groupid=-2,int page = 1)
         {
-            var dataMenu = new CategoryController().ListMenuDontMiss(true);
-            return PartialView();
+            var dataMenu = new CategoryController().ListMenuDontMiss(type,_isClearCache);
+            var datanews = new ArticleController().BlockNewsByGroup(categoryid, page, _pageSize, groupid,_isClearCache);
+            var rs = new BlockModel {ListMenu = dataMenu, ListNews = datanews};
+            return PartialView(rs);
         }
         public ActionResult BlockLifeStyleNews()
         {
@@ -150,9 +153,12 @@ namespace Newspaper.FromtEnd.Com.Controllers
         {
             return PartialView();
         }
-        public ActionResult BlockTechAndGadgets()
+        public ActionResult BlockTechAndGadgets(int type = 2, int categoryid = -1, int groupid = -2, int page = 1)
         {
-            return PartialView();
+            var dataMenu = new CategoryController().ListMenuDontMiss(type, _isClearCache);
+            var datanews = new ArticleController().BlockNewsByGroup(categoryid, page, _pageSize, groupid, _isClearCache);
+            var rs = new BlockModel { ListMenu = dataMenu, ListNews = datanews };
+            return PartialView(rs);
         }
         public ActionResult BlockLeftStayConnected()
         {

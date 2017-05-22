@@ -58,6 +58,7 @@
     <Compile Include="Entities\ArticleInfo.cs" />
     <Compile Include="Entities\BannerController.cs" />
     <Compile Include="Entities\BannerInfo.cs" />
+    <Compile Include="Entities\BlockModel.cs" />
     <Compile Include="Entities\CategoryController.cs" />
     <Compile Include="Entities\CategoryInfo.cs" />
     <Compile Include="Entities\CustomerController.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Entities\HyperLinkInfo.cs" />
     <Compile Include="Entities\LinkWebsiteController.cs" />
     <Compile Include="Entities\LinkWebsiteInfo.cs" />
+    <Compile Include="Entities\MenuInfo.cs" />
     <Compile Include="Entities\PictureController.cs" />
     <Compile Include="Entities\PictureInfo.cs" />
     <Compile Include="Entities\QuestionAnswerInfo.cs" />

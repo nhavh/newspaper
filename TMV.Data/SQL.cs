@@ -254,6 +254,10 @@ namespace TMV.Data
         {
             return SqlHelper.ExecuteReader(ConnectString, "ArticleListByGroup", categoryId, group, page, pageSize);
         }
+        public static IDataReader BlockNewsByGroup(int categoryId, int page, int pageSize, int group)
+        {
+            return SqlHelper.ExecuteReader(ConnectString, "BlockByHome", categoryId, page, pageSize, group);
+        }
         public static IDataReader ListArticleByView()
         {
             return SqlHelper.ExecuteReader(ConnectString, "ArticleListByView");

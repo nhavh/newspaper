@@ -106,6 +106,18 @@ namespace TMV.Data.Entities
             System.Web.HttpContext.Current.Cache.Add(strCacheKey, res, null, DateTime.Now.AddMinutes(3), TimeSpan.Zero, System.Web.Caching.CacheItemPriority.Normal, null);
             return res;
         }
+        public List<ArticleInfo> BlockNewsByGroup(int categoryId, int page, int pageSize, int group=-2, bool isClearCache = false)
+        {
+            string strCacheKey = string.Format("BlockNewsByGroup_{0}_{1}_{2}_{3}", categoryId, group, page, pageSize);
+            if (isClearCache) System.Web.HttpContext.Current.Cache.Remove(strCacheKey);
+            List<ArticleInfo> res = System.Web.HttpContext.Current.Cache.Get(strCacheKey) as List<ArticleInfo>;
+            if (res != null) return res;
+            var tmp = CBO.FillCollection<ArticleInfo>(SQL.BlockNewsByGroup(categoryId, page, pageSize, group));
+            if (tmp == null || tmp.Count == 0) return new List<ArticleInfo>();
+            res = new List<ArticleInfo>(tmp);
+            System.Web.HttpContext.Current.Cache.Add(strCacheKey, res, null, DateTime.Now.AddMinutes(3), TimeSpan.Zero, System.Web.Caching.CacheItemPriority.Normal, null);
+            return res;
+        }
         public List<ArticleInfo> ListArticleByView(bool isClearCache = false)
         {
             string strCacheKey = "TMV_ListArticleByView";

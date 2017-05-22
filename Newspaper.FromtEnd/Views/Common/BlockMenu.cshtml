@@ -1,4 +1,4 @@
-﻿@model List<TMV.Data.Entities.CategoryInfo>
+﻿@model List<TMV.Data.Entities.MenuInfo>
     @if (Model.Any())
     {
         <div class="td-header-menu-wrap-full td-container-wrap ">
@@ -9,7 +9,7 @@
                             <ul id=menu-main-menu-1 class=sf-menu>
                                 @foreach (var itemParent in Model.Where(p => p.ParentId == -1))
                                 {
-                                    var lstSup = Model.Where(p => itemParent.CategoryId == p.ParentId).ToList();
+                                    var lstSup = Model.Where(p => p.ParentId == itemParent.Id).ToList();
                                     <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children td-menu-item td-normal-menu menu-item-296">
                                         <a href="@itemParent.NavigationUrl">@itemParent.CategoryName</a>
                                         @if (lstSup.Any())
@@ -17,7 +17,7 @@
                                             <ul class=sub-menu>
                                             @foreach (var itemSub in lstSup)
                                             {
-                                                var lstSupSup = Model.Where(p => itemSub.CategoryId == p.ParentId).ToList();
+                                                var lstSupSup = Model.Where(p => p.ParentId== itemSub.Id).ToList();
 
                                                 <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children td-menu-item td-normal-menu menu-item-297">
                                                     <a href="@itemSub.NavigationUrl">@itemSub.CategoryName</a>
