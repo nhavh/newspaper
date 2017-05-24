@@ -24,74 +24,59 @@
             </div>
         </div>
     }
-    
+
     <div id=td_uid_39_590ffa2861f8a class=td_block_inner>
-        <div class=td-block-row>
-            <div class=td-block-span6>
-                <div class="td_module_4 td_module_wrap td-animation-stack">
-                    <div class=td-module-image>
-                        <div class=td-module-thumb><a href="https://demo.tagdiv.com/newspaper/td-post-amazons-apple-watch-killer-will-be-free-and-sell-you-everything/" rel=bookmark title="Amazon&#8217;s Apple Watch killer will be free and sell you everything"><img width=324 height=235 class=entry-thumb src="/assets/wp-content/uploads/2015/04/headphones-324x235.jpg" alt="" title="Amazon&#8217;s Apple Watch killer will be free and sell you everything"/></a>
-                        </div> <a href="https://demo.tagdiv.com/newspaper/category/tagdiv-technology/" class=td-post-category>Technology</a>
-                    </div>
-                    <h3 class="entry-title td-module-title"><a href="https://demo.tagdiv.com/newspaper/td-post-amazons-apple-watch-killer-will-be-free-and-sell-you-everything/" rel=bookmark title="Amazon&#8217;s Apple Watch killer will be free and sell you everything">Amazon&#8217;s Apple Watch killer will be free and sell you everything</a>
-                    </h3>
-                    <div class=td-module-meta-info>
-                        <span class=td-post-author-name><a href="https://demo.tagdiv.com/newspaper/author/marius/">John Doe</a> <span>-</span> </span> <span class=td-post-date><time class="entry-date updated td-module-date" datetime="2015-04-24T05:44:22+00:00">Apr 24, 2015</time></span> <div class=td-module-comments><a href="https://demo.tagdiv.com/newspaper/td-post-amazons-apple-watch-killer-will-be-free-and-sell-you-everything/#respond">0</a>
-                        </div>
-                    </div>
-                    <div class=td-excerpt>
-                        The model is talking about booking her latest gig, modeling WordPress underwear in the brand latest Perfectly Fit campaign, which was shot by Lachian...
-                    </div>
-                </div>
-            </div>
-            <div class=td-block-span6>
-                <div class="td_module_6 td_module_wrap td-animation-stack">
-                    <div class=td-module-thumb><a href="https://demo.tagdiv.com/newspaper/td-post-microsoft-subsumes-open-tech-unit-back-inside-mothership/" rel=bookmark title="Microsoft Subsumes Open Tech Unit Back Inside Mothership"><img width=100 height=70 class=entry-thumb src="/assets/wp-content/uploads/2015/04/tee-100x70.jpg" alt="" title="Microsoft Subsumes Open Tech Unit Back Inside Mothership"/></a>
-                    </div>
-                    <div class=item-details>
-                        <h3 class="entry-title td-module-title"><a href="https://demo.tagdiv.com/newspaper/td-post-microsoft-subsumes-open-tech-unit-back-inside-mothership/" rel=bookmark title="Microsoft Subsumes Open Tech Unit Back Inside Mothership">Microsoft Subsumes Open Tech Unit Back Inside Mothership</a>
-                        </h3>
-                        <div class=td-module-meta-info>
-                            <span class=td-post-date><time class="entry-date updated td-module-date" datetime="2015-04-24T05:23:25+00:00">Apr 24, 2015</time></span>
-                        </div>
-                    </div>
-                </div>
-                <div class="td_module_6 td_module_wrap td-animation-stack">
-                    <div class=td-module-thumb><a href="https://demo.tagdiv.com/newspaper/td-post-why-tech-accelerators-may-soon-be-as-irrelevant-as-an-mba/" rel=bookmark title="Why tech accelerators may soon be as irrelevant as an MBA"><img width=100 height=70 class=entry-thumb src="/assets/wp-content/uploads/2015/04/singer-100x70.jpg" alt="" title="Why tech accelerators may soon be as irrelevant as an MBA"/></a>
-                    </div>
-                    <div class=item-details>
-                        <h3 class="entry-title td-module-title"><a href="https://demo.tagdiv.com/newspaper/td-post-why-tech-accelerators-may-soon-be-as-irrelevant-as-an-mba/" rel=bookmark title="Why tech accelerators may soon be as irrelevant as an MBA">Why tech accelerators may soon be as irrelevant as an MBA</a>
-                        </h3>
-                        <div class=td-module-meta-info>
-                            <div class=entry-review-stars><i class=td-icon-star></i><i class=td-icon-star></i><i class=td-icon-star></i><i class=td-icon-star></i><i class=td-icon-star-empty></i>
+        @if (Model.ListNews.Any())
+        {
+            <div class=td-block-row>
+                @foreach (var item in Model.ListNews.Take(1))
+                {
+                    <div class=td-block-span6>
+                        <div class="td_module_4 td_module_wrap td-animation-stack">
+                            <div class=td-module-image>
+                                <div class=td-module-thumb>
+                                    <a href="@item.NavigationUrl" rel=bookmark title="@item.Title">
+                                        <img width=324 height=235 class=entry-thumb src="/assets/wp-content/uploads/2015/04/headphones-324x235.jpg" alt="" title="@item.Title"/>
+                                    </a>
+                                </div> <a href="@item.NavigationUrl" class=td-post-category>@item.CategoryName</a>
+                            </div>
+                            <h3 class="entry-title td-module-title">
+                                <a href="@item.NavigationUrl" rel=bookmark title="@item.Title">@item.Title</a>
+                            </h3>
+                            <div class=td-module-meta-info>
+                                <span class=td-post-author-name><a href="@item.Title">John Doe</a> <span>-</span> </span> <span class=td-post-date><time class="entry-date updated td-module-date" datetime="@item.CreatedDate">@item.CreatedDate</time></span> <div class=td-module-comments>
+                                    <a href="@item.NavigationUrl">0</a>
+                                </div>
+                            </div>
+                            <div class=td-excerpt>
+                                @Html.Raw(item.Description)
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="td_module_6 td_module_wrap td-animation-stack">
-                    <div class=td-module-thumb><a href="https://demo.tagdiv.com/newspaper/td-post-canon-xc10-4k-digital-camcorder-is-out-compact-versatile-and-for-only-2500/" rel=bookmark title="Canon XC10 4K Digital Camcorder Is Out: Compact and Versatile"><img width=100 height=70 class=entry-thumb src="/assets/wp-content/uploads/2015/04/snickers-100x70.jpg" alt="" title="Canon XC10 4K Digital Camcorder Is Out: Compact and Versatile"/></a>
-                    </div>
-                    <div class=item-details>
-                        <h3 class="entry-title td-module-title"><a href="https://demo.tagdiv.com/newspaper/td-post-canon-xc10-4k-digital-camcorder-is-out-compact-versatile-and-for-only-2500/" rel=bookmark title="Canon XC10 4K Digital Camcorder Is Out: Compact and Versatile">Canon XC10 4K Digital Camcorder Is Out: Compact and Versatile</a>
-                        </h3>
-                        <div class=td-module-meta-info>
-                            <span class=td-post-date><time class="entry-date updated td-module-date" datetime="2015-04-22T05:23:32+00:00">Apr 22, 2015</time></span>
+                }
+
+                <div class=td-block-span6>
+                    @foreach (var item in Model.ListNews.Skip(1))
+                    {
+                        <div class="td_module_6 td_module_wrap td-animation-stack">
+                            <div class=td-module-thumb>
+                                <a href="@item.NavigationUrl" rel=bookmark title="@item.Title"><img width=100 height=70 class=entry-thumb src="/assets/wp-content/uploads/2015/04/tee-100x70.jpg" alt="" title="Microsoft Subsumes Open Tech Unit Back Inside Mothership" /></a>
+                            </div>
+                            <div class=item-details>
+                                <h3 class="entry-title td-module-title">
+                                    <a href="@item.NavigationUrl" rel=bookmark title="@item.Title">@item.Title</a>
+                                </h3>
+                                <div class=td-module-meta-info>
+                                    <span class=td-post-date><time class="entry-date updated td-module-date" datetime="@item.CreatedDate">@item.CreatedDate</time></span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="td_module_6 td_module_wrap td-animation-stack">
-                    <div class=td-module-thumb><a href="https://demo.tagdiv.com/newspaper/td-post-part-gopro-dropcam-flir-fx-camera-does-sports-a-new-camera/" rel=bookmark title="Part GoPro Dropcam: Flir FX Camera Does Sports a new camera"><img width=100 height=70 class=entry-thumb src="/assets/wp-content/uploads/2015/04/43-100x70.jpg" alt="" title="Part GoPro Dropcam: Flir FX Camera Does Sports a new camera"/></a>
-                    </div>
-                    <div class=item-details>
-                        <h3 class="entry-title td-module-title"><a href="https://demo.tagdiv.com/newspaper/td-post-part-gopro-dropcam-flir-fx-camera-does-sports-a-new-camera/" rel=bookmark title="Part GoPro Dropcam: Flir FX Camera Does Sports a new camera">Part GoPro Dropcam: Flir FX Camera Does Sports a new camera</a>
-                        </h3>
-                        <div class=td-module-meta-info>
-                            <span class=td-post-date><time class="entry-date updated td-module-date" datetime="2015-04-22T05:23:31+00:00">Apr 22, 2015</time></span>
-                        </div>
-                    </div>
+                    }
+                   
                 </div>
             </div>
-        </div>
+        }
+        
     </div>
     <div class=td-next-prev-wrap><a href="index.html#" class="td-ajax-prev-page ajax-page-disabled" id=prev-page-td_uid_39_590ffa2861f8a data-td_block_id=td_uid_39_590ffa2861f8a><i class="td-icon-font td-icon-menu-left"></i></a><a href="index.html#" class=td-ajax-next-page id=next-page-td_uid_39_590ffa2861f8a data-td_block_id=td_uid_39_590ffa2861f8a><i class="td-icon-font td-icon-menu-right"></i></a>
     </div>

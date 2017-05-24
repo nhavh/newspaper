@@ -153,7 +153,7 @@ namespace Newspaper.FromtEnd.Com.Controllers
         {
             return PartialView();
         }
-        public ActionResult BlockTechAndGadgets(int type = 2, int categoryid = -1, int groupid = -2, int page = 1)
+        public ActionResult BlockTechAndGadgets(int type = 3, int categoryid = 2, int groupid = -2, int page = 1)
         {
             var dataMenu = new CategoryController().ListMenuDontMiss(type, _isClearCache);
             var datanews = new ArticleController().BlockNewsByGroup(categoryid, page, _pageSize, groupid, _isClearCache);
@@ -222,9 +222,11 @@ namespace Newspaper.FromtEnd.Com.Controllers
         {
             return PartialView();
         }
-        public ActionResult BlockLatestAticles()
+        public ActionResult BlockLatestAticles(int categoryid = 3, int groupid = -2, int page = 1)
         {
-            return PartialView();
+            _pageSize = 12;
+            var data = new ArticleController().BlockNewsByGroup(categoryid, page, _pageSize, groupid, _isClearCache);
+            return PartialView(data);
         }
 
         public ActionResult BlockFooterEditPick()
