@@ -113,6 +113,8 @@ namespace Newspaper.FromtEnd.Com.Controllers
             return PartialView(categories);
         }
 
+        #region news home
+
         public ActionResult BlockLogin()
         {
             return PartialView();
@@ -138,11 +140,11 @@ namespace Newspaper.FromtEnd.Com.Controllers
             var data = new BannerController().TextListByHome(2);
             return PartialView(data);
         }
-        public ActionResult BlockDontMiss(int type=2, int categoryid=-1, int groupid=-2,int page = 1)
+        public ActionResult BlockDontMiss(int type = 2, int categoryid = -1, int groupid = -2, int page = 1)
         {
-            var dataMenu = new CategoryController().ListMenuDontMiss(type,_isClearCache);
-            var datanews = new ArticleController().BlockNewsByGroup(categoryid, page, _pageSize, groupid,_isClearCache);
-            var rs = new BlockModel {ListMenu = dataMenu, ListNews = datanews};
+            var dataMenu = new CategoryController().ListMenuDontMiss(type, _isClearCache);
+            var datanews = new ArticleController().BlockNewsByGroup(categoryid, page, _pageSize, groupid, _isClearCache);
+            var rs = new BlockModel { ListMenu = dataMenu, ListNews = datanews };
             return PartialView(rs);
         }
         public ActionResult BlockLifeStyleNews()
@@ -250,6 +252,8 @@ namespace Newspaper.FromtEnd.Com.Controllers
         {
             return PartialView();
         }
+
+        #endregion
 
 
     }
