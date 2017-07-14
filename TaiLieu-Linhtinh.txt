@@ -1,0 +1,126 @@
+[{'TenChuongTrinh':'Giảm giá thanh toán Master Card','MaTaiChinh':'4095','GiaTri':599000,'IsTruTien':'Y','GhiChu':'Giảm giá thanh toán Master Card: 599,000đ'}]
+
+?utm_source=yeah1&utm_affiliate=vienthonga_aff
+
+{ feature_id = 176, filter_id = 97, field_type = '', filter = 'Phụ kiện điện thoại' }
+
+'variant_id'
+'20937','20936','20446','20447','20448','20458','20459','20621','20712','20713','20731','20732','20744','20745','20757','20760','20781','20955','20956'
+
+
+SELECT cscart_product_features_values.feature_id FeatureId, 
+			COUNT(DISTINCT cscart_products.product_id) AS CountProduct , 
+			cscart_product_features_values.variant_id AS VariantId, 
+			cscart_product_feature_variant_descriptions.variant AS FeatureName
+			FROM cscart_product_features_values
+			LEFT JOIN cscart_products ON cscart_products.product_id = cscart_product_features_values.product_id
+			LEFT JOIN cscart_product_filters ON cscart_product_filters.feature_id = cscart_product_features_values.feature_id
+			LEFT JOIN cscart_product_feature_variants ON cscart_product_feature_variants.variant_id = cscart_product_features_values.variant_id
+			LEFT JOIN cscart_product_feature_variant_descriptions ON cscart_product_feature_variant_descriptions.variant_id = cscart_product_feature_variants.variant_id 
+			AND cscart_product_feature_variant_descriptions.lang_code = 'VN'
+			LEFT JOIN cscart_product_features ON cscart_product_features.feature_id = cscart_product_filters.feature_id
+			LEFT JOIN cscart_price_area parea ON parea.product_code=cscart_products.product_code
+			LEFT JOIN (
+			SELECT product_id, GROUP_CONCAT(cscart_product_features_values.variant_id) AS simple_variants
+			FROM cscart_product_features_values
+			WHERE lang_code = 'VN'
+			GROUP BY product_id) AS pfv_simple ON pfv_simple.product_id = cscart_products.product_id
+			LEFT JOIN cscart_product_prices ON cscart_product_prices.product_id = cscart_products.product_id 
+			AND cscart_product_prices.lower_limit = '1'
+			INNER JOIN cscart_products_categories ON cscart_products_categories.product_id = cscart_products.product_id
+			LEFT JOIN cscart_categories ON cscart_categories.category_id = cscart_products_categories.category_id
+			LEFT JOIN cscart_companies AS companies ON companies.company_id = cscart_products.company_id
+			WHERE cscart_product_features_values.feature_id = '176'
+			AND cscart_product_features_values.lang_code = 'VN' 
+			AND cscart_product_features_values.variant_id 
+			AND cscart_categories.id_path like '%180273%'
+			AND (cscart_categories.usergroup_ids = '' OR FIND_IN_SET(0, cscart_categories.usergroup_ids) OR FIND_IN_SET(1, cscart_categories.usergroup_ids)) 
+			AND (cscart_products.usergroup_ids = '' OR FIND_IN_SET(0, cscart_products.usergroup_ids) OR FIND_IN_SET(1, cscart_products.usergroup_ids)) 
+			AND cscart_categories.status IN ('A', 'H') 
+			AND cscart_products.status IN ('A') 
+			AND (companies.status = 'A' OR cscart_products.company_id = 0) 
+			AND cscart_product_filters.filter_id = '97'
+			AND cscart_product_features.feature_type IN ('S', 'M', 'E') 
+			AND (parea.tbl_branchs_code = 'CS_0000042' OR (parea.tbl_branchs_code IS NULL AND cscart_products.status_exsit = 'U'))
+			GROUP BY cscart_product_features_values.variant_id
+			ORDER BY cscart_product_feature_variants.position, cscart_product_feature_variant_descriptions.variant
+
+			
+			
+kết nói đối tác
++ add js(api) của doi tac yêu cầu vào layout
++ tạo đối tac 
++ tạo link utm lay gia trị utm_source => id doi tac tạo cooki
++ luu đơn hàng cho doi tac khi thanh toán từ utm_source mà bên trang đoi tac sang
++ khi đat hang xong thì pull thông tin đơn hàng qua cho doi tac theo js(api) mà doi tat cung cấp
+
+
+
+tratruocPrice = (price * model.PhanTramTraTruoc / 100)
+conlai = (price - tratruocPrice) + (price - tratruocPrice) * lxTragop * model.ThoiGianTraGop / 100
+tThangPrice = (contai / (model.ThoiGianTraGop * 1000)) * 1000
+
+500k
+exec SP_Create_GeneralCodes '2017-06-01','2017-07-05','Active',null,'WEB-EQ',null,null,'MACHINHANH','4104',null,6,2,'w','WEB','14240,14239'
+300k
+exec SP_Create_GeneralCodes '2017-06-01','2017-07-05','Active',null,'WEB-EQ',null,null,'MACHINHANH','4104',null,6,2,'w','WEB','13937,13648,14183'
+200k
+exec SP_Create_GeneralCodes '2017-06-01','2017-07-05','Active',null,'WEB-EQ',null,null,'MACHINHANH','4104',null,6,2,'w','WEB','13616,14130'
+100k
+exec SP_Create_GeneralCodes '2017-06-01','2017-07-05','Active',null,'WEB-EQ',null,null,'MACHINHANH','4104',null,6,2,'w','WEB','13900,14253,14220,13529,13863,13572,13938,14131'
+
+http://bestie.vn/2016/09/chi-can-xem-chung-minh-thu-la-biet-ngay-so-menh-giau-ngheo#wMIGZ4Lp9sTfkX3X.97
+
+
+
+
+Declare @TSQL int = 1000
+
+WHILE @TSQL > 0  
+BEGIN 
+    SET @TSQL=@TSQL-1;
+    exec SP_Create_GeneralCodes '2017-07-14','2017-08-01','Active',null,'WEB-THANDEN',null,null,'MATAICHINH','4104',null,6,2,'w','WEB'
+END   
+
+Declare @TSQL int = 2500
+
+WHILE @TSQL > 0  
+BEGIN 
+    SET @TSQL=@TSQL-1;
+    exec SP_Create_GeneralCodes '2017-07-01','2017-08-01','Active',null,'WEB-THANDEN',null,null,'MATAICHINH','4104',null,6,2,'w','WEB'
+END   
+
+
+
+{"total":-4,"subtotal":0,"shipping_ids":8,"shipping_cost":0,"area":"CS_0000004","discount":0,"coupon_code":"","payment_id":"23","lastname":"8","firstname":"It test FE 01","phone":"01258846374","sex":"M","address":"3/2 HCM","email":"teowwww@vienthonga.com","notes":"","ip_address":"","affiliate_branch_id":32,"confirm_code":null,"order_type":"B","promotion_note":"","admin_note":null,"product":[{"product":null,"amount":2,"color":"6272","price":-1,"product_id":184748,"product_code":"13765","imei":null},{"product":null,"amount":2,"color":"8128","price":-1,"product_id":186303,"product_code":"14240","imei":null}],"affiliate_info":{"fe_code":"FE00001","cmnd":"912345678","cmnd_link":"google.com","affiliate_key":"order_fe"}}
+
+
+Link : http://vta.saigonbpo.vn/img/Vj4CCCSAQAhQAHs2XDrrTBmNq6du2U6M/CMND.pdf
+user/pass: vta/@A12345678
+Có restrict IP
+
+
+
+
+
+http://vohoangnha:!12345679N@gitlab.vienthonga.com/WebSite/Web-FrontEnd.git
+http://vohoangnha:!12345679N@gitlab.vienthonga.com/WebSite/API-Public.git
+http://vohoangnha:!12345679N@gitlab.vienthonga.com/WebSite/API-Local.git
+http://gitlab.vienthonga.com/WebSite/API-CorePrice.git
+
+http://vohoangnha:!12345679N@gitlab.vienthonga.com/WebSite/Public_WebMain.git
+http://vohoangnha:!12345679N@gitlab.vienthonga.com/WebSite/Public_ApiPublic.git
+http://vohoangnha:!12345679N@gitlab.vienthonga.com/WebSite/Public_ApiLocal.git
+http://gitlab.vienthonga.com/WebSite/Web-MobileApp.git
+http://gitlab.vienthonga.com/WebSite/Public_Event.git
+10.10.40.111
+10.10.40.112
+10.10.40.137
+10.10.40.141
+10.10.40.142
+10.10.40.116
+10.10.40.81
+10.10.40.82
+
+
+
